@@ -1,0 +1,27 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+.errormain {
+  background: url(../images/error/error-bg.png) no-repeat center center/cover;
+  @include flex-center-column;
+  @include w100;
+  min-height: 60vh;
+  overflow: hidden;
+
+  @include breakpoint(mobile768) {
+    min-height: 100vh;
+  }
+
+  .error-thumbnail {
+    @include flex-center;
+    overflow: hidden;
+
+    @include breakpoint(mobile576) {
+      @include square(300);
+    }
+
+    @include breakpoint(tab992) {
+      @include square(480);
+    }
+  }
+}

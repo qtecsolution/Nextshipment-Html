@@ -1,0 +1,14 @@
+@use '../global' as *;
+@use '../partials' as *;
+
+.shipcontainer {
+  width: calc(100% - size(40));
+  max-width: 100%;
+  padding-inline: size(20);
+  margin-inline: auto;
+  
+  @include breakpoint(tab992) {
+    padding-inline: size(150);
+    width: calc(100% - size(300));
+  }
+}
