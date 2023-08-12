@@ -6,6 +6,8 @@
   <title>Nextshipment</title>
   <!-- FAVICON -->
   <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+  <!-- REMIXICON(CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css">
   <!-- CLASH-DISPLAY-FONT(CDN) -->
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,700,500,600,300&display=swap">
   <!-- BACK-TO-TOP-CSS -->
@@ -25,9 +27,187 @@
   <!-- PRELOADER END -->
 
   <!-- HEADER-SECTION START -->
-  <header class="header">
+  <header class="header fixed-top">
     <div class="shipcontainer">
+      <nav id="header-nav" class="d-flex align-items-center justify-content-between" aria-labelledby="header-nav">
+        <!-- HAMBURGER-MENU -->
+        <div class="d-lg-none d-block">
+          <button type="button" class="btn-hamburger" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+            <i class="ri-menu-2-fill"></i>
+          </button>
 
+          <!-- MOBILE-MENU -->
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="ri-close-fill"></i>
+              </button>
+            </div>
+
+            <div class="offcanvas-body">
+              <!-- MOBILE-LIST -->
+              <ul class="mobilelist">
+                <li class="mobilelist-item">
+                  <a href="index.html" class="mobilelist-link">
+                    Home
+                  </a>
+                </li>
+                
+                <li class="mobilelist-item">
+                  <a href="#" class="mobilelist-link">
+                    How do we
+                  </a>
+                </li>
+
+                <div class="accordion" id="accordionDropdown">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <a href="services.html" class="mobilelist-link">Services</a>
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-dropdown" aria-expanded="true" aria-controls="collapse-dropdown"></button>
+                    </h2>
+
+                    <div id="collapse-dropdown" class="accordion-collapse collapse show" data-bs-parent="#accordionDropdown">
+                      
+                    </div>
+                  </div>
+                </div>
+
+                <li class="mobilelist-item">
+                  <a href="trackpackage.html" class="mobilelist-link">
+                    Track Package
+                  </a>
+                </li>
+
+                <li class="mobilelist-item">
+                  <a href="costestimate.html" class="mobilelist-link">
+                    Cost Estimate
+                  </a>
+                </li>
+
+                <li class="mobilelist-item">
+                  <a href="faq.html" class="mobilelist-link">
+                    Faq
+                  </a>
+                </li>
+
+                <li class="mobilelist-item">
+                  <a href="about.html" class="mobilelist-link">
+                    About us
+                  </a>
+                </li>
+
+                <li class="mobilelist-item">
+                  <a href="support.html" class="mobilelist-link">
+                    Support
+                  </a>
+                </li>
+
+                <li class="mobilelist-item">
+                  <a href="importpackage.html" class="mobilelist-link">
+                    Import Package
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- BRAND-LOGO -->
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo/logo.svg" alt="brand-logo">
+        </a>
+
+        <!-- DESKTOP-LIST -->
+        <div class="d-none d-lg-block">
+          <ul class="desktoplist">
+            <li class="ps-0 desktoplist-item">
+              <a href="index.html" class="desktoplist-link active">
+                Home
+              </a>
+            </li>
+            
+            <li class="desktoplist-item">
+              <a href="#" class="desktoplist-link">
+                How do we
+              </a>
+            </li>
+
+            <li class="desktoplist-item desktopdropdown">
+              <a href="services.html" class="desktoplist-link">
+                Services
+              </a>
+
+              <div class="desktopdropdown-menu">
+                <ul class="dropdownlist">
+                  <li class="dropdownlist-item">
+                    <a href="airfreight.html" class="dropdownlist-link">
+                      Air Freight
+                    </a>
+                  </li>
+
+                  <li class="dropdownlist-item">
+                    <a href="roadfreight.html" class="dropdownlist-link">
+                      Road Freight
+                    </a>
+                  </li>
+
+                  <li class="dropdownlist-item">
+                    <a href="oceanfreight.html" class="dropdownlist-link">
+                      Ocean Freight
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="desktoplist-item">
+              <a href="trackpackage.html" class="desktoplist-link">
+                Track Package
+              </a>
+            </li>
+
+            <li class="desktoplist-item">
+              <a href="costestimate.html" class="desktoplist-link">
+                Cost Estimate
+              </a>
+            </li>
+
+            <li class="desktoplist-item">
+              <a href="faq.html" class="desktoplist-link">
+                Faq
+              </a>
+            </li>
+
+            <li class="desktoplist-item">
+              <a href="about.html" class="desktoplist-link">
+                About us
+              </a>
+            </li>
+
+            <li class="desktoplist-item pe-0">
+              <a href="support.html" class="desktoplist-link">
+                Support
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- AUTHENTICATION-LIST -->
+        <ul class="authlist">
+          <li class="authlist-item d-none d-lg-block ps-0">
+            <a href="importpackage.html" class="authlist-link">
+              Import Package
+            </a>
+          </li>
+
+          <li class="authlist-item">
+            <a href="login.html" class="btn-login">
+              Login
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </header>
   <!-- HEADER-SECTION END -->

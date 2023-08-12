@@ -11,7 +11,7 @@ $primary: hsl(217, 100%, 56%); //#2074FF
 
 // BACKGROUND-COLORS
 $sectionbg: hsl(213, 100%, 98%); //#F4F9FF
-
+$hoverbg: hsl(217, 100%, 47%); //#005AEF
 
 // TEXT-COLORS
 $bodytext: hsl(0, 0%, 19%); //#303030
@@ -28,6 +28,10 @@ $inputborder: hsl(207, 23%, 92%); //#E7ECF0
 
 
 // SHADOWS
+$dropshad: rgba(17, 12, 46, 0.15);
+$shade-1: rgba(30, 30, 30, 0.05);
 
 
 // BOX-SHADOWS
+$shadow-1: .25rem .25rem 0rem 0rem $shade-1;
+$dropdownshadow: 0rem 3rem 6.25rem 0rem $shade-1;

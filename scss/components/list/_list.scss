@@ -1,3 +1,112 @@
 @use '../../global' as *;
 @use '../../partials' as *;
 
+.desktoplist {
+  @include list-horizontal;
+
+  &-item {
+    cursor: pointer;
+    padding-inline: size(12);
+    height: size(100);
+    @include flex-center;
+
+    @include breakpoint(desktop1400) {
+      padding-inline: size(18);
+    }
+  }
+
+  &-link {
+    color: $blacktext;
+    font-weight: 600;
+    @include transitionscolor;
+
+    &:hover:not(.active) {
+      color: $primary;
+    }
+
+    &.active {
+      color: $primary;
+    }
+  }
+
+  .desktopdropdown {
+    position: relative;
+    @include flex-center;
+
+    &-menu {
+      background: $white;
+      box-shadow: $dropdownshadow;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: size(200);
+      max-width: size(250);
+      display: none;
+      @extend %animation;
+      @extend %slideUpIn;
+    }
+    
+    @include hover {
+      .desktopdropdown-menu {
+        display: block;
+      }
+    }
+  }
+}
+
+.dropdownlist {
+  @include list-vertical;
+  @include border(solid, 1, $headerborder);
+  border-top: 0;
+  background: $white;
+
+  &-item {
+    &:last-of-type {
+      .dropdownlist-link {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &-link {
+    color: $blacktext;
+    font-size: size(14);
+    font-weight: 600;
+    @include flex;
+    @include w100;
+    padding: size(12) size(16);
+    @include border-single(bottom, solid, 1, $headerborder);
+    @include transitionscolor;
+
+    @include hover {
+      color: $primary;
+    }
+  }
+}
+
+.authlist {
+  @include list-horizontal;
+
+  &-item {
+    padding-inline: size(12);
+  }
+
+  &-link {
+    color: $blacktext;
+    font-weight: 600;
+    @include transitionscolor;
+
+    &:hover:not(.active) {
+      color: $primary;
+    }
+
+    &.active {
+      color: $primary;
+    }
+  }
+}
+
+.mobilelist {
+  @include list-vertical;
+
+}

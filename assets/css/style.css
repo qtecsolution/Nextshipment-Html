@@ -8,6 +8,11 @@
 /**=====================================================**
                 ANIMATION-STYLES
 =======================================================**/
+.desktoplist .desktopdropdown-menu {
+  animation-duration: 350ms;
+  animation-fill-mode: both;
+}
+
 @keyframes slideDownIn {
   0% {
     transform: translateY(-100%);
@@ -41,6 +46,10 @@
     transform: translateY(1.25rem);
   }
 }
+.desktoplist .desktopdropdown-menu {
+  animation-name: slideUpIn;
+}
+
 @keyframes slideUpInMobile {
   0% {
     transform: translateY(2.5rem);
@@ -322,14 +331,19 @@ video::selection {
 body {
   background: hsl(0, 0%, 100%);
   color: hsl(0, 0%, 19%);
+  font-family: "Inter", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
-  letter-spacing: 0.0625rem;
   text-rendering: optimizeSpeed;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
   margin: 4rem 0 0;
+}
+@media screen and (min-width: 87.5rem) {
+  body {
+    font-size: 1rem;
+  }
 }
 @media screen and (min-width: 62rem) {
   body {
@@ -415,6 +429,7 @@ button,
   opacity: 1;
   margin: 0;
   padding: 0;
+  transition: all 350ms ease-in-out;
 }
 button:focus,
 [type=button]:focus,
@@ -422,6 +437,48 @@ button:focus,
 [type=submit]:focus {
   box-shadow: none;
   outline: none;
+}
+
+.btn-login {
+  background: hsl(217, 100%, 56%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.84375rem 2.5rem;
+  transition: all 350ms ease-in-out;
+}
+.btn-login:not([disabled]):hover {
+  background: hsl(217, 100%, 47%);
+  color: hsl(0, 0%, 100%);
+}
+
+.header {
+  border-bottom: solid 0.0625rem hsl(210, 35%, 93%);
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 62rem) {
+  .header {
+    height: 6.25rem;
+  }
+}
+.header .header-nav .logo {
+  width: 12.875rem;
+  height: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.header .header-nav .logo img {
+  width: 100%;
+  height: 100%;
 }
 
 input,
@@ -621,6 +678,114 @@ table tr th, table tr td {
   vertical-align: middle;
 }
 
+.desktoplist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.desktoplist-item {
+  cursor: pointer;
+  padding-inline: 0.75rem;
+  height: 6.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 87.5rem) {
+  .desktoplist-item {
+    padding-inline: 1.125rem;
+  }
+}
+.desktoplist-link {
+  color: hsl(0, 0%, 11%);
+  font-weight: 600;
+  transition: color 350ms ease-in-out;
+}
+.desktoplist-link:hover:not(.active) {
+  color: hsl(217, 100%, 56%);
+}
+.desktoplist-link.active {
+  color: hsl(217, 100%, 56%);
+}
+.desktoplist .desktopdropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.desktoplist .desktopdropdown-menu {
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0rem 3rem 6.25rem 0rem rgba(30, 30, 30, 0.05);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 12.5rem;
+  max-width: 15.625rem;
+  display: none;
+}
+.desktoplist .desktopdropdown:not([disabled]):hover .desktopdropdown-menu {
+  display: block;
+}
+
+.dropdownlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  border: solid 0.0625rem hsl(210, 35%, 93%);
+  border-top: 0;
+  background: hsl(0, 0%, 100%);
+}
+.dropdownlist-item:last-of-type .dropdownlist-link {
+  border-bottom: 0;
+}
+.dropdownlist-link {
+  color: hsl(0, 0%, 11%);
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-bottom: solid 0.0625rem hsl(210, 35%, 93%);
+  transition: color 350ms ease-in-out;
+}
+.dropdownlist-link:not([disabled]):hover {
+  color: hsl(217, 100%, 56%);
+}
+
+.authlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.authlist-item {
+  padding-inline: 0.75rem;
+}
+.authlist-link {
+  color: hsl(0, 0%, 11%);
+  font-weight: 600;
+  transition: color 350ms ease-in-out;
+}
+.authlist-link:hover:not(.active) {
+  color: hsl(217, 100%, 56%);
+}
+.authlist-link.active {
+  color: hsl(217, 100%, 56%);
+}
+
+.mobilelist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
 .errormain {
   background: url(../images/error/error-bg.png) no-repeat center center/cover;
   display: flex;
@@ -656,14 +821,18 @@ table tr th, table tr td {
 }
 
 .shipcontainer {
-  width: calc(100% - 2.5rem);
+  min-width: 100%;
   max-width: 100%;
   padding-inline: 1.25rem;
   margin-inline: auto;
 }
 @media screen and (min-width: 62rem) {
   .shipcontainer {
+    padding-inline: 5rem;
+  }
+}
+@media screen and (min-width: 87.5rem) {
+  .shipcontainer {
     padding-inline: 9.375rem;
-    width: calc(100% - 18.75rem);
   }
 }

@@ -2,3 +2,26 @@
 @use '../../global' as *;
 @use '../../partials' as *;
 
+.header {
+  @include border-single(bottom, solid, 1, $headerborder);
+  @include w100;
+  height: size(64);
+  @include flex-center-vert;
+
+  @include breakpoint(tab992) {
+    height: size(100);
+  }
+
+  .header-nav {
+    .logo {
+      width: size(206);
+      height: size(18);
+      @include flex-center;
+      overflow: hidden;
+
+      img {
+        @include wh100;
+      }
+    }
+  }
+}
