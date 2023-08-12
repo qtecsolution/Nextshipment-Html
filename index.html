@@ -37,9 +37,13 @@
           </button>
 
           <!-- MOBILE-MENU -->
-          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenu">
             <div class="offcanvas-header">
-              
+              <!-- BRAND-LOGO -->
+              <a href="index.html" class="logo">
+                <img src="assets/images/logo/logo.svg" alt="brand-logo">
+              </a>
+
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
                 <i class="ri-close-fill"></i>
               </button>
@@ -64,11 +68,29 @@
                   <div class="accordion-item">
                     <h2 class="accordion-header">
                       <a href="services.html" class="mobilelist-link">Services</a>
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-dropdown" aria-expanded="true" aria-controls="collapse-dropdown"></button>
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-dropdown" aria-expanded="true" aria-controls="collapse-dropdown"></button>
                     </h2>
 
-                    <div id="collapse-dropdown" class="accordion-collapse collapse show" data-bs-parent="#accordionDropdown">
-                      
+                    <div id="collapse-dropdown" class="accordion-collapse collapse" data-bs-parent="#accordionDropdown">
+                      <ul class="dropdownlist">
+                        <li class="dropdownlist-item">
+                          <a href="airfreight.html" class="dropdownlist-link">
+                            Air Freight
+                          </a>
+                        </li>
+      
+                        <li class="dropdownlist-item">
+                          <a href="roadfreight.html" class="dropdownlist-link">
+                            Road Freight
+                          </a>
+                        </li>
+      
+                        <li class="dropdownlist-item">
+                          <a href="oceanfreight.html" class="dropdownlist-link">
+                            Ocean Freight
+                          </a>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>

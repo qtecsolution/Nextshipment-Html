@@ -12,16 +12,19 @@
     height: size(100);
   }
 
-  .header-nav {
-    .logo {
-      width: size(206);
-      height: size(18);
-      @include flex-center;
-      overflow: hidden;
+  .logo {
+    width: size(140);
+    height: size(18);
+    @include flex-center;
+    overflow: hidden;
 
-      img {
-        @include wh100;
-      }
+    @include breakpoint(mobile768) {
+      width: size(206);
+    }
+
+    img {
+      object-fit: contain;
+      @include wh100;
     }
   }
 }

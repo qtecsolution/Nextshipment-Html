@@ -102,6 +102,7 @@ ul,
 var,
 video {
   margin: 0;
+  font: inherit;
 
   &::selection {
     @include setBgColor($primary, $white);

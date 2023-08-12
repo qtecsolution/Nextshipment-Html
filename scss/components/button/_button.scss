@@ -18,14 +18,37 @@ button,
   }
 }
 
+.btn-hamburger {
+  @include setBgColor($white, $bodytext);
+  @include border(solid, 1, $headerborder);
+  @include radius(4);
+  @include square(38);
+  @include flex-center;
+  overflow: hidden;
+  
+  i {
+    color: inherit;
+    font-size: size(20);
+  }
+  
+  @include hover {
+    @include setBgColor($white, $primary);
+    border-color: $primary;
+  }
+}
+
 .btn-login {
   @include setBgColor($primary, $white);
   @include radius(4);
   @include flex-center;
   font-weight: 600;
   text-align: center;
-  padding: size(13.5) size(40);
+  padding: size(8) size(16);
   @include transitionsall;
+
+  @include breakpoint(mobile768) {
+    padding: size(13.5) size(40);
+  }
   
   @include hover {
     @include setBgColor($hoverbg, $white);
