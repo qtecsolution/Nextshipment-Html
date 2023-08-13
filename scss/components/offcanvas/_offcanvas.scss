@@ -23,26 +23,22 @@
 
   &-header {
     .btn-close {
-      @include square(20);
+      @include square(24);
       @include flex-center;
       overflow: hidden;
       @include radius(0);
       @include transitionsall;
 
-      svg {
-        path {
-          fill: $blacktext;
-        }
+      i {
+        font-size: size(24);
       }
 
       @include hover {
         opacity: 1;
         @include rotate(180);
 
-        svg {
-          path {
-            fill: $danger;
-          }
+        i {
+          color: $danger;
         }
       }
     }

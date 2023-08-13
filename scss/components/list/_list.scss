@@ -108,5 +108,86 @@
 
 .mobilelist {
   @include list-vertical;
+  @include border-single(bottom, solid, 1, $headerborder);
 
+
+  &-item {
+    &:last-of-type {
+      .mobilelist-link {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .accordion {
+    border: none;
+    background: transparent;
+    
+    &-item {
+      background: transparent;
+      border: none;
+
+      &:first-of-type,
+      &:last-of-type {
+        @include radius(0);
+
+        .accordion-button {
+          @include radius(0);
+        }
+      }
+    }
+
+    &-header {
+      background: transparent;
+      @include flex-center-vert;
+      position: relative;
+
+      .mobilelist-link {
+        position: relative;
+        z-index: 10;
+        height: size(46);
+      }
+    }
+
+    &-button {
+      background: transparent;
+      @include flex-end;
+      position: absolute;
+      @include square(46);
+      width: 50%;
+      left: auto;
+      right: 0;
+      z-index: 100;
+      padding-right: size(16);
+
+      &::after {
+        margin-left: 0;
+      }
+
+      &:not(.collapsed) {
+        background-color: transparent;
+        box-shadow: none;
+      }
+    }
+  }
+
+  &-link {
+    background: transparent;
+    color: $blacktext;
+    font-size: size(14);
+    font-weight: 600;
+    @include flex;
+    @include w100;
+    padding: size(12) size(16);
+    @include border-single(bottom, solid, 1, $headerborder);
+    @include transitionscolor;
+
+    &:hover:not(.active) {
+      color: $primary;
+    }
+    
+    &.active {
+      color: $primary;
+    }
+  }
 }

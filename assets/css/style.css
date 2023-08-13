@@ -603,8 +603,8 @@ input[type=search]::-webkit-search-results-decoration:focus {
   border-left: 0;
 }
 .offcanvas-header .btn-close {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -612,15 +612,15 @@ input[type=search]::-webkit-search-results-decoration:focus {
   border-radius: 0rem;
   transition: all 350ms ease-in-out;
 }
-.offcanvas-header .btn-close svg path {
-  fill: hsl(0, 0%, 11%);
+.offcanvas-header .btn-close i {
+  font-size: 1.5rem;
 }
 .offcanvas-header .btn-close:not([disabled]):hover {
   opacity: 1;
   transform: rotate(180deg);
 }
-.offcanvas-header .btn-close:not([disabled]):hover svg path {
-  fill: hsl(354, 70%, 54%);
+.offcanvas-header .btn-close:not([disabled]):hover i {
+  color: hsl(354, 70%, 54%);
 }
 .offcanvas-body::-webkit-scrollbar {
   background: transparent;
@@ -819,6 +819,72 @@ table tr th, table tr td {
   list-style: none;
   display: flex;
   flex-direction: column;
+  border-bottom: solid 0.0625rem hsl(210, 35%, 93%);
+}
+.mobilelist-item:last-of-type .mobilelist-link {
+  border-bottom: 0;
+}
+.mobilelist .accordion {
+  border: none;
+  background: transparent;
+}
+.mobilelist .accordion-item {
+  background: transparent;
+  border: none;
+}
+.mobilelist .accordion-item:first-of-type, .mobilelist .accordion-item:last-of-type {
+  border-radius: 0rem;
+}
+.mobilelist .accordion-item:first-of-type .accordion-button, .mobilelist .accordion-item:last-of-type .accordion-button {
+  border-radius: 0rem;
+}
+.mobilelist .accordion-header {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.mobilelist .accordion-header .mobilelist-link {
+  position: relative;
+  z-index: 10;
+  height: 2.875rem;
+}
+.mobilelist .accordion-button {
+  background: transparent;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  width: 2.875rem;
+  height: 2.875rem;
+  width: 50%;
+  left: auto;
+  right: 0;
+  z-index: 100;
+  padding-right: 1rem;
+}
+.mobilelist .accordion-button::after {
+  margin-left: 0;
+}
+.mobilelist .accordion-button:not(.collapsed) {
+  background-color: transparent;
+  box-shadow: none;
+}
+.mobilelist-link {
+  background: transparent;
+  color: hsl(0, 0%, 11%);
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-bottom: solid 0.0625rem hsl(210, 35%, 93%);
+  transition: color 350ms ease-in-out;
+}
+.mobilelist-link:hover:not(.active) {
+  color: hsl(217, 100%, 56%);
+}
+.mobilelist-link.active {
+  color: hsl(217, 100%, 56%);
 }
 
 .errormain {
