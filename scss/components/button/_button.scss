@@ -54,3 +54,21 @@ button,
     @include setBgColor($hoverbg, $white);
   }
 }
+
+.btn-import {
+  @include setBgColor($white, $blacktext);
+  @include radius(4);
+  @include flex-center;
+  font-weight: 600;
+  text-align: center;
+  padding: size(8) size(16);
+  @include transitionsall;
+
+  @include breakpoint(mobile768) {
+    padding: size(13.5) size(40);
+  }
+  
+  @include hover {
+    @include setBgColor($primary, $white);
+  }
+}

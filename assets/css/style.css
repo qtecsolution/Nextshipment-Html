@@ -483,6 +483,28 @@ button:focus,
   color: hsl(0, 0%, 100%);
 }
 
+.btn-import {
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 11%);
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  transition: all 350ms ease-in-out;
+}
+@media screen and (min-width: 48rem) {
+  .btn-import {
+    padding: 0.84375rem 2.5rem;
+  }
+}
+.btn-import:not([disabled]):hover {
+  background: hsl(217, 100%, 56%);
+  color: hsl(0, 0%, 100%);
+}
+
 .header {
   background: hsl(0, 0%, 100%);
   border-bottom: solid 0.0625rem hsl(210, 35%, 93%);
@@ -1025,6 +1047,59 @@ table tr th, table tr td {
   color: hsl(217, 100%, 56%);
 }
 
+.uppersection {
+  background: hsl(240, 30%, 8%);
+  min-height: 20.5rem;
+  display: flex;
+  align-items: center;
+}
+.uppersection .upperthumbnail {
+  width: 100%;
+}
+.uppersection .upperinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 5rem;
+}
+@media screen and (min-width: 48rem) {
+  .uppersection .upperinfo {
+    padding-bottom: 0rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .uppersection .upperinfo {
+    gap: 3rem;
+    max-width: 34.625rem;
+  }
+}
+@media screen and (min-width: 87.5rem) {
+  .uppersection .upperinfo {
+    gap: 4.125rem;
+  }
+}
+.uppersection .upperinfo .display-6 {
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  letter-spacing: 0.0275rem;
+  text-align: center;
+}
+@media screen and (min-width: 48rem) {
+  .uppersection .upperinfo .display-6 {
+    text-align: left;
+  }
+}
+.uppersection .upperinfo .myimport {
+  max-width: 8.125rem;
+  margin-inline: auto;
+}
+@media screen and (min-width: 48rem) {
+  .uppersection .upperinfo .myimport {
+    max-width: 11.25rem;
+    margin: 0;
+  }
+}
+
 .errormain {
   background: url(../images/error/error-bg.png) no-repeat center center/cover;
   display: flex;
@@ -1074,4 +1149,10 @@ table tr th, table tr td {
   .shipcontainer {
     padding-inline: 9.375rem;
   }
+}
+
+.marked {
+  color: hsl(217, 100%, 56%);
+  font-weight: 600;
+  letter-spacing: 0.0275rem;
 }

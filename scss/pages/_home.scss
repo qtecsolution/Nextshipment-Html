@@ -1,3 +1,52 @@
 @use "../global" as *;
 @use "../partials" as *;
 
+.uppersection {
+  background: $sectionbgdark;
+  min-height: size(328);
+  @include flex-center-vert;
+
+  .upperthumbnail {
+    @include w100;
+  }
+
+  .upperinfo {
+    @include flex-column;
+    gap: size(32);
+    padding-bottom: size(80);
+    
+    @include breakpoint(mobile768) {
+      padding-bottom: size(0);
+    }
+    
+    @include breakpoint(desktop1200) {
+      gap: size(48);
+      max-width: size(554);
+    }
+
+    @include breakpoint(desktop1400) {
+      gap: size(66);
+    }
+
+    .display-6 {
+      color: $white;
+      font-weight: 600;
+      letter-spacing: size(0.44);
+      text-align: center;
+    
+      @include breakpoint(mobile768) {
+        text-align: left;
+      }
+    }
+
+    .myimport {
+      max-width: size(130);
+      margin-inline: auto;
+    
+      @include breakpoint(mobile768) {
+        max-width: size(180);
+        margin: 0;
+      }
+    }
+  }
+}
