@@ -761,7 +761,7 @@ input[type=search]::-webkit-search-results-decoration:focus {
 .footer .copyright {
   border-top: solid 0.0625rem hsl(210, 35%, 93%);
   width: 100%;
-  padding: 1.5rem;
+  padding: 1.5rem 0rem;
 }
 .footer .copyright-text {
   color: hsl(0, 0%, 11%);

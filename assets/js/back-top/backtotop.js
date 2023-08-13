@@ -1,6 +1,6 @@
 up({
   // bottom position
-  bottom: '1.5rem',
+  bottom: '3rem',
   // right position
   right: '1.5rem',
   // width
@@ -8,7 +8,7 @@ up({
   // height
   height: '2.5rem',
   // background color
-  bg: 'hsl(19, 89%, 54%)',
+  bg: 'hsl(217, 100%, 56%)',
   // custom icon
   src: 'assets/cursor/chevron-up-solid.svg',
   // distance from the top to show the back to top button

@@ -92,7 +92,7 @@
   .copyright {
     @include border-single(top, solid, 1, $headerborder);
     @include w100;
-    padding: size(24);
+    padding: size(24) size(0);
 
     &-text {
       color: $blacktext;
