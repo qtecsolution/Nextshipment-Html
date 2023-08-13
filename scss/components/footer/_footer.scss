@@ -7,6 +7,11 @@
   &-content {
     @include flex-column;
     gap: size(24);
+    text-align: center;
+    
+    @include breakpoint(tab992) {
+      text-align: left;
+    }
   }
 
   .footerinfo {
@@ -22,6 +27,11 @@
       height: size(18);
       @include flex-center;
       overflow: hidden;
+      margin-inline: auto;
+
+      @include breakpoint(tab992) {
+        margin: 0;
+      }
   
       img {
         object-fit: contain;
@@ -30,6 +40,14 @@
     }
 
     .infotext {
+      max-width: 65%;
+      margin-inline: auto;
+
+      @include breakpoint(tab992) {
+        max-width: 100%;
+        margin: 0;
+      }
+
       .text {
         color: $blacktext;
         font-weight: 300;

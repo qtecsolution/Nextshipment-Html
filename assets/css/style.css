@@ -8,7 +8,7 @@
 /**=====================================================**
                 ANIMATION-STYLES
 =======================================================**/
-.desktoplist .desktopdropdown-menu {
+.authlist .desktopdropdown-menu {
   animation-duration: 350ms;
   animation-fill-mode: both;
 }
@@ -46,7 +46,7 @@
     transform: translateY(1.25rem);
   }
 }
-.desktoplist .desktopdropdown-menu {
+.authlist .desktopdropdown-menu {
   animation-name: slideUpIn;
 }
 
@@ -444,8 +444,8 @@ button:focus,
   color: hsl(0, 0%, 19%);
   border: solid 0.0625rem hsl(210, 35%, 93%);
   border-radius: 0.25rem;
-  width: 2.375rem;
-  height: 2.375rem;
+  width: 3rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -453,7 +453,7 @@ button:focus,
 }
 .btn-hamburger i {
   color: inherit;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 .btn-hamburger:not([disabled]):hover {
   background: hsl(0, 0%, 100%);
@@ -681,6 +681,12 @@ input[type=search]::-webkit-search-results-decoration:focus {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  text-align: center;
+}
+@media screen and (min-width: 62rem) {
+  .footer-content {
+    text-align: left;
+  }
 }
 .footer .footerinfo {
   display: flex;
@@ -699,12 +705,28 @@ input[type=search]::-webkit-search-results-decoration:focus {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin-inline: auto;
+}
+@media screen and (min-width: 62rem) {
+  .footer .footerinfo .logo {
+    margin: 0;
+  }
 }
 .footer .footerinfo .logo img {
   -o-object-fit: contain;
      object-fit: contain;
   width: 100%;
   height: 100%;
+}
+.footer .footerinfo .infotext {
+  max-width: 65%;
+  margin-inline: auto;
+}
+@media screen and (min-width: 62rem) {
+  .footer .footerinfo .infotext {
+    max-width: 100%;
+    margin: 0;
+  }
 }
 .footer .footerinfo .infotext .text {
   color: hsl(0, 0%, 11%);
@@ -795,12 +817,7 @@ table tr th, table tr td {
   align-items: center;
 }
 .desktoplist-item {
-  cursor: pointer;
   padding-inline: 0.75rem;
-  height: 6.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 @media screen and (min-width: 87.5rem) {
   .desktoplist-item {
@@ -817,25 +834,6 @@ table tr th, table tr td {
 }
 .desktoplist-link.active {
   color: hsl(217, 100%, 56%);
-}
-.desktoplist .desktopdropdown {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.desktoplist .desktopdropdown-menu {
-  background: hsl(0, 0%, 100%);
-  box-shadow: 0rem 3rem 6.25rem 0rem rgba(30, 30, 30, 0.05);
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 12.5rem;
-  max-width: 15.625rem;
-  display: none;
-}
-.desktoplist .desktopdropdown:not([disabled]):hover .desktopdropdown-menu {
-  display: block;
 }
 
 .dropdownlist {
@@ -872,21 +870,87 @@ table tr th, table tr td {
   display: flex;
   align-items: center;
 }
+.authlist-item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+}
 @media screen and (min-width: 62rem) {
   .authlist-item {
     padding-inline: 0.75rem;
+    height: 6.25rem;
   }
 }
+.authlist-item:not([disabled]):hover .authlist-link .text {
+  color: hsl(217, 100%, 56%);
+}
+.authlist-item:not([disabled]):hover .authlist-link .icon svg {
+  transform: rotateX(180deg);
+}
+.authlist-item:not([disabled]):hover .authlist-link .icon svg path {
+  fill: hsl(217, 100%, 56%);
+}
+.authlist-item:not([disabled]):hover .authlist-linkcircle {
+  background: hsl(217, 100%, 56%);
+  color: hsl(0, 0%, 100%);
+  border-color: hsl(217, 100%, 56%);
+}
+.authlist .desktopdropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.authlist .desktopdropdown-menu {
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0rem 3rem 6.25rem 0rem rgba(30, 30, 30, 0.05);
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 8.75rem;
+  max-width: 12.5rem;
+  display: none;
+}
+.authlist .desktopdropdown:not([disabled]):hover .desktopdropdown-menu {
+  display: block;
+}
 .authlist-link {
+  display: flex;
+  align-items: center;
+  transition: all 350ms ease-in-out;
+}
+.authlist-link .text {
   color: hsl(0, 0%, 11%);
   font-weight: 600;
-  transition: color 350ms ease-in-out;
 }
-.authlist-link:hover:not(.active) {
-  color: hsl(217, 100%, 56%);
+.authlist-link .icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
-.authlist-link.active {
-  color: hsl(217, 100%, 56%);
+.authlist-link .icon svg {
+  transition: transform 350ms ease-in-out;
+}
+.authlist-linkcircle {
+  background: hsl(0, 0%, 100%);
+  color: hsl(240, 30%, 8%);
+  border: solid 0.0625rem hsl(207, 23%, 92%);
+  border-radius: 100%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Clash Display", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.0625rem;
+  transition: all 350ms ease-in-out;
 }
 
 .mobilelist {
@@ -899,51 +963,6 @@ table tr th, table tr td {
 }
 .mobilelist-item:last-of-type .mobilelist-link {
   border-bottom: 0;
-}
-.mobilelist .accordion {
-  border: none;
-  background: transparent;
-}
-.mobilelist .accordion-item {
-  background: transparent;
-  border: none;
-}
-.mobilelist .accordion-item:first-of-type, .mobilelist .accordion-item:last-of-type {
-  border-radius: 0rem;
-}
-.mobilelist .accordion-item:first-of-type .accordion-button, .mobilelist .accordion-item:last-of-type .accordion-button {
-  border-radius: 0rem;
-}
-.mobilelist .accordion-header {
-  background: transparent;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-.mobilelist .accordion-header .mobilelist-link {
-  position: relative;
-  z-index: 10;
-  height: 2.875rem;
-}
-.mobilelist .accordion-button {
-  background: transparent;
-  display: flex;
-  justify-content: flex-end;
-  position: absolute;
-  width: 2.875rem;
-  height: 2.875rem;
-  width: 50%;
-  left: auto;
-  right: 0;
-  z-index: 100;
-  padding-right: 1rem;
-}
-.mobilelist .accordion-button::after {
-  margin-left: 0;
-}
-.mobilelist .accordion-button:not(.collapsed) {
-  background-color: transparent;
-  box-shadow: none;
 }
 .mobilelist-link {
   background: transparent;
@@ -970,6 +989,12 @@ table tr th, table tr td {
   display: flex;
   align-items: center;
   gap: 1rem;
+  justify-content: center;
+}
+@media screen and (min-width: 62rem) {
+  .sociallist {
+    justify-content: flex-start;
+  }
 }
 .sociallist-link {
   width: 1.5rem;

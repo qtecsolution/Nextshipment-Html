@@ -22,13 +22,13 @@ button,
   @include setBgColor($white, $bodytext);
   @include border(solid, 1, $headerborder);
   @include radius(4);
-  @include square(38);
+  @include square(48);
   @include flex-center;
   overflow: hidden;
   
   i {
     color: inherit;
-    font-size: size(20);
+    font-size: size(24);
   }
   
   @include hover {
