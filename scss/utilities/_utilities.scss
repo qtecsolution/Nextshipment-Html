@@ -21,3 +21,13 @@
   font-weight: 600;
   letter-spacing: size(0.44);
 }
+
+.myimport {
+  max-width: size(130);
+  margin-inline: auto;
+
+  @include breakpoint(mobile768) {
+    max-width: size(180);
+    margin: 0;
+  }
+}

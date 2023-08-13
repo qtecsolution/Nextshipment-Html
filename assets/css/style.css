@@ -1056,56 +1056,111 @@ table tr th, table tr td {
 .uppersection .upperthumbnail {
   width: 100%;
 }
-.uppersection .upperinfo {
+
+.upperinfo {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding-bottom: 5rem;
 }
 @media screen and (min-width: 48rem) {
-  .uppersection .upperinfo {
+  .upperinfo {
     padding-bottom: 0rem;
   }
 }
 @media screen and (min-width: 75rem) {
-  .uppersection .upperinfo {
+  .upperinfo {
     gap: 3rem;
     max-width: 34.625rem;
   }
 }
 @media screen and (min-width: 87.5rem) {
-  .uppersection .upperinfo {
+  .upperinfo {
     gap: 4.125rem;
   }
 }
-.uppersection .upperinfo .display-6 {
+.upperinfo .display-6 {
   color: hsl(0, 0%, 100%);
   font-weight: 600;
   letter-spacing: 0.0275rem;
   text-align: center;
 }
 @media screen and (min-width: 48rem) {
-  .uppersection .upperinfo .display-6 {
+  .upperinfo .display-6 {
     text-align: left;
   }
 }
-.uppersection .upperinfo .myimport {
-  max-width: 8.125rem;
+
+.uppersec {
+  background: hsl(240, 30%, 8%);
+  min-height: 20rem;
+  display: flex;
+  align-items: center;
+}
+.uppersec .leftinfo {
+  width: 100%;
+  padding: 2.5rem 1.25rem 0rem;
+}
+@media screen and (min-width: 62rem) {
+  .uppersec .leftinfo {
+    width: 70%;
+    padding: 0rem 1.25rem;
+    margin-inline: auto;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .uppersec .leftinfo {
+    padding-left: 5rem;
+    padding-right: 0rem;
+  }
+}
+@media screen and (min-width: 87.5rem) {
+  .uppersec .leftinfo {
+    padding-left: 9.375rem;
+  }
+}
+.uppersec .leftinfo .upperinfo {
+  max-width: 80%;
   margin-inline: auto;
 }
-@media screen and (min-width: 48rem) {
-  .uppersection .upperinfo .myimport {
-    max-width: 11.25rem;
+@media screen and (min-width: 62rem) {
+  .uppersec .leftinfo .upperinfo {
+    max-width: 44rem;
     margin: 0;
   }
 }
-
-.errormain {
-  background: url(../images/error/error-bg.png) no-repeat center center/cover;
+.uppersec .rightinfo {
+  width: 100%;
+}
+@media screen and (min-width: 62rem) {
+  .uppersec .rightinfo {
+    width: 30%;
+  }
+}
+.uppersec .rightinfo-thumbnail {
+  width: 100%;
+  height: 13.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  overflow: hidden;
+}
+@media screen and (min-width: 48rem) {
+  .uppersec .rightinfo-thumbnail {
+    height: 21.875rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .uppersec .rightinfo-thumbnail {
+    height: auto;
+  }
+}
+.uppersec .rightinfo-thumbnail img {
+  width: 100%;
+  height: 100%;
+}
+
+.errormain {
   width: 100%;
   min-height: 60vh;
   overflow: hidden;
@@ -1115,22 +1170,23 @@ table tr th, table tr td {
     min-height: 100vh;
   }
 }
-.errormain .error-thumbnail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.errormain .errorthumbnail {
+  width: 100%;
   overflow: hidden;
 }
 @media screen and (min-width: 36rem) {
-  .errormain .error-thumbnail {
-    width: 18.75rem;
+  .errormain .errorthumbnail {
     height: 18.75rem;
   }
 }
 @media screen and (min-width: 62rem) {
-  .errormain .error-thumbnail {
-    width: 30rem;
+  .errormain .errorthumbnail {
     height: 30rem;
+  }
+}
+@media screen and (min-width: 87.5rem) {
+  .errormain .errorthumbnail {
+    height: 38.75rem;
   }
 }
 
@@ -1155,4 +1211,15 @@ table tr th, table tr td {
   color: hsl(217, 100%, 56%);
   font-weight: 600;
   letter-spacing: 0.0275rem;
+}
+
+.myimport {
+  max-width: 8.125rem;
+  margin-inline: auto;
+}
+@media screen and (min-width: 48rem) {
+  .myimport {
+    max-width: 11.25rem;
+    margin: 0;
+  }
 }

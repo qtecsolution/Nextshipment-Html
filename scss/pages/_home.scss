@@ -9,43 +9,96 @@
   .upperthumbnail {
     @include w100;
   }
+}
 
-  .upperinfo {
-    @include flex-column;
-    gap: size(32);
-    padding-bottom: size(80);
-    
+.upperinfo {
+  @include flex-column;
+  gap: size(32);
+  padding-bottom: size(80);
+  
+  @include breakpoint(mobile768) {
+    padding-bottom: size(0);
+  }
+  
+  @include breakpoint(desktop1200) {
+    gap: size(48);
+    max-width: size(554);
+  }
+
+  @include breakpoint(desktop1400) {
+    gap: size(66);
+  }
+
+  .display-6 {
+    color: $white;
+    font-weight: 600;
+    letter-spacing: size(0.44);
+    text-align: center;
+  
     @include breakpoint(mobile768) {
-      padding-bottom: size(0);
+      text-align: left;
     }
-    
-    @include breakpoint(desktop1200) {
-      gap: size(48);
-      max-width: size(554);
-    }
+  }
+}
 
+.uppersec {
+  background: $sectionbgdark;
+  min-height: size(320);
+  @include flex-center-vert;
+
+  .leftinfo {
+    @include w100;
+    padding: size(40) size(20) size(0);
+
+    @include breakpoint(tab992) {
+      width: 70%;
+      padding: size(0) size(20);
+      margin-inline: auto;
+    }
+      
+    @include breakpoint(tab992) {
+      padding-left: size(80);
+      padding-right: size(0);
+    }
+  
     @include breakpoint(desktop1400) {
-      gap: size(66);
+      padding-left: size(150);
     }
 
-    .display-6 {
-      color: $white;
-      font-weight: 600;
-      letter-spacing: size(0.44);
-      text-align: center;
-    
-      @include breakpoint(mobile768) {
-        text-align: left;
+    .upperinfo {
+      max-width: 80%;
+      margin-inline: auto;
+
+      @include breakpoint(tab992) {
+        max-width: size(704);
+        margin: 0;
       }
     }
+  }
 
-    .myimport {
-      max-width: size(130);
-      margin-inline: auto;
-    
+  .rightinfo {
+    @include w100;
+
+    @include breakpoint(tab992) {
+      width: 30%;
+    }
+
+    &-thumbnail {
+      @include w100;
+      height: size(220);
+      @include flex-center;
+      overflow: hidden;
+  
       @include breakpoint(mobile768) {
-        max-width: size(180);
-        margin: 0;
+        height: size(350);
+      }
+
+      @include breakpoint(tab992) {
+        height: auto;
+      }
+      
+      img {
+        @include wh100;
       }
     }
   }
