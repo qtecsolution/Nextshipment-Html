@@ -88,7 +88,9 @@
   @include list-horizontal;
 
   &-item {
-    padding-inline: size(12);
+    @include breakpoint(tab992) {
+      padding-inline: size(12);
+    }
   }
 
   &-link {
@@ -187,6 +189,40 @@
     }
     
     &.active {
+      color: $primary;
+    }
+  }
+}
+
+.sociallist {
+  @include list-horizontal;
+  gap: size(16);
+
+  &-link {
+    @include square(24);
+    @include flex-center;
+
+    @include hover {
+      svg {
+        path {
+          stroke: $primary;
+        }
+      }
+    }
+  }
+}
+
+.footerlist {
+  @include list-vertical;
+  gap: size(8);
+
+  &-link {
+    color: $blacktext;
+    font-weight: 300;
+    letter-spacing: size(0.16);
+    @include transitionscolor;
+    
+    @include hover {
       color: $primary;
     }
   }

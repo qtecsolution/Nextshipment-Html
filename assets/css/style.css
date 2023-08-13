@@ -360,7 +360,6 @@ h5,
 h6 {
   margin: 0;
   font-family: "Clash Display", sans-serif;
-  text-shadow: balance;
 }
 h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, h5::-moz-selection, h6::-moz-selection {
   background: hsl(217, 100%, 56%);
@@ -485,6 +484,7 @@ button:focus,
 }
 
 .header {
+  background: hsl(0, 0%, 100%);
   border-bottom: solid 0.0625rem hsl(210, 35%, 93%);
   width: 100%;
   height: 4rem;
@@ -674,6 +674,80 @@ input[type=search]::-webkit-search-results-decoration:focus {
   border-right-color: hsl(0, 0%, 11%);
 }
 
+.footer {
+  padding-top: 4rem;
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.footer .footerinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+@media screen and (min-width: 62rem) {
+  .footer .footerinfo {
+    gap: 2rem;
+  }
+}
+.footer .footerinfo .logo {
+  width: 12.875rem;
+  height: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.footer .footerinfo .logo img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.footer .footerinfo .infotext .text {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+}
+.footer .footerdetail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+@media screen and (min-width: 62rem) {
+  .footer .footerdetail {
+    gap: 2rem;
+  }
+}
+.footer .footerdetail-header .footertitle {
+  color: hsl(0, 0%, 11%);
+}
+.footer .footerdetail-body .addressinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.footer .footerdetail-body .addressinfo p {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+}
+.footer .footerdetail-body .wearhouse p {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+}
+.footer .copyright {
+  border-top: solid 0.0625rem hsl(210, 35%, 93%);
+  width: 100%;
+  padding: 1.5rem;
+}
+.footer .copyright-text {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+  letter-spacing: 0.01rem;
+  text-align: center;
+}
+
 .preloader {
   background: hsl(213, 100%, 98%);
   display: flex;
@@ -798,8 +872,10 @@ table tr th, table tr td {
   display: flex;
   align-items: center;
 }
-.authlist-item {
-  padding-inline: 0.75rem;
+@media screen and (min-width: 62rem) {
+  .authlist-item {
+    padding-inline: 0.75rem;
+  }
 }
 .authlist-link {
   color: hsl(0, 0%, 11%);
@@ -884,6 +960,43 @@ table tr th, table tr td {
   color: hsl(217, 100%, 56%);
 }
 .mobilelist-link.active {
+  color: hsl(217, 100%, 56%);
+}
+
+.sociallist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.sociallist-link {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sociallist-link:not([disabled]):hover svg path {
+  stroke: hsl(217, 100%, 56%);
+}
+
+.footerlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footerlist-link {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+  letter-spacing: 0.01rem;
+  transition: color 350ms ease-in-out;
+}
+.footerlist-link:not([disabled]):hover {
   color: hsl(217, 100%, 56%);
 }
 

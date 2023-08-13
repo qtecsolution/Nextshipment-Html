@@ -3,6 +3,7 @@
 @use '../../partials' as *;
 
 .header {
+  background: $white;
   @include border-single(bottom, solid, 1, $headerborder);
   @include w100;
   height: size(64);

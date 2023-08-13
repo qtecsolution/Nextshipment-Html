@@ -1,3 +1,86 @@
 @use "../../global" as *;
 @use "../../partials" as *;
 
+.footer {
+  padding-top: size(64);
+
+  &-content {
+    @include flex-column;
+    gap: size(24);
+  }
+
+  .footerinfo {
+    @include flex-column;
+    gap: size(24);
+    
+    @include breakpoint(tab992) {
+      gap: size(32);
+    }
+
+    .logo {
+      width: size(206);
+      height: size(18);
+      @include flex-center;
+      overflow: hidden;
+  
+      img {
+        object-fit: contain;
+        @include wh100;
+      }
+    }
+
+    .infotext {
+      .text {
+        color: $blacktext;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .footerdetail {
+    @include flex-column;
+    gap: size(24);
+    
+    @include breakpoint(tab992) {
+      gap: size(32);
+    }
+
+    &-header {
+      .footertitle {
+        color: $blacktext;
+      }
+    }
+    
+    &-body {
+      .addressinfo {
+        @include flex-column;
+        gap: size(4);
+
+        p {
+          color: $blacktext;
+          font-weight: 300;
+        }
+      }
+
+      .wearhouse {
+        p {
+          color: $blacktext;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    @include border-single(top, solid, 1, $headerborder);
+    @include w100;
+    padding: size(24);
+
+    &-text {
+      color: $blacktext;
+      font-weight: 300;
+      letter-spacing: size(0.16);
+      text-align: center;
+    }
+  }
+}
