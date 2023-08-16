@@ -223,3 +223,18 @@
     }
   }
 }
+
+.contactlist {
+  @include list-horizontal;
+  gap: size(4);
+
+  &-link {
+    color: $blacktext;
+    font-weight: 300;
+    @include transitionscolor;
+
+    @include hover {
+      color: $primary;
+    }
+  }
+}

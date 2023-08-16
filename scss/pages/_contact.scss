@@ -1,0 +1,122 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+.contactus {
+  padding: size(80) size(0) size(48);
+
+  @include breakpoint(desktop1400) {
+    padding: size(124) size(0) size(80);
+  }
+
+  &-details {
+    @include flex-column;
+    gap: size(64);
+
+    // @include breakpoint(desktop1400) {
+    //   gap: size(100);
+    // }
+
+    .infotext {
+      max-width: size(664);
+    }
+  }
+}
+
+.faqsection {
+  padding: size(80) size(0);
+
+  @include breakpoint(desktop1400) {
+    padding: size(124) size(0);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(80);
+  
+    @include breakpoint(desktop1400) {
+      gap: size(124);
+    }
+  }
+
+  &-header {
+    @include flex-center;
+
+    .titlebox {
+      max-width: size(406);
+      margin-inline: auto;
+    }
+  }
+
+  .accordion {
+    border: none;
+    
+    &-item {
+      border: none;
+      @include radius(0);
+      
+      &:first-of-type,
+      &:last-of-type {
+        .accordion-button {
+          @include radius(0);
+        }
+      }
+    }
+
+    &-button {
+      @include setBgColor(transparent, $blacktext);
+      box-shadow: none;
+      font-size: size(18);
+      font-weight: 500;
+      padding: size(20) size(0);
+
+      @include breakpoint(mobile768) {
+        font-size: size(20);
+      }
+
+      @include breakpoint(tab992) {
+        font-size: size(24);
+      }
+
+      @include breakpoint(desktop1400) {
+        font-size: size(28);
+      }
+
+      &:not(.collapsed) {
+        @include setBgColor(transparent, $blacktext);
+        box-shadow: none;
+
+        &::after {
+          background-image: url("data:image/svg+xml,%3Csvg width='15' height='5' viewBox='0 0 15 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.3123 4.048H0.320312V0H14.3123V4.048Z' fill='%231B1B1B'/%3E%3C/svg%3E");
+          transition: none;
+        }
+      }
+
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='18' height='17' viewBox='0 0 18 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.8738 16.64H7.11383V10.12H0.673828V6.52H7.11383V0H10.8738V6.52H17.3138V10.12H10.8738V16.64Z' fill='%231B1B1B'/%3E%3C/svg%3E%0A");
+        transition: none;
+      }
+    }
+
+    &-body {
+      padding: size(0) size(0) size(40);
+
+      p {
+        color: $bodytext;
+        font-size: size(14);
+        font-weight: 300;
+
+        @include breakpoint(mobile768) {
+          font-size: size(16);
+        }
+
+        @include breakpoint(tab992) {
+          font-size: size(18);
+        }
+
+        @include breakpoint(desktop1400) {
+          font-size: size(20);
+        }
+      }
+    }
+  }
+}

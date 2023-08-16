@@ -49,11 +49,45 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
+.form-control {
+  @include setBgColor($white, $blacktext);
+  border-color: $borderinput;
+  @include radius(2);
+  font-size: size(14);
+  font-weight: 500;
+  padding: size(12.5) size(16);
+  @include transitionsall;
+
+  @include breakpoint(desktop1400) {
+    font-size: size(16);
+  }
+
+  &::placeholder {
+    color: $placeholdertext;
+    font-weight: 400;
+  }
+}
+
+.form-select {
+  border-color: $borderinput;
+  @include radius(2);
+  cursor: pointer;
+  font-size: size(14);
+  font-weight: 500;
+  padding: size(12.5) size(16);
+  @include transitionsall;
+
+  @include breakpoint(desktop1400) {
+    font-size: size(16);
+  }
+}
+
 .form-control,
 .form-select {
   &:focus {
     box-shadow: none;
     outline: none;
+    border-color: $primary;
   }
 }
 
@@ -71,4 +105,59 @@ input[type="search"]::-webkit-search-results-decoration {
     box-shadow: none;
     outline: none;
   }
+}
+
+.form-select.is-invalid:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"], .was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"] {
+  // --bs-form-select-bg-icon: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 10L12 16L18 10H6Z' fill='%231B1B1B'/%3E%3C/svg%3E%0A");
+}
+
+.form-select.is-invalid:focus, .was-validated .form-select:invalid:focus {
+  box-shadow: none;
+  outline: none;
+  border-color: $primary;
+}
+
+.form-select {
+  --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 10L12 16L18 10H6Z' fill='%231B1B1B'/%3E%3C/svg%3E%0A");
+  --bs-form-select-bg-icon: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 10L12 16L18 10H6Z' fill='%231B1B1B'/%3E%3C/svg%3E%0A");
+}
+
+.output {
+  @include flex-center-between;
+  height: size(48);
+  @include border(solid, 1, $borderinput);
+  @include radius(2);
+  padding: size(12.5) size(10) size(12.5) size(16);
+
+  .text {
+    color: $placeholdertext;
+    font-size: size(14);
+    font-weight: 400;
+  }
+
+  .uploadlabel {
+    cursor: pointer;
+    @include setBgColor($blacktext, $white);
+    @include radius(2);
+    @include flex-center;
+    text-align: center;
+    padding: size(8) size(12);
+    font-size: size(13);
+    font-weight: 600;
+    @include transitionsall;
+
+    @include hover {
+      @include setBgColor($bodytext, $white);
+    }
+  }
+}
+
+.form-control.is-valid ~ .output, .was-validated .form-control:valid ~ .output {
+  border-color: $success;
+  box-shadow: none;
+  outline: none;
+}
+
+.form-control.is-invalid ~ .output, .was-validated .form-control:invalid ~ .output {
+  border-color: $danger;
 }

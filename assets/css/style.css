@@ -589,10 +589,50 @@ input[type=search]::-webkit-search-results-decoration:focus {
   outline: none;
 }
 
+.form-control {
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 11%);
+  border-color: hsl(210, 16%, 82%);
+  border-radius: 0.125rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.78125rem 1rem;
+  transition: all 350ms ease-in-out;
+}
+@media screen and (min-width: 87.5rem) {
+  .form-control {
+    font-size: 1rem;
+  }
+}
+.form-control::-moz-placeholder {
+  color: hsl(208, 9%, 59%);
+  font-weight: 400;
+}
+.form-control::placeholder {
+  color: hsl(208, 9%, 59%);
+  font-weight: 400;
+}
+
+.form-select {
+  border-color: hsl(210, 16%, 82%);
+  border-radius: 0.125rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.78125rem 1rem;
+  transition: all 350ms ease-in-out;
+}
+@media screen and (min-width: 87.5rem) {
+  .form-select {
+    font-size: 1rem;
+  }
+}
+
 .form-control:focus,
 .form-select:focus {
   box-shadow: none;
   outline: none;
+  border-color: hsl(217, 100%, 56%);
 }
 
 .form-control.is-invalid, .was-validated .form-control:invalid {
@@ -606,6 +646,60 @@ input[type=search]::-webkit-search-results-decoration:focus {
 .was-validated .form-control:valid:focus {
   box-shadow: none;
   outline: none;
+}
+
+.form-select.is-invalid:focus, .was-validated .form-select:invalid:focus {
+  box-shadow: none;
+  outline: none;
+  border-color: hsl(217, 100%, 56%);
+}
+
+.form-select {
+  --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 10L12 16L18 10H6Z' fill='%231B1B1B'/%3E%3C/svg%3E%0A");
+  --bs-form-select-bg-icon: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 10L12 16L18 10H6Z' fill='%231B1B1B'/%3E%3C/svg%3E%0A");
+}
+
+.output {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  border: solid 0.0625rem hsl(210, 16%, 82%);
+  border-radius: 0.125rem;
+  padding: 0.78125rem 0.625rem 0.78125rem 1rem;
+}
+.output .text {
+  color: hsl(208, 9%, 59%);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.output .uploadlabel {
+  cursor: pointer;
+  background: hsl(0, 0%, 11%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 0.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  transition: all 350ms ease-in-out;
+}
+.output .uploadlabel:not([disabled]):hover {
+  background: hsl(0, 0%, 19%);
+  color: hsl(0, 0%, 100%);
+}
+
+.form-control.is-valid ~ .output, .was-validated .form-control:valid ~ .output {
+  border-color: hsl(152, 69%, 31%);
+  box-shadow: none;
+  outline: none;
+}
+
+.form-control.is-invalid ~ .output, .was-validated .form-control:invalid ~ .output {
+  border-color: hsl(354, 70%, 54%);
 }
 
 .offcanvas {
@@ -1047,6 +1141,23 @@ table tr th, table tr td {
   color: hsl(217, 100%, 56%);
 }
 
+.contactlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.contactlist-link {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+  transition: color 350ms ease-in-out;
+}
+.contactlist-link:not([disabled]):hover {
+  color: hsl(217, 100%, 56%);
+}
+
 .uppersection {
   background: hsl(240, 30%, 8%);
   min-height: 20.5rem;
@@ -1158,6 +1269,120 @@ table tr th, table tr td {
 .uppersec .rightinfo-thumbnail img {
   width: 100%;
   height: 100%;
+}
+
+.contactus {
+  padding: 5rem 0rem 3rem;
+}
+@media screen and (min-width: 87.5rem) {
+  .contactus {
+    padding: 7.75rem 0rem 5rem;
+  }
+}
+.contactus-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.contactus-details .infotext {
+  max-width: 41.5rem;
+}
+
+.faqsection {
+  padding: 5rem 0rem;
+}
+@media screen and (min-width: 87.5rem) {
+  .faqsection {
+    padding: 7.75rem 0rem;
+  }
+}
+.faqsection-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+@media screen and (min-width: 87.5rem) {
+  .faqsection-content {
+    gap: 7.75rem;
+  }
+}
+.faqsection-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.faqsection-header .titlebox {
+  max-width: 25.375rem;
+  margin-inline: auto;
+}
+.faqsection .accordion {
+  border: none;
+}
+.faqsection .accordion-item {
+  border: none;
+  border-radius: 0rem;
+}
+.faqsection .accordion-item:first-of-type .accordion-button, .faqsection .accordion-item:last-of-type .accordion-button {
+  border-radius: 0rem;
+}
+.faqsection .accordion-button {
+  background: transparent;
+  color: hsl(0, 0%, 11%);
+  box-shadow: none;
+  font-size: 1.125rem;
+  font-weight: 500;
+  padding: 1.25rem 0rem;
+}
+@media screen and (min-width: 48rem) {
+  .faqsection .accordion-button {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .faqsection .accordion-button {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 87.5rem) {
+  .faqsection .accordion-button {
+    font-size: 1.75rem;
+  }
+}
+.faqsection .accordion-button:not(.collapsed) {
+  background: transparent;
+  color: hsl(0, 0%, 11%);
+  box-shadow: none;
+}
+.faqsection .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg width='15' height='5' viewBox='0 0 15 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.3123 4.048H0.320312V0H14.3123V4.048Z' fill='%231B1B1B'/%3E%3C/svg%3E");
+  transition: none;
+}
+.faqsection .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='17' viewBox='0 0 18 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.8738 16.64H7.11383V10.12H0.673828V6.52H7.11383V0H10.8738V6.52H17.3138V10.12H10.8738V16.64Z' fill='%231B1B1B'/%3E%3C/svg%3E%0A");
+  transition: none;
+}
+.faqsection .accordion-body {
+  padding: 0rem 0rem 2.5rem;
+}
+.faqsection .accordion-body p {
+  color: hsl(0, 0%, 19%);
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+@media screen and (min-width: 48rem) {
+  .faqsection .accordion-body p {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .faqsection .accordion-body p {
+    font-size: 1.125rem;
+  }
+}
+@media screen and (min-width: 87.5rem) {
+  .faqsection .accordion-body p {
+    font-size: 1.25rem;
+  }
 }
 
 .errormain {
