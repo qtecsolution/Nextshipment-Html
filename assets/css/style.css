@@ -1271,6 +1271,71 @@ table tr th, table tr td {
   height: 100%;
 }
 
+.authenticmain {
+  padding-top: 2.5rem;
+  padding-bottom: 5rem;
+}
+@media screen and (min-width: 62rem) {
+  .authenticmain {
+    padding-top: 0rem;
+    padding-bottom: 10rem;
+  }
+}
+@media screen and (min-width: 87.5rem) {
+  .authenticmain {
+    padding-bottom: 20rem;
+  }
+}
+
+.authenticinfo {
+  background: hsl(0, 0%, 100%);
+  border: solid 0.0625rem hsl(207, 23%, 92%);
+  max-width: 33.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 1.25rem;
+  text-align: center;
+}
+@media screen and (min-width: 48rem) {
+  .authenticinfo {
+    padding: 3rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .authenticinfo {
+    padding: 4rem;
+  }
+}
+.authenticinfo-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.authenticinfo-header p {
+  color: hsl(208, 9%, 59%);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.authenticinfo-footer p {
+  color: hsl(0, 0%, 19%);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.authenticinfo-footer p .authlink {
+  color: hsl(217, 100%, 56%);
+  font: inherit;
+  transition: all 350ms ease-in-out;
+}
+.authenticinfo-footer p .authlink:not([disabled]):hover {
+  color: hsl(217, 100%, 47%);
+  text-decoration: underline;
+}
+
 .contactus {
   padding: 5rem 0rem 3rem;
 }

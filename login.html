@@ -164,9 +164,52 @@
   <!-- HEADER-SECTION END -->
   
   <!-- MAIN-SECTION START -->
-  <main class="main">
+  <main class="authenticmain">
     <div class="shipcontainer">
-      
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6 d-none d-lg-block">
+          <figure class="authentic-thumbnail">
+            <img src="assets/images/authentication/container.png" alt="container-thumbnail">
+          </figure>
+        </div>
+        
+        <div class="col-lg-5 offset-lg-1 offset-0">
+          <div class="authenticinfo">
+            <div class="authenticinfo-header">
+              <figure class="logo">
+                <img src="assets/images/logo/logo.svg" alt="brand-logo">
+              </figure>
+
+              <h1 class="display-6 fw-semibold"><span class="marked">Login</span> here</h1>
+            
+              <p>Enter your phone number to get your OTP and continue.</p>
+            </div>
+
+            <div class="authenticinfo-body">
+              <form class="row g-4 needs-validation" novalidate>
+                <div class="col-12 mb-2">
+                  <div class="inputbox">
+                    <input type="tel" pattern="[0-9]{3}[0-9]{8}" class="form-control" id="phonenumber" placeholder="Phone number" autocomplete="off" required>
+                    <div class="invalid-feedback">
+                      Phone number is required.
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="col-12 d-flex justify-content-center">
+                  <button class="btn-login" type="submit">Login</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="authenticinfo-footer">
+              <p>
+                <a href="register.html" class="authlink">Register here</a> if you don't have any account
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
   <!-- MAIN-SECTION END -->
@@ -390,5 +433,7 @@
   <script src="assets/js/loader/loader.js"></script>
   <!-- COPYRIGHT-JS -->
   <script src="assets/js/copyright/copyright.js"></script>
+  <!-- VALIDATION-JS -->
+  <script src="assets/js/validation/validation.js"></script>
 </body>
 </html>

@@ -1,0 +1,64 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+.authenticmain {
+  padding-top: size(40);
+  padding-bottom: size(80);
+  
+  @include breakpoint(tab992) {
+    padding-top: size(0);
+    padding-bottom: size(160);
+  }
+  
+  @include breakpoint(desktop1400) {
+    padding-bottom: size(320);
+  }
+}
+
+.authenticinfo {
+  background: $white;
+  @include border(solid, 1, $inputborder);
+  max-width: size(530);
+  @include flex-center-column;
+  gap: size(40);
+  padding: size(20);
+  text-align: center;
+
+  @include breakpoint(mobile768) {
+    padding: size(48);
+  }
+
+  @include breakpoint(tab992) {
+    padding: size(64);
+  }
+
+  &-header {
+    @include flex-center-column;
+    gap: size(20);
+
+    p {
+      color: $placeholdertext;
+      font-size: size(14);
+      font-weight: 400;
+    }
+  }
+
+  &-footer {
+    p {
+      color: $bodytext;
+      font-size: size(14);
+      font-weight: 400;
+
+      .authlink {
+        color: $primary;
+        font: inherit;
+        @include transitionsall;
+
+        @include hover {
+          color: $hoverbg;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
