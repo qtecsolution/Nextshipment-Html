@@ -552,6 +552,10 @@ button:focus,
   justify-content: center;
   overflow: hidden;
 }
+.cardservice-body .servicetext {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+}
 
 .header {
   background: hsl(0, 0%, 100%);
@@ -1650,6 +1654,7 @@ table tr th, table tr td {
 }
 .servicebanner-detail .info .text {
   color: hsl(0, 0%, 11%);
+  font-weight: 300;
 }
 .servicebanner-thumbnail {
   width: 100%;
@@ -1738,6 +1743,10 @@ table tr th, table tr td {
 .serviceabout .aboutdetail .info {
   max-width: 40rem;
 }
+.serviceabout .aboutdetail .info p {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+}
 @media screen and (min-width: 112.5rem) {
   .serviceabout .aboutdetail .info p {
     font-size: 1.125rem;
@@ -1767,6 +1776,10 @@ table tr th, table tr td {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+.serviceabout ul li .text {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
 }
 @media screen and (min-width: 112.5rem) {
   .serviceabout ul li .text {
@@ -1805,10 +1818,87 @@ table tr th, table tr td {
 .moreservices-header .info {
   max-width: 40rem;
 }
+.moreservices-header .info p {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+}
 @media screen and (min-width: 112.5rem) {
   .moreservices-header .info p {
     font-size: 1.125rem;
   }
+}
+
+.importedrequest {
+  padding: 3rem 0rem;
+}
+@media screen and (min-width: 62rem) {
+  .importedrequest {
+    padding: 5rem 0rem 7.75rem;
+  }
+}
+@media screen and (min-width: 112.5rem) {
+  .importedrequest {
+    padding: 7.75rem 0rem 10rem;
+  }
+}
+.importedrequest-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+}
+@media screen and (min-width: 62rem) {
+  .importedrequest-details {
+    gap: 5rem;
+  }
+}
+@media screen and (min-width: 112.5rem) {
+  .importedrequest-details {
+    gap: 7.75rem;
+  }
+}
+.importedrequest-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media screen and (min-width: 62rem) {
+  .importedrequest-header {
+    gap: 4rem;
+  }
+}
+@media screen and (min-width: 112.5rem) {
+  .importedrequest-header {
+    gap: 6.25rem;
+  }
+}
+.importedrequest-header .info {
+  max-width: 41.5rem;
+}
+.importedrequest-header .info p {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+}
+.importedrequest-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+.importedrequest-body p {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+}
+.importedrequest-body .link {
+  color: hsl(217, 100%, 56%);
+}
+.importedrequest-body .link:not([disabled]):hover {
+  color: hsl(217, 100%, 47%);
 }
 
 .errormain {

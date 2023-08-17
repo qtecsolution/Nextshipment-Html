@@ -1,0 +1,69 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+.importedrequest {
+  padding: size(48) size(0);
+  
+  @include breakpoint(tab992) {
+    padding: size(80) size(0) size(124);
+  }
+  
+  @include breakpoint(desktop1800) {
+    padding: size(124) size(0) size(160);
+  }
+
+  &-details {
+    @include flex-center-column;
+    gap: size(48);
+    text-align: center;
+    
+    @include breakpoint(tab992) {
+      gap: size(80);
+    }
+    
+    @include breakpoint(desktop1800) {
+      gap: size(124);
+    }
+  }
+
+  &-header {
+    @include flex-center-column;
+    gap: size(32);
+    
+    @include breakpoint(tab992) {
+      gap: size(64);
+    }
+    
+    @include breakpoint(desktop1800) {
+      gap: size(100);
+    }
+
+    .info {
+      max-width: size(664);
+
+      p {
+        color: $blacktext;
+        font-weight: 300;
+      }
+    }
+  }
+
+  &-body {
+    @include flex-center-column;
+    gap: size(32);
+
+    p {
+      color: $blacktext;
+      font-weight: 300;
+    }
+
+    .link {
+      color: $primary;
+
+      @include hover {
+        color: $hoverbg;
+
+      }
+    }
+  }
+}

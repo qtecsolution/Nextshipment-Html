@@ -84,6 +84,7 @@
 
       .text {
         color: $blacktext;
+        font-weight: 300;
       }
     }
   }
@@ -163,6 +164,9 @@
       max-width: size(640);
 
       p {
+        color: $blacktext;
+        font-weight: 300;
+
         @include breakpoint(desktop1800) {
           font-size: size(18);
         }
@@ -189,6 +193,9 @@
       }
 
       .text {
+        color: $blacktext;
+        font-weight: 300;
+
         @include breakpoint(desktop1800) {
           font-size: size(18);
         }
@@ -225,6 +232,9 @@
       max-width: size(640);
 
       p {
+        color: $blacktext;
+        font-weight: 300;
+        
         @include breakpoint(desktop1800) {
           font-size: size(18);
         }
