@@ -1,3 +1,42 @@
 @use "../../global" as *;
 @use "../../partials" as *;
 
+.cardservice {
+  @include border(solid, 1, $headerborder);
+  @include radius(4);
+  @include flex-column;
+  gap: size(24);
+  padding: size(24);
+  @include wh100;
+
+  @include breakpoint(tab992) {
+    padding: size(42) size(48);
+    gap: size(48);
+  }
+
+  &-header {
+    @include flex-center-vert;
+    gap: size(20);
+
+    .serviceicon {
+      @include square(48);
+      @include flex-center;
+      overflow: hidden;
+    }
+  }
+
+  &-body {
+    @include flex-column;
+    gap: size(24);
+
+    @include breakpoint(tab992) {
+      gap: size(48);
+    }
+
+    .icon {
+      @include square(24);
+      @include flex-center;
+      overflow: hidden;
+    }
+  }
+}
