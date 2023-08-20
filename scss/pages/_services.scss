@@ -2,5 +2,177 @@
 @use "../partials" as *;
 
 .servicesbanner {
+  padding-top: size(32);
+  padding-bottom: size(64);
   
+  @include breakpoint(tab992) {
+    padding-top: size(0);
+    padding-bottom: size(80);
+  }
+
+  @include breakpoint(desktop1200) {
+    padding-bottom: size(128);
+  }
+
+  .bannerdetails {
+    @include flex-column;
+    gap: size(24);
+    margin-bottom: size(48);
+    text-align: center;
+
+    @include breakpoint(tab992) {
+      margin-bottom: size(0);
+      text-align: left;
+    }
+
+    @include breakpoint(desktop1200) {
+      gap: size(48);
+    }
+
+    .info {
+      max-width: size(664);
+      margin-inline: auto;
+
+      @include breakpoint(tab992) {
+        margin: size(0);
+      }
+
+      p {
+        color: $blacktext;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.ourservices {
+  background: $sectionbgdark;
+  padding: size(64) size(0);
+  
+  @include breakpoint(tab992) {
+    padding: size(80) size(0);
+  }
+
+  &-content {
+    position: relative;
+    @include flex-column;
+    gap: size(48);
+
+    @include breakpoint(desktop1200) {
+      gap: size(80);
+    }
+
+    .icon {
+      position: absolute;
+      top: size(0);
+      right: size(-80);
+    }
+
+    h2 {
+      color: $white;
+    }
+
+    .servinfo {
+      p {
+        color: $headerborder;
+        font-weight: 300;
+      }
+    }
+  }
+
+  table {
+    position: relative;
+    z-index: 100;
+
+    tbody {
+      @include flex-column;
+      gap: size(48);
+  
+      @include breakpoint(tab992) {
+        gap: size(64);
+      }
+
+      tr {
+        @include border-single(bottom, solid, 1, $tableborder);
+        padding-bottom: size(48);
+        @include flex-center-between;
+        gap: size(96);
+  
+        @include breakpoint(tab992) {
+          padding-bottom: size(64);
+        }
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+
+      th {
+        color: $white;
+        font-family: $clashdisplay;
+        font-size: size(32);
+        font-style: normal;
+        font-weight: 600;
+      }
+
+      td {
+        .servicethumb {
+          @include w100;
+          width: size(396);
+          height: size(126);
+          @include flex-center;
+          overflow: hidden;
+          @include radius(90);
+
+          img {
+            @include wh100;
+          }
+        }
+
+        .info {
+          min-width: size(280);
+          max-width: size(380);
+
+          @include breakpoint(desktop1600) {
+            max-width: size(520);
+          }
+
+          p {
+            color: $headerborder;
+            font-weight: 300;
+          }
+        }
+
+        .servicelink {
+          @include square(60);
+          @include flex-center;
+          overflow: hidden;
+          @extend %animation;
+          @extend %floating;
+
+          .staricon {
+            display: block;
+          }
+
+          .linkicon {
+            display: none;
+          }
+
+          @include hover {
+            .staricon {
+              display: none;
+            }
+
+            .linkicon {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+    
+  table:not(caption)>*>* {
+    background: transparent;
+  }
 }

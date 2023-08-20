@@ -97,10 +97,6 @@
         font-weight: 300;
       }
     }
-
-    .joininfo {
-      max-width: size(140);
-    }
   }
 
   .shipment-thumbnail {
@@ -213,10 +209,18 @@
         font-weight: 300;
       }
     }
+  }
+}
 
-    .joininfo {
-      max-width: size(140);
-    }
+.clientsatisfaction {
+  padding-top: size(48);
+  
+  @include breakpoint(tab992) {
+    padding-top: size(80);
+  }
+
+  @include breakpoint(desktop1200) {
+    padding-top: size(120);
   }
 }
 
