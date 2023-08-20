@@ -44,14 +44,37 @@ button,
   font-weight: 600;
   text-align: center;
   padding: size(8) size(16);
+  height: size(38);
   @include transitionsall;
 
   @include breakpoint(mobile768) {
     padding: size(13.5) size(40);
+    height: size(48);
   }
   
   @include hover {
     @include setBgColor($hoverbg, $white);
+  }
+}
+
+.btn-border {
+  @include setBgColor($sectionbg, $blacktext);
+  @include border(solid, 1, $blacktext);
+  @include radius(4);
+  @include flex-center;
+  font-weight: 600;
+  text-align: center;
+  padding: size(8) size(16);
+  height: size(38);
+  @include transitionsall;
+
+  @include breakpoint(mobile768) {
+    padding: size(12.5) size(40);
+    height: size(48);
+  }
+  
+  @include hover {
+    @include setBgColor($blacktext, $sectionbg);
   }
 }
 

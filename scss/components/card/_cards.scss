@@ -45,3 +45,106 @@
     }
   }
 }
+
+.card-counter {
+  @include flex-center-column;
+  gap: size(24);
+  text-align: center;
+
+  &-header {
+    @include flex-center;
+
+    .countnumber,
+    .icon {
+      font-weight: 600;
+    }
+  }
+
+  &-body {
+    .countertitle {
+      color: $bodytext;
+      font-size: size(24);
+      font-style: normal;
+      font-weight: 300;
+    }
+  }
+}
+
+.cardvalue {
+  @include border(solid, 1, $headerborder);
+  @include radius(4);
+  @include flex-column;
+  gap: size(24);
+  padding: size(24);
+  
+  @include breakpoint(tab992) {
+    gap: size(40);
+    padding: size(48);
+  }
+
+  .valueicon {
+    @include square(56);
+    @include flex-center;
+    overflow: hidden;
+  }
+
+  .info {
+    p {
+      color: $blacktext;
+      font-weight: 300;
+    }
+  }
+}
+
+.cardchoose {
+  background: $white;
+  @include border(solid, 1, $headerborder);
+  @include radius(4);
+  @include flex-column;
+  gap: size(20);
+  padding: size(30) size(24) size(48);
+  @include wh100;
+  
+  .chooseicon {
+    @include square(50);
+    @include circle;
+    @include flex-center;
+    padding: size(13);
+  }
+
+  .icon-1 {
+    background: $icon-1-bg;
+  }
+
+  .icon-2 {
+    background: $icon-2-bg;
+  }
+
+  .icon-3 {
+    background: $icon-3-bg;
+  }
+
+  .icon-4 {
+    background: $icon-4-bg;
+  }
+
+  .icon-5 {
+    background: $icon-5-bg;
+  }
+
+  .icon-6 {
+    background: $icon-6-bg;
+  }
+
+  h5 {
+    max-height: size(48);
+    @include flex-center-vert;
+    @include line-clamp;
+  }
+
+  p {
+    font-size: size(12);
+    font-style: normal;
+    font-weight: 300;
+  }
+}

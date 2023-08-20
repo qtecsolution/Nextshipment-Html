@@ -1,3 +1,306 @@
 @use "../global" as *;
 @use "../partials" as *;
 
+.aboutbanner {
+  padding: size(32) size(0) size(64);
+
+  @include breakpoint(tab992) {
+    padding-bottom: size(80);
+  }
+
+  @include breakpoint(desktop1200) {
+    padding-bottom: size(120);
+  }
+
+  .bannerdetails {
+    @include flex-column;
+    gap: size(24);
+    margin-bottom: size(48);
+    text-align: center;
+
+    @include breakpoint(tab992) {
+      margin-bottom: size(0);
+      text-align: left;
+    }
+
+    @include breakpoint(desktop1200) {
+      gap: size(48);
+    }
+
+    .info {
+      max-width: size(664);
+      margin-inline: auto;
+
+      @include breakpoint(tab992) {
+        margin: size(0);
+      }
+
+      p {
+        color: $blacktext;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.autoincrement {
+  padding-bottom: size(48);
+
+  @include breakpoint(tab992) {
+    padding-bottom: size(80);
+  }
+
+  @include breakpoint(desktop1200) {
+    padding-bottom: size(120);
+  }
+
+  &-content {
+    @include flex-center-column;
+    gap: size(32);
+    text-align: center;
+
+    @include breakpoint(tab992) {
+      gap: size(64);
+    }
+  }
+}
+
+.aboutshipment {
+  padding-bottom: size(48);
+
+  @include breakpoint(tab992) {
+    padding-bottom: size(80);
+  }
+
+  @include breakpoint(desktop1200) {
+    padding-bottom: size(120);
+  }
+
+  .shipment-detail {
+    @include flex-column;
+    gap: size(48);
+
+    @include breakpoint(desktop1600) {
+      gap: size(80);
+    }
+
+    .info {
+      @include flex-column;
+      gap: size(32);
+
+      @include breakpoint(desktop1600) {
+        gap: size(48);
+      }
+
+      p {
+        color: $blacktext;
+        font-weight: 300;
+      }
+    }
+
+    .joininfo {
+      max-width: size(140);
+    }
+  }
+
+  .shipment-thumbnail {
+    @include w100;
+    min-height: size(214);
+    max-height: size(535);
+    position: relative;
+
+    @include breakpoint(mobile768) {
+      min-height: size(350);
+    }
+
+    @include breakpoint(tab992) {
+      @include flex-center;
+    }
+
+    @include breakpoint(desktop1600) {
+      min-height: size(535);
+    }
+
+    img {
+      @include wh100;
+      position: relative;
+      z-index: 100;
+    }
+
+    .arrowicon {
+      display: none;
+      position: absolute;
+      left: size(-293);
+      bottom: size(0);
+      width: size(637);
+      height: size(384);
+  
+      @include breakpoint(tab992) {
+        @include flex-center;
+      }
+  
+      @include breakpoint(desktop1200) {
+        bottom: size(-36);
+      }
+  
+      @include breakpoint(desktop1600) {
+        bottom: size(0);
+      }
+  
+      @include breakpoint(desktop1800) {
+        bottom: size(-36);
+      }
+    }
+  }
+}
+
+.valuesarea {
+  padding-top: size(100);
+  padding-bottom: size(48);
+  
+  @include breakpoint(tab992) {
+    padding-top: size(140);
+    padding-bottom: size(80);
+  }
+
+  @include breakpoint(desktop1200) {
+    padding-bottom: size(120);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(48);
+
+    @include breakpoint(tab992) {
+      gap: size(96);
+    }
+
+    @include breakpoint(desktop1600) {
+      gap: size(140);
+    }
+  }
+}
+
+.whychooseus {
+  padding-bottom: size(48);
+  
+  @include breakpoint(tab992) {
+    padding-bottom: size(80);
+  }
+
+  @include breakpoint(desktop1200) {
+    padding-bottom: size(120);
+  }
+  
+  .leftinfo {
+    @include flex-column;
+    gap: size(48);
+
+    @include breakpoint(desktop1200) {
+      gap: size(64);
+    }
+
+    .info {
+      @include flex-column;
+      gap: size(32);
+  
+      @include breakpoint(desktop1200) {
+        gap: size(48);
+      }
+
+      p {
+        color: $blacktext;
+        font-weight: 300;
+      }
+    }
+
+    .joininfo {
+      max-width: size(140);
+    }
+  }
+}
+
+.videosection {
+  padding-bottom: size(48);
+  
+  @include breakpoint(tab992) {
+    padding-bottom: size(80);
+  }
+
+  @include breakpoint(desktop1200) {
+    padding-bottom: size(120);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(48);
+  
+    @include breakpoint(tab992) {
+      gap: size(80);
+    }
+  }
+
+  .videobox {
+    position: relative;
+
+    &-detail {
+      position: absolute;
+      bottom: calc(100% - size(64));
+      right: size(64);
+      @include square(162);
+      @include border(solid, 1, $blacktext);
+      padding: size(14);
+      display: none;
+  
+      @include breakpoint(tab992) {
+        @include flex-center;
+      }
+
+      .videoinfo {
+        @include square(135);
+        @include setBgColor($primary, $white);
+        @include flex-center-column;
+        gap: size(10);
+        text-align: center;
+        padding: size(14);
+
+        h4 {
+          font-size: size(40);
+          font-weight: 600;
+          letter-spacing: size(0.394);
+        }
+
+        p {
+          font-size: size(10);
+          font-weight: 500;
+        }
+      }
+    }
+
+    .myvideo {
+      overflow: hidden;
+
+      iframe {
+        @include w100;
+        max-height: size(700);
+        min-height: size(300);
+    
+        @include breakpoint(tab992) {
+          min-height: size(400);
+        }
+      
+        @include breakpoint(desktop1200) {
+          min-height: size(500);
+        }
+      
+        @include breakpoint(desktop1400) {
+          min-height: size(600);
+        }
+      
+        @include breakpoint(desktop1600) {
+          min-height: size(700);
+        }
+      }
+    }
+  }
+}

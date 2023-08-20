@@ -471,16 +471,43 @@ button:focus,
   font-weight: 600;
   text-align: center;
   padding: 0.5rem 1rem;
+  height: 2.375rem;
   transition: all 350ms ease-in-out;
 }
 @media screen and (min-width: 48rem) {
   .btn-login {
     padding: 0.84375rem 2.5rem;
+    height: 3rem;
   }
 }
 .btn-login:not([disabled]):hover {
   background: hsl(217, 100%, 47%);
   color: hsl(0, 0%, 100%);
+}
+
+.btn-border {
+  background: hsl(213, 100%, 98%);
+  color: hsl(0, 0%, 11%);
+  border: solid 0.0625rem hsl(0, 0%, 11%);
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  height: 2.375rem;
+  transition: all 350ms ease-in-out;
+}
+@media screen and (min-width: 48rem) {
+  .btn-border {
+    padding: 0.78125rem 2.5rem;
+    height: 3rem;
+  }
+}
+.btn-border:not([disabled]):hover {
+  background: hsl(0, 0%, 11%);
+  color: hsl(213, 100%, 98%);
 }
 
 .btn-import {
@@ -557,6 +584,111 @@ button:focus,
   font-weight: 300;
 }
 
+.card-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+.card-counter-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-counter-header .countnumber,
+.card-counter-header .icon {
+  font-weight: 600;
+}
+.card-counter-body .countertitle {
+  color: hsl(0, 0%, 19%);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.cardvalue {
+  border: solid 0.0625rem hsl(210, 35%, 93%);
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+@media screen and (min-width: 62rem) {
+  .cardvalue {
+    gap: 2.5rem;
+    padding: 3rem;
+  }
+}
+.cardvalue .valueicon {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.cardvalue .info p {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+}
+
+.cardchoose {
+  background: hsl(0, 0%, 100%);
+  border: solid 0.0625rem hsl(210, 35%, 93%);
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.875rem 1.5rem 3rem;
+  width: 100%;
+  height: 100%;
+}
+.cardchoose .chooseicon {
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8125rem;
+}
+.cardchoose .icon-1 {
+  background: hsl(44, 100%, 93%);
+}
+.cardchoose .icon-2 {
+  background: hsl(0, 100%, 96%);
+}
+.cardchoose .icon-3 {
+  background: hsl(18, 100%, 95%);
+}
+.cardchoose .icon-4 {
+  background: hsl(219, 100%, 95%);
+}
+.cardchoose .icon-5 {
+  background: hsl(120, 100%, 97%);
+}
+.cardchoose .icon-6 {
+  background: hsl(0, 0%, 95%);
+}
+.cardchoose h5 {
+  max-height: 3rem;
+  display: flex;
+  align-items: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+.cardchoose p {
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 300;
+}
+
 .header {
   background: hsl(0, 0%, 100%);
   border-bottom: solid 0.0625rem hsl(210, 35%, 93%);
@@ -576,11 +708,16 @@ button:focus,
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 @media screen and (min-width: 48rem) {
   .header .logo {
     width: 12.875rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .header .logo {
+    width: 12.9375rem;
+    height: 1.375rem;
   }
 }
 .header .logo img {
@@ -1332,6 +1469,344 @@ table tr th, table tr td {
 .uppersec .rightinfo-thumbnail img {
   width: 100%;
   height: 100%;
+}
+
+.aboutbanner {
+  padding: 2rem 0rem 4rem;
+}
+@media screen and (min-width: 62rem) {
+  .aboutbanner {
+    padding-bottom: 5rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .aboutbanner {
+    padding-bottom: 7.5rem;
+  }
+}
+.aboutbanner .bannerdetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+@media screen and (min-width: 62rem) {
+  .aboutbanner .bannerdetails {
+    margin-bottom: 0rem;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .aboutbanner .bannerdetails {
+    gap: 3rem;
+  }
+}
+.aboutbanner .bannerdetails .info {
+  max-width: 41.5rem;
+  margin-inline: auto;
+}
+@media screen and (min-width: 62rem) {
+  .aboutbanner .bannerdetails .info {
+    margin: 0rem;
+  }
+}
+.aboutbanner .bannerdetails .info p {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+}
+
+.autoincrement {
+  padding-bottom: 3rem;
+}
+@media screen and (min-width: 62rem) {
+  .autoincrement {
+    padding-bottom: 5rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .autoincrement {
+    padding-bottom: 7.5rem;
+  }
+}
+.autoincrement-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+@media screen and (min-width: 62rem) {
+  .autoincrement-content {
+    gap: 4rem;
+  }
+}
+
+.aboutshipment {
+  padding-bottom: 3rem;
+}
+@media screen and (min-width: 62rem) {
+  .aboutshipment {
+    padding-bottom: 5rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .aboutshipment {
+    padding-bottom: 7.5rem;
+  }
+}
+.aboutshipment .shipment-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+@media screen and (min-width: 100rem) {
+  .aboutshipment .shipment-detail {
+    gap: 5rem;
+  }
+}
+.aboutshipment .shipment-detail .info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media screen and (min-width: 100rem) {
+  .aboutshipment .shipment-detail .info {
+    gap: 3rem;
+  }
+}
+.aboutshipment .shipment-detail .info p {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+}
+.aboutshipment .shipment-detail .joininfo {
+  max-width: 8.75rem;
+}
+.aboutshipment .shipment-thumbnail {
+  width: 100%;
+  min-height: 13.375rem;
+  max-height: 33.4375rem;
+  position: relative;
+}
+@media screen and (min-width: 48rem) {
+  .aboutshipment .shipment-thumbnail {
+    min-height: 21.875rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .aboutshipment .shipment-thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 100rem) {
+  .aboutshipment .shipment-thumbnail {
+    min-height: 33.4375rem;
+  }
+}
+.aboutshipment .shipment-thumbnail img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 100;
+}
+.aboutshipment .shipment-thumbnail .arrowicon {
+  display: none;
+  position: absolute;
+  left: -18.3125rem;
+  bottom: 0rem;
+  width: 39.8125rem;
+  height: 24rem;
+}
+@media screen and (min-width: 62rem) {
+  .aboutshipment .shipment-thumbnail .arrowicon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .aboutshipment .shipment-thumbnail .arrowicon {
+    bottom: -2.25rem;
+  }
+}
+@media screen and (min-width: 100rem) {
+  .aboutshipment .shipment-thumbnail .arrowicon {
+    bottom: 0rem;
+  }
+}
+@media screen and (min-width: 112.5rem) {
+  .aboutshipment .shipment-thumbnail .arrowicon {
+    bottom: -2.25rem;
+  }
+}
+
+.valuesarea {
+  padding-top: 6.25rem;
+  padding-bottom: 3rem;
+}
+@media screen and (min-width: 62rem) {
+  .valuesarea {
+    padding-top: 8.75rem;
+    padding-bottom: 5rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .valuesarea {
+    padding-bottom: 7.5rem;
+  }
+}
+.valuesarea-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+@media screen and (min-width: 62rem) {
+  .valuesarea-content {
+    gap: 6rem;
+  }
+}
+@media screen and (min-width: 100rem) {
+  .valuesarea-content {
+    gap: 8.75rem;
+  }
+}
+
+.whychooseus {
+  padding-bottom: 3rem;
+}
+@media screen and (min-width: 62rem) {
+  .whychooseus {
+    padding-bottom: 5rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .whychooseus {
+    padding-bottom: 7.5rem;
+  }
+}
+.whychooseus .leftinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+@media screen and (min-width: 75rem) {
+  .whychooseus .leftinfo {
+    gap: 4rem;
+  }
+}
+.whychooseus .leftinfo .info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media screen and (min-width: 75rem) {
+  .whychooseus .leftinfo .info {
+    gap: 3rem;
+  }
+}
+.whychooseus .leftinfo .info p {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+}
+.whychooseus .leftinfo .joininfo {
+  max-width: 8.75rem;
+}
+
+.videosection {
+  padding-bottom: 3rem;
+}
+@media screen and (min-width: 62rem) {
+  .videosection {
+    padding-bottom: 5rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .videosection {
+    padding-bottom: 7.5rem;
+  }
+}
+.videosection-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+@media screen and (min-width: 62rem) {
+  .videosection-content {
+    gap: 5rem;
+  }
+}
+.videosection .videobox {
+  position: relative;
+}
+.videosection .videobox-detail {
+  position: absolute;
+  bottom: calc(100% - 4rem);
+  right: 4rem;
+  width: 10.125rem;
+  height: 10.125rem;
+  border: solid 0.0625rem hsl(0, 0%, 11%);
+  padding: 0.875rem;
+  display: none;
+}
+@media screen and (min-width: 62rem) {
+  .videosection .videobox-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.videosection .videobox-detail .videoinfo {
+  width: 8.4375rem;
+  height: 8.4375rem;
+  background: hsl(217, 100%, 56%);
+  color: hsl(0, 0%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.625rem;
+  text-align: center;
+  padding: 0.875rem;
+}
+.videosection .videobox-detail .videoinfo h4 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.024625rem;
+}
+.videosection .videobox-detail .videoinfo p {
+  font-size: 0.625rem;
+  font-weight: 500;
+}
+.videosection .videobox .myvideo {
+  overflow: hidden;
+}
+.videosection .videobox .myvideo iframe {
+  width: 100%;
+  max-height: 43.75rem;
+  min-height: 18.75rem;
+}
+@media screen and (min-width: 62rem) {
+  .videosection .videobox .myvideo iframe {
+    min-height: 25rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .videosection .videobox .myvideo iframe {
+    min-height: 31.25rem;
+  }
+}
+@media screen and (min-width: 87.5rem) {
+  .videosection .videobox .myvideo iframe {
+    min-height: 37.5rem;
+  }
+}
+@media screen and (min-width: 100rem) {
+  .videosection .videobox .myvideo iframe {
+    min-height: 43.75rem;
+  }
 }
 
 .authenticmain {

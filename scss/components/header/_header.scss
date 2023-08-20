@@ -17,10 +17,14 @@
     width: size(140);
     height: size(18);
     @include flex-center;
-    overflow: hidden;
 
     @include breakpoint(mobile768) {
       width: size(206);
+    }
+
+    @include breakpoint(tab992) {
+      width: size(207);
+      height: size(22);
     }
 
     img {
