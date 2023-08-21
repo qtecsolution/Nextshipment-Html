@@ -174,3 +174,73 @@ input[type="search"]::-webkit-search-results-decoration {
     @include radius(0);
   }
 }
+
+.form-check {
+  padding-left: size(0);
+  margin-bottom: size(0);
+
+  &-input {
+    &:checked {
+      ~ .form-check-label {
+        &::before {
+          opacity: 1;
+          visibility: visible;
+        }
+        
+        &::after {
+          border-color: $primary;
+        }
+      }
+    }
+  }
+
+  &-label {
+    color: $bodytext;
+    cursor: pointer;
+    font-size: size(14);
+    font-style: normal;
+    font-weight: 300;
+    position: relative;
+    padding-left: size(28);
+
+    @include breakpoint(desktop1400) {
+      font-size: size(16);
+    }
+    
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      @include circle;
+      @include translateY(-50%);
+      left: 0;
+      @include transitionsall;
+    }
+
+    &::before {
+      @include square(10);
+      left: size(4);
+      background: $primary;
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    &::after {
+      @include square(18);
+      @include border(solid, 1, $placeholdertext);
+    }
+  }
+}
+
+.form-check-input.is-invalid~.form-check-label, .was-validated .form-check-input:invalid~.form-check-label {
+  &::after {
+    border-color: $danger;
+  }
+}
+
+.form-check-input.is-valid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label {
+  &::after {
+    border-color: $success;
+  }
+}

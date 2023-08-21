@@ -110,3 +110,107 @@ button,
     @include setBgColor($primary, $white);
   }
 }
+
+.btn-add {
+  @include flex-center-vert;
+  gap: size(8);
+
+  .icon {
+    @include square(20);
+    margin-top: size(-3);
+  }
+
+  .text {
+    font: inherit;
+    color: $primary;
+    font-weight: 500;
+  }
+
+  @include hover {
+    .icon {
+      svg {
+        path {
+          stroke: $hoverbg;
+        }
+      }
+    }
+
+    .text {
+      color: $hoverbg;
+    }
+  }
+}
+
+.btn-delete {
+  @include flex-center-vert;
+  gap: size(8);
+
+  .icon {
+    @include square(20);
+    margin-top: size(-6);
+  }
+
+  .text {
+    font: inherit;
+    color: $danger;
+    font-weight: 500;
+  }
+
+  @include hover {
+    .icon {
+      svg {
+        path {
+          stroke: darken($danger, 10%);
+        }
+      }
+    }
+
+    .text {
+      color: darken($danger, 10%);
+    }
+  }
+}
+
+.btn-success {
+  @include flex-center-vert;
+  gap: size(8);
+
+  .icon {
+    @include square(20);
+    margin-top: size(-6);
+  }
+
+  .text {
+    font: inherit;
+    color: $success;
+    font-weight: 500;
+  }
+
+  @include hover {
+    .icon {
+      svg {
+        path {
+          stroke: darken($success, 10%);
+        }
+      }
+    }
+
+    .text {
+      color: darken($success, 10%);
+    }
+  }
+}
+
+.btn-remove {
+  @include square(24);
+  @include circle;
+  @include flex-center;
+
+  @include hover {
+    svg {
+      path {
+        stroke: darken($danger, 10%);
+      }
+    }
+  }
+}

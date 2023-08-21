@@ -1,0 +1,78 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+.importpackage {
+  padding: size(48) size(0);
+  
+  @include breakpoint(tab992) {
+    padding: size(80) size(0);
+  }
+
+  @include breakpoint(desktop1200) {
+    padding: size(120) size(0);
+  }
+
+  &-content {
+    @include flex-center-column;
+    gap: size(32);
+    text-align: center;
+
+    @include breakpoint(tab992) {
+      gap: size(64);
+    }
+  }
+
+  &-header {
+    @include flex-center-column;
+    gap: size(48);
+    margin-bottom: size(48);
+
+    @include breakpoint(tab992) {
+      gap: size(64);
+      margin-bottom: size(0);
+    }
+
+    .info {
+      p {
+        color: $blacktext;
+        font-weight: 300;
+      }
+    }
+  }
+  
+  &-body {
+    @include w100;
+    @include flex-center;
+    @include border(solid, 1, $inputborder);
+    @include radius(4);
+    padding: size(24);
+    text-align: left;
+
+    @include breakpoint(mobile768) {
+      padding: size(48);
+    }
+
+    @include breakpoint(tab992) {
+      padding: size(56);
+    }
+
+    .parcelbox {
+      @include border(solid, 1, $inputborder);
+      @include radius(4);
+      padding: size(20);
+      @include flex-column;
+      gap: size(20);
+
+      .title {
+        color: $bodytext;
+        font-size: size(13);
+        font-style: normal;
+        font-weight: 400;
+
+        @include breakpoint(desktop1400) {
+          font-size: size(16);
+        }
+      }
+    }
+  }
+}

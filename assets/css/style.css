@@ -556,6 +556,84 @@ button:focus,
   color: hsl(0, 0%, 100%);
 }
 
+.btn-add {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-add .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: -0.1875rem;
+}
+.btn-add .text {
+  font: inherit;
+  color: hsl(217, 100%, 56%);
+  font-weight: 500;
+}
+.btn-add:not([disabled]):hover .icon svg path {
+  stroke: hsl(217, 100%, 47%);
+}
+.btn-add:not([disabled]):hover .text {
+  color: hsl(217, 100%, 47%);
+}
+
+.btn-delete {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-delete .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: -0.375rem;
+}
+.btn-delete .text {
+  font: inherit;
+  color: hsl(354, 70%, 54%);
+  font-weight: 500;
+}
+.btn-delete:not([disabled]):hover .icon svg path {
+  stroke: #bf2231;
+}
+.btn-delete:not([disabled]):hover .text {
+  color: #bf2231;
+}
+
+.btn-success {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-success .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: -0.375rem;
+}
+.btn-success .text {
+  font: inherit;
+  color: hsl(152, 69%, 31%);
+  font-weight: 500;
+}
+.btn-success:not([disabled]):hover .icon svg path {
+  stroke: #115a38;
+}
+.btn-success:not([disabled]):hover .text {
+  color: #115a38;
+}
+
+.btn-remove {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-remove:not([disabled]):hover svg path {
+  stroke: #bf2231;
+}
+
 .cardservice {
   border: solid 0.0625rem hsl(210, 35%, 93%);
   border-radius: 0.25rem;
@@ -924,6 +1002,62 @@ input[type=search]::-webkit-search-results-decoration:focus {
   background: hsl(207, 23%, 92%);
   font-size: 0.9375rem;
   border-radius: 0rem;
+}
+
+.form-check {
+  padding-left: 0rem;
+  margin-bottom: 0rem;
+}
+.form-check-input:checked ~ .form-check-label::before {
+  opacity: 1;
+  visibility: visible;
+}
+.form-check-input:checked ~ .form-check-label::after {
+  border-color: hsl(217, 100%, 56%);
+}
+.form-check-label {
+  color: hsl(0, 0%, 19%);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 300;
+  position: relative;
+  padding-left: 1.75rem;
+}
+@media screen and (min-width: 87.5rem) {
+  .form-check-label {
+    font-size: 1rem;
+  }
+}
+.form-check-label::before, .form-check-label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  border-radius: 100%;
+  transform: translateY(-50%);
+  left: 0;
+  transition: all 350ms ease-in-out;
+}
+.form-check-label::before {
+  width: 0.625rem;
+  height: 0.625rem;
+  left: 0.25rem;
+  background: hsl(217, 100%, 56%);
+  opacity: 0;
+  visibility: hidden;
+}
+.form-check-label::after {
+  width: 1.125rem;
+  height: 1.125rem;
+  border: solid 0.0625rem hsl(208, 9%, 59%);
+}
+
+.form-check-input.is-invalid ~ .form-check-label::after, .was-validated .form-check-input:invalid ~ .form-check-label::after {
+  border-color: hsl(354, 70%, 54%);
+}
+
+.form-check-input.is-valid ~ .form-check-label::after, .was-validated .form-check-input:valid ~ .form-check-label::after {
+  border-color: hsl(152, 69%, 31%);
 }
 
 .offcanvas {
@@ -2761,6 +2895,90 @@ table tr th, table tr td {
 }
 .importedrequest-body .link:not([disabled]):hover {
   color: hsl(217, 100%, 47%);
+}
+
+.importpackage {
+  padding: 3rem 0rem;
+}
+@media screen and (min-width: 62rem) {
+  .importpackage {
+    padding: 5rem 0rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .importpackage {
+    padding: 7.5rem 0rem;
+  }
+}
+.importpackage-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+@media screen and (min-width: 62rem) {
+  .importpackage-content {
+    gap: 4rem;
+  }
+}
+.importpackage-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 62rem) {
+  .importpackage-header {
+    gap: 4rem;
+    margin-bottom: 0rem;
+  }
+}
+.importpackage-header .info p {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+}
+.importpackage-body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 0.0625rem hsl(207, 23%, 92%);
+  border-radius: 0.25rem;
+  padding: 1.5rem;
+  text-align: left;
+}
+@media screen and (min-width: 48rem) {
+  .importpackage-body {
+    padding: 3rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .importpackage-body {
+    padding: 3.5rem;
+  }
+}
+.importpackage-body .parcelbox {
+  border: solid 0.0625rem hsl(207, 23%, 92%);
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.importpackage-body .parcelbox .title {
+  color: hsl(0, 0%, 19%);
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+}
+@media screen and (min-width: 87.5rem) {
+  .importpackage-body .parcelbox .title {
+    font-size: 1rem;
+  }
 }
 
 .trackorder {

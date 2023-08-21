@@ -165,9 +165,519 @@
   
   <!-- MAIN-SECTION START -->
   <main class="main">
-    <div class="shipcontainer">
-      
-    </div>
+    <!-- IMPORT-PACKAGE START -->
+    <section class="importpackage">
+      <div class="shipcontainer">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-md-auto">
+            <div class="importpackage-content">
+              <div class="importpackage-header">
+                <h1 class="display-2 fw-bold">
+                  <span class="marked">Import</span> package
+                </h1>
+
+                <div class="info">
+                  <p>
+                    Effortlessly import your packages with us. 
+                    Our streamlined process ensures smooth customs clearance, 
+                    efficient handling, and timely delivery. Experience hassle-free 
+                    importing for a seamless logistics experience.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="importpackage-body">
+                <form class="row g-4 needs-validation" novalidate>
+                  <div class="col-lg-6">
+                    <div class="inputbox">
+                      <input type="text" class="form-control" id="myfullname" placeholder="Your full name" autocomplete="off" required>
+                      <div class="invalid-feedback">
+                        Name is required.
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="col-lg-6">
+                    <div class="inputbox">
+                      <input type="tel" pattern="[0-9]{3}[0-9]{8}" class="form-control" id="phonenumber" placeholder="Phone number" autocomplete="off" required>
+                      <div class="invalid-feedback">
+                        Phone number is required.
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="col-lg-6">
+                    <div class="inputbox">
+                      <select class="form-select" id="shippingfrom" aria-label="select shippingfrom" autocomplete="off" required>
+                        <option value="">Shipping from ( country )</option>
+                        <option value="">China</option>
+                        <option value="">India</option>
+                        <option value="">Bangladesh</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Shipping from is required.
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="col-lg-6">
+                    <div class="inputbox">
+                      <select class="form-select" id="shippingmethod" aria-label="select shippingmethod" autocomplete="off" required>
+                        <option value="">Shipping method</option>
+                        <option value="">Air</option>
+                        <option value="">Ocean</option>
+                        <option value="">Road</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Shipping method is required.
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="col-12">
+                    <div class="inputbox">
+                      <textarea class="form-control" id="shippingaddress" rows="5" placeholder="Shipping Address" autocomplete="off" required></textarea>
+                      <div class="invalid-feedback">
+                        Address is required.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="input-group has-validation">
+                      <span class="input-group-text" id="nextshipmnt">
+                        Nextshipment / 
+                        <span>
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.0026 1.3335C11.6846 1.3335 14.6693 4.31816 14.6693 8.00016C14.6707 9.75048 13.9836 11.4311 12.7565 12.6793C11.5294 13.9274 9.8607 14.6429 8.11062 14.6712C6.36053 14.6996 4.6695 14.0385 3.4026 12.8308C2.13571 11.6231 1.3946 9.9656 1.33927 8.21616L1.33594 8.00016L1.3386 7.8135C1.43727 4.21816 4.3826 1.3335 8.0026 1.3335ZM8.0026 7.3335H7.33594L7.25794 7.33816C7.0959 7.35744 6.94657 7.43547 6.83821 7.55747C6.72986 7.67948 6.67001 7.83699 6.67001 8.00016C6.67001 8.16334 6.72986 8.32085 6.83821 8.44285C6.94657 8.56486 7.0959 8.64289 7.25794 8.66216L7.33594 8.66683V10.6668L7.3406 10.7448C7.35815 10.8936 7.42532 11.0322 7.53128 11.1382C7.63723 11.2441 7.77579 11.3113 7.9246 11.3288L8.0026 11.3335H8.66927L8.74727 11.3288C8.89608 11.3113 9.03464 11.2441 9.1406 11.1382C9.24655 11.0322 9.31372 10.8936 9.33127 10.7448L9.33594 10.6668L9.33127 10.5888C9.31533 10.4528 9.25789 10.325 9.16677 10.2228C9.07564 10.1206 8.95524 10.0489 8.82194 10.0175L8.74727 10.0042L8.66927 10.0002V8.00016L8.6646 7.92216C8.64705 7.77335 8.57988 7.63479 8.47393 7.52884C8.36797 7.42288 8.22941 7.35571 8.0806 7.33816L8.0026 7.3335ZM8.00927 5.3335L7.9246 5.33816C7.76257 5.35744 7.61323 5.43547 7.50488 5.55747C7.39653 5.67948 7.33668 5.83699 7.33668 6.00016C7.33668 6.16334 7.39653 6.32085 7.50488 6.44285C7.61323 6.56486 7.76257 6.64289 7.9246 6.66216L8.0026 6.66683L8.08727 6.66216C8.2493 6.64289 8.39864 6.56486 8.507 6.44285C8.61535 6.32085 8.67519 6.16334 8.67519 6.00016C8.67519 5.83699 8.61535 5.67948 8.507 5.55747C8.39864 5.43547 8.2493 5.35744 8.08727 5.33816L8.00927 5.3335Z" fill="#303030"/>
+                          </svg>
+                        </span>
+                      </span>
+                      <input type="text" class="form-control" id="nextshipment" placeholder="Enter your first name or company name" autocomplete="off" required>
+                      <div class="invalid-feedback">
+                        Nextshipment is required.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="inputbox">
+                      <input type="text" class="form-control" id="orderID" placeholder="Order ID" autocomplete="off" required>
+                      <div class="invalid-feedback">
+                        Order ID is required.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="input-group has-validation">
+                      <span class="input-group-text" id="weightkg">
+                        Weight
+                      </span>
+                      <input type="text" class="form-control" id="weightinput" placeholder="0" autocomplete="off" required>
+                      <span class="input-group-text bg-transparent">
+                        Kg
+                      </span>
+                      <div class="invalid-feedback">
+                        Weight is required.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="parcelbox">
+                      <p class="title">
+                        Is there any additional service you would like to avail for this parcel? (Applicable charges may apply)
+                      </p>
+
+                      <div class="d-flex align-items-center gap-2 flex-wrap w-100">
+                        <div class="form-check">
+                          <input type="radio" class="form-check-input" id="radio-1" name="parcel" autocomplete="off" required hidden>
+                          <label class="form-check-label" for="radio-1">
+                            Product Inspection
+                          </label>
+                        </div>
+
+                        <div class="form-check">
+                          <input type="radio" class="form-check-input" id="radio-2" name="parcel" autocomplete="off" required hidden>
+                          <label class="form-check-label" for="radio-2">
+                            Packed by Warehouse
+                          </label>
+                        </div>
+
+                        <div class="form-check">
+                          <input type="radio" class="form-check-input" id="radio-3" name="parcel" autocomplete="off" required hidden>
+                          <label class="form-check-label" for="radio-3">
+                            Payment
+                          </label>
+                        </div>
+
+                        <div class="form-check">
+                          <input type="radio" class="form-check-input" id="radio-4" name="parcel" autocomplete="off" required hidden>
+                          <label class="form-check-label" for="radio-4">
+                            Special Packing
+                          </label>
+                        </div>
+
+                        <div class="form-check">
+                          <input type="radio" class="form-check-input" id="radio-5" name="parcel" autocomplete="off" required hidden>
+                          <label class="form-check-label" for="radio-5">
+                            None
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="input-group has-validation">
+                      <span class="input-group-text" id="nextshipmnt">
+                        Carton Number
+                      </span>
+                      <input type="number" class="form-control" id="cartonnumber" placeholder="0" autocomplete="off" required>
+                      <div class="invalid-feedback">
+                        Carton Number is required.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="parcelbox">
+                      <p class="title fw-medium">
+                        Carton 1
+                      </p>
+
+                      <div class="row g-4">
+                        <div class="col-lg-8">
+                          <div class="inputbox">
+                            <input type="text" class="form-control" id="itemdetails" placeholder="Item details" autocomplete="off" required>
+                            <div class="invalid-feedback">
+                              Item details is required.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                          <div class="inputbox">
+                            <input type="number" class="form-control" id="quantity" placeholder="Quantity" autocomplete="off" required>
+                            <div class="invalid-feedback">
+                              Quantity is required.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap w-100">
+                        <div class="form-check">
+                          <input type="radio" class="form-check-input" id="radio-batteries" name="batteries" autocomplete="off" required hidden>
+                          <label class="form-check-label fw-normal" for="radio-batteries">
+                            This carton contains batteries/liquids/cosmetics/hazardous materials.
+                          </label>
+                        </div>
+
+                        <button type="button" class="btn-add">
+                          <span class="icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <g clip-path="url(#plusicon)">
+                                <path d="M9.99935 18.3332C14.6017 18.3332 18.3327 14.6022 18.3327 9.99984C18.3327 5.39746 14.6017 1.6665 9.99935 1.6665C5.39698 1.6665 1.66602 5.39746 1.66602 9.99984C1.66602 14.6022 5.39698 18.3332 9.99935 18.3332Z" stroke="#2074FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 6.6665V13.3332" stroke="#2074FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.66602 10H13.3327" stroke="#2074FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </g>
+                              <defs>
+                                <clipPath id="plusicon">
+                                  <rect width="20" height="20" fill="white"/>
+                                </clipPath>
+                              </defs>
+                            </svg>
+                          </span>
+                          <span class="text">Add Item</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="parcelbox">
+                      <div class="d-flex align-items-center justify-content-between">
+                        <p class="title fw-medium">
+                          Carton 2
+                        </p>
+
+                        <button type="button" class="btn-delete">
+                          <span class="icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <g clip-path="url(#minusionc-1)">
+                                <path d="M9.99935 18.3332C14.6017 18.3332 18.3327 14.6022 18.3327 9.99984C18.3327 5.39746 14.6017 1.6665 9.99935 1.6665C5.39698 1.6665 1.66602 5.39746 1.66602 9.99984C1.66602 14.6022 5.39698 18.3332 9.99935 18.3332Z" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.66602 10H13.3327" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </g>
+                              <defs>
+                                <clipPath id="minusionc-1">
+                                  <rect width="20" height="20" fill="white"/>
+                                </clipPath>
+                              </defs>
+                            </svg>
+                          </span>
+
+                          <span class="text">Delete Item</span>
+                        </button>
+                      </div>
+
+                      <div class="row g-4">
+                        <div class="col-lg-8">
+                          <div class="inputbox">
+                            <input type="text" class="form-control" id="itemdetails-1" placeholder="Item details" autocomplete="off" required>
+                            <div class="invalid-feedback">
+                              Item details is required.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                          <div class="inputbox">
+                            <input type="number" class="form-control" id="quantity-1" placeholder="Quantity" autocomplete="off" required>
+                            <div class="invalid-feedback">
+                              Quantity is required.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-8">
+                          <div class="inputbox">
+                            <input type="text" class="form-control" id="itemdetails-2" placeholder="Item details" autocomplete="off" required>
+                            <div class="invalid-feedback">
+                              Item details is required.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                          <div class="inputbox">
+                            <input type="number" class="form-control" id="quantity-2" placeholder="Quantity" autocomplete="off" required>
+                            <div class="invalid-feedback">
+                              Quantity is required.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-8">
+                          <div class="inputbox">
+                            <input type="text" class="form-control" id="itemdetails-3" placeholder="Item details" autocomplete="off" required>
+                            <div class="invalid-feedback">
+                              Item details is required.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                          <div class="inputbox">
+                            <input type="number" class="form-control" id="quantity-3" placeholder="Quantity" autocomplete="off" required>
+                            <div class="invalid-feedback">
+                              Quantity is required.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap w-100">
+                        <div class="form-check">
+                          <input type="radio" class="form-check-input" id="radio-batteries" name="batteries" autocomplete="off" required hidden>
+                          <label class="form-check-label fw-normal" for="radio-batteries">
+                            This carton contains batteries/liquids/cosmetics/hazardous materials.
+                          </label>
+                        </div>
+
+                        <button type="button" class="btn-add">
+                          <span class="icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <g clip-path="url(#plusicon)">
+                                <path d="M9.99935 18.3332C14.6017 18.3332 18.3327 14.6022 18.3327 9.99984C18.3327 5.39746 14.6017 1.6665 9.99935 1.6665C5.39698 1.6665 1.66602 5.39746 1.66602 9.99984C1.66602 14.6022 5.39698 18.3332 9.99935 18.3332Z" stroke="#2074FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 6.6665V13.3332" stroke="#2074FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.66602 10H13.3327" stroke="#2074FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </g>
+                              <defs>
+                                <clipPath id="plusicon">
+                                  <rect width="20" height="20" fill="white"/>
+                                </clipPath>
+                              </defs>
+                            </svg>
+                          </span>
+                          <span class="text">Add Item</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="parcelbox">
+                      <div class="d-flex align-items-center justify-content-between">
+                        <p class="title fw-medium">
+                          Carton 3
+                        </p>
+
+                        <button type="button" class="btn-success">
+                          <span class="icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <g clip-path="url(#successionc-1)">
+                                <path d="M9.99935 18.3332C14.6017 18.3332 18.3327 14.6022 18.3327 9.99984C18.3327 5.39746 14.6017 1.6665 9.99935 1.6665C5.39698 1.6665 1.66602 5.39746 1.66602 9.99984C1.66602 14.6022 5.39698 18.3332 9.99935 18.3332Z" stroke="#02B290" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13 8L8.875 12L7 10.1818" stroke="#02B290" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </g>
+                              <defs>
+                                <clipPath id="successionc-1">
+                                  <rect width="20" height="20" fill="white"/>
+                                </clipPath>
+                              </defs>
+                            </svg>
+                          </span>
+
+                          <span class="text">Done</span>
+                        </button>
+                      </div>
+
+                      <div class="row g-4 w-100 align-items-center">
+                        <div class="col-lg-7">
+                          <div class="inputbox">
+                            <input type="text" class="form-control" id="itemdetails-0" placeholder="Item details" autocomplete="off" required>
+                            <div class="invalid-feedback">
+                              Item details is required.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                          <div class="inputbox">
+                            <input type="number" class="form-control" id="quantity-0" placeholder="Quantity" autocomplete="off" required>
+                            <div class="invalid-feedback">
+                              Quantity is required.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-2">
+                          <div class="d-flex justify-content-lg-center">
+                            <button type="button" class="btn-remove">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.17188 9.1709L14.8287 14.8278" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.16992 14.8281L14.8268 9.17127" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row g-4 w-100 align-items-center">
+                        <div class="col-lg-7">
+                          <div class="inputbox">
+                            <input type="text" class="form-control" id="itemdetails-02" placeholder="Item details" autocomplete="off" required>
+                            <div class="invalid-feedback">
+                              Item details is required.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                          <div class="inputbox">
+                            <input type="number" class="form-control" id="quantity-02" placeholder="Quantity" autocomplete="off" required>
+                            <div class="invalid-feedback">
+                              Quantity is required.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-2">
+                          <div class="d-flex justify-content-lg-center">
+                            <button type="button" class="btn-remove">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.17188 9.1709L14.8287 14.8278" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.16992 14.8281L14.8268 9.17127" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row g-4 w-100 align-items-center">
+                        <div class="col-lg-7">
+                          <div class="inputbox">
+                            <input type="text" class="form-control" id="itemdetails-03" placeholder="Item details" autocomplete="off" required>
+                            <div class="invalid-feedback">
+                              Item details is required.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                          <div class="inputbox">
+                            <input type="number" class="form-control" id="quantity-03" placeholder="Quantity" autocomplete="off" required>
+                            <div class="invalid-feedback">
+                              Quantity is required.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-2">
+                          <div class="d-flex justify-content-lg-center">
+                            <button type="button" class="btn-remove">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.17188 9.1709L14.8287 14.8278" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.16992 14.8281L14.8268 9.17127" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap w-100">
+                        <div class="form-check">
+                          <input type="radio" class="form-check-input" id="radio-batteries" name="batteries" autocomplete="off" required hidden>
+                          <label class="form-check-label fw-normal" for="radio-batteries">
+                            This carton contains batteries/liquids/cosmetics/hazardous materials.
+                          </label>
+                        </div>
+
+                        <button type="button" class="btn-add">
+                          <span class="icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <g clip-path="url(#plusicon)">
+                                <path d="M9.99935 18.3332C14.6017 18.3332 18.3327 14.6022 18.3327 9.99984C18.3327 5.39746 14.6017 1.6665 9.99935 1.6665C5.39698 1.6665 1.66602 5.39746 1.66602 9.99984C1.66602 14.6022 5.39698 18.3332 9.99935 18.3332Z" stroke="#2074FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 6.6665V13.3332" stroke="#2074FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.66602 10H13.3327" stroke="#2074FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </g>
+                              <defs>
+                                <clipPath id="plusicon">
+                                  <rect width="20" height="20" fill="white"/>
+                                </clipPath>
+                              </defs>
+                            </svg>
+                          </span>
+                          <span class="text">Add Item</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="col-12">
+                    <div class="inputbox">
+                      <textarea class="form-control" id="additionalnote" rows="5" placeholder="Any additional notes..." autocomplete="off" required></textarea>
+                      <div class="invalid-feedback">
+                        Additional notes is required.
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="col-12">
+                    <button class="btn-login w-100" type="submit">Submit Import Request</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- IMPORT-PACKAGE END -->
   </main>
   <!-- MAIN-SECTION END -->
 
@@ -416,5 +926,7 @@
   <script src="assets/js/loader/loader.js"></script>
   <!-- COPYRIGHT-JS -->
   <script src="assets/js/copyright/copyright.js"></script>
+  <!-- VALIDATION-JS -->
+  <script src="assets/js/validation/validation.js"></script>
 </body>
 </html>
