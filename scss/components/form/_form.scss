@@ -1,3 +1,43 @@
 @use "../../global" as *;
 @use "../../partials" as *;
 
+.importform {
+  @include flex-column;
+  gap: size(20);
+  @include w100;
+
+  @include breakpoint(mobile768) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .inputbox {
+    @include w100;
+
+    @include breakpoint(mobile768) {
+      width: calc(100% - size(220));
+    }
+
+    input {
+      @include border(solid, 1, $trackinputborder);
+      @include radius(2);
+      font-weight: 400;
+      height: size(48);
+      padding-inline: size(20);
+      @include w100;
+
+      &::placeholder {
+        color: $placeholdertext;
+      }
+    }
+  }
+  
+  .submitbox {
+    width: size(200);
+    margin-inline: auto;
+
+    @include breakpoint(mobile768) {
+      margin: 0;
+    }
+  }
+}

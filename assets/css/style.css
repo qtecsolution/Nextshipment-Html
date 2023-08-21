@@ -491,6 +491,24 @@ button:focus,
   color: hsl(0, 0%, 100%);
 }
 
+.btn-submit {
+  background: hsl(217, 100%, 56%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  padding: 0.84375rem 1.5rem;
+  height: 3rem;
+  text-align: center;
+  transition: all 350ms ease-in-out;
+}
+.btn-submit:not([disabled]):hover {
+  background: hsl(217, 100%, 47%);
+  color: hsl(0, 0%, 100%);
+}
+
 .btn-border {
   background: hsl(213, 100%, 98%);
   color: hsl(0, 0%, 11%);
@@ -1131,6 +1149,50 @@ table tr th, table tr td {
   vertical-align: middle;
 }
 
+.importform {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+@media screen and (min-width: 48rem) {
+  .importform {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+.importform .inputbox {
+  width: 100%;
+}
+@media screen and (min-width: 48rem) {
+  .importform .inputbox {
+    width: calc(100% - 13.75rem);
+  }
+}
+.importform .inputbox input {
+  border: solid 0.0625rem hsl(208, 19%, 87%);
+  border-radius: 0.125rem;
+  font-weight: 400;
+  height: 3rem;
+  padding-inline: 1.25rem;
+  width: 100%;
+}
+.importform .inputbox input::-moz-placeholder {
+  color: hsl(208, 9%, 59%);
+}
+.importform .inputbox input::placeholder {
+  color: hsl(208, 9%, 59%);
+}
+.importform .submitbox {
+  width: 12.5rem;
+  margin-inline: auto;
+}
+@media screen and (min-width: 48rem) {
+  .importform .submitbox {
+    margin: 0;
+  }
+}
+
 .desktoplist {
   margin: 0;
   padding: 0;
@@ -1362,6 +1424,150 @@ table tr th, table tr td {
 }
 .contactlist-link:not([disabled]):hover {
   color: hsl(217, 100%, 56%);
+}
+
+.tracklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18.75rem;
+  margin-inline: auto;
+  gap: 3rem;
+}
+@media screen and (min-width: 62rem) {
+  .tracklist {
+    flex-direction: row;
+    margin: 0;
+    width: 100%;
+  }
+}
+.tracklist-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+@media screen and (min-width: 62rem) {
+  .tracklist-item {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+.tracklist-item .trackicon {
+  background: hsl(0, 0%, 94%);
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+.tracklist-item .trackicon .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.tracklist-item .trackicon::before {
+  content: "";
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.125rem;
+  height: 82%;
+  border: dashed 0.0625rem hsl(0, 0%, 83%);
+  z-index: 1;
+}
+@media screen and (min-width: 62rem) {
+  .tracklist-item .trackicon::before {
+    height: 0.125rem;
+    top: 50%;
+    transform: translateY(-50%);
+    right: auto;
+    width: 100%;
+    left: -100%;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .tracklist-item .trackicon::before {
+    width: 120%;
+    left: -120%;
+  }
+}
+@media screen and (min-width: 68.75rem) {
+  .tracklist-item .trackicon::before {
+    width: 140%;
+    left: -140%;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .tracklist-item .trackicon::before {
+    width: 170%;
+    left: -170%;
+  }
+}
+@media screen and (min-width: 100rem) {
+  .tracklist-item .trackicon::before {
+    width: 260%;
+    left: -260%;
+  }
+}
+@media screen and (min-width: 112.5rem) {
+  .tracklist-item .trackicon::before {
+    width: 280%;
+    left: -280%;
+  }
+}
+.tracklist-item .tracktitle {
+  width: calc(100% - 4.75rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 62rem) {
+  .tracklist-item .tracktitle {
+    width: 100%;
+    min-height: 2.25rem;
+  }
+}
+.tracklist-item .tracktitle .title {
+  font-size: 0.75rem;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+@media screen and (min-width: 100rem) {
+  .tracklist-item .tracktitle .title {
+    font-size: 1rem;
+  }
+}
+.tracklist-item.active .trackicon {
+  background: hsl(217, 100%, 56%);
+}
+.tracklist-item.active .trackicon .icon path {
+  stroke: hsl(0, 0%, 100%);
+}
+.tracklist-item.active .trackicon::before {
+  border-color: hsl(217, 100%, 56%);
+}
+.tracklist-item:first-child .trackicon::before {
+  top: 0rem;
+  width: 0rem;
+  height: 0;
+  display: none;
 }
 
 .uppersection {
@@ -2557,6 +2763,138 @@ table tr th, table tr td {
   color: hsl(217, 100%, 47%);
 }
 
+.trackorder {
+  padding: 3rem 0rem;
+}
+@media screen and (min-width: 62rem) {
+  .trackorder {
+    padding: 5rem 0rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .trackorder {
+    padding: 7.5rem 0rem;
+  }
+}
+.trackorder-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+@media screen and (min-width: 62rem) {
+  .trackorder-content {
+    gap: 4rem;
+  }
+}
+.trackorder-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+@media screen and (min-width: 62rem) {
+  .trackorder-header {
+    gap: 4rem;
+    margin-bottom: 0rem;
+  }
+}
+.trackorder-header .info p {
+  color: hsl(0, 0%, 11%);
+  font-weight: 300;
+}
+.trackorder-body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 0.0625rem hsl(208, 19%, 87%);
+  padding: 1.5rem;
+}
+@media screen and (min-width: 48rem) {
+  .trackorder-body {
+    padding: 3rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .trackorder-body {
+    padding: 5rem 5rem 7.5rem;
+  }
+}
+.trackorder-body .emptyorder {
+  max-width: 32rem;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media screen and (min-width: 48rem) {
+  .trackorder-body .emptyorder {
+    gap: 3rem;
+  }
+}
+.trackorder-body .emptyorder .emptyicon {
+  width: 12.1875rem;
+  height: 12.1875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.trackorder-body .emptyorder .emptyinfo p {
+  color: hsl(208, 9%, 59%);
+  font-weight: 500;
+  text-align: center;
+}
+.trackorder-body .emptyorder .emptyinfo p .link {
+  color: hsl(217, 100%, 56%);
+  transition: color 350ms ease-in-out;
+}
+.trackorder-body .emptyorder .emptyinfo p .link:not([disabled]):hover {
+  color: hsl(217, 100%, 47%);
+}
+.trackorder-body .trackorderinfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+@media screen and (min-width: 62rem) {
+  .trackorder-body .trackorderinfo {
+    gap: 5rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .trackorder-body .trackorderinfo {
+    gap: 7.5rem;
+  }
+}
+.trackorder-body .trackorderinfo-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+.trackorder-body .trackorderinfo-header p {
+  color: hsl(208, 9%, 59%);
+  font-weight: 500;
+}
+.trackorder-body .trackorderinfo-header p .idnumber,
+.trackorder-body .trackorderinfo-header p .arrivaldate {
+  color: hsl(217, 100%, 56%);
+}
+.trackorder-body .trackorderinfo-header p .date {
+  color: hsl(0, 0%, 11%);
+}
+.trackorder-body .trackorderinfo-header .importid {
+  color: hsl(0, 0%, 11%);
+}
 .errormain {
   width: 100%;
   min-height: 60vh;

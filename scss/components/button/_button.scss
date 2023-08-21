@@ -57,6 +57,21 @@ button,
   }
 }
 
+.btn-submit {
+  @include setBgColor($primary, $white);
+  @include radius(4);
+  @include flex-center;
+  font-weight: 600;
+  padding: size(13.5) size(24);
+  height: size(48);
+  text-align: center;
+  @include transitionsall;
+  
+  @include hover {
+    @include setBgColor($hoverbg, $white);
+  }
+}
+
 .btn-border {
   @include setBgColor($sectionbg, $blacktext);
   @include border(solid, 1, $blacktext);

@@ -238,3 +238,138 @@
     }
   }
 }
+
+.tracklist {
+  @include list-vertical;
+  align-items: center;
+  width: size(300);
+  margin-inline: auto;
+  gap: size(48);
+
+  @include breakpoint(tab992) {
+    flex-direction: row;
+    margin: 0;
+    @include w100;
+  }
+
+  &-item {
+    @include flex-center-vert;
+    gap: size(16);
+    @include w100;
+
+    @include breakpoint(tab992) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .trackicon {
+      background: $trackbg;
+      @include square(60);
+      @include circle;
+      @include flex-center;
+      position: relative;
+      z-index: 10;
+
+      .icon {
+        @include square(24);
+        @include flex-center;
+        overflow: hidden;
+      }
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: size(-48);
+        left: 50%;
+        @include translateX(-50%);
+        width: size(2);
+        height: 82%;
+        @include border(dashed, 1, $trackborder);
+        z-index: 1;
+
+        @include breakpoint(tab992) {
+          height: size(2);
+          top: 50%;
+          @include translateY(-50%);
+          right: auto;
+          width: 100%;
+          left: -100%;
+        }
+
+        @include breakpoint(desktop1024) {
+          width: 120%;
+          left: -120%;
+        }
+
+        @include breakpoint(desktop1100) {
+          width: 140%;
+          left: -140%;
+        }
+
+        @include breakpoint(desktop1200) {
+          width: 170%;
+          left: -170%;
+        }
+
+        @include breakpoint(desktop1600) {
+          width: 260%;
+          left: -260%;
+        }
+
+        @include breakpoint(desktop1800) {
+          width: 280%;
+          left: -280%;
+        }
+      }
+    }
+
+    .tracktitle {
+      width: calc(100% - size(76));
+      @include flex-center;
+
+      @include breakpoint(tab992) {
+        @include w100;
+        min-height: size(36);
+      }
+      
+      .title {
+        font-size: size(12);
+        text-align: center;
+        @include line-clamp;
+
+        @include breakpoint(desktop1600) {
+          font-size: size(16);
+        }
+      }
+    }
+
+    &.active {
+      .trackicon {
+        background: $primary;
+
+        .icon {
+          path {
+            stroke: $white;
+          }
+        }
+        
+        &::before {
+          border-color: $primary;
+        }
+      }
+    }
+
+    &:first-child {
+      .trackicon {
+        &::before {
+          top: size(0);
+          width: size(0);
+          height: 0;
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+.trackorder {
+  padding: size(48) size(0);
+  
+  @include breakpoint(tab992) {
+    padding: size(80) size(0);
+  }
+
+  @include breakpoint(desktop1200) {
+    padding: size(120) size(0);
+  }
+
+  &-content {
+    @include flex-center-column;
+    gap: size(32);
+    text-align: center;
+
+    @include breakpoint(tab992) {
+      gap: size(64);
+    }
+  }
+
+  &-header {
+    @include flex-center-column;
+    gap: size(48);
+    margin-bottom: size(40);
+
+    @include breakpoint(tab992) {
+      gap: size(64);
+      margin-bottom: size(0);
+    }
+
+    .info {
+      p {
+        color: $blacktext;
+        font-weight: 300;
+      }
+    }
+  }
+
+  &-body {
+    @include w100;
+    @include flex-center;
+    @include border(solid, 1, $trackinputborder);
+    padding: size(24);
+
+    @include breakpoint(mobile768) {
+      padding: size(48);
+    }
+
+    @include breakpoint(tab992) {
+      padding: size(80) size(80) size(120);
+    }
+
+    .emptyorder {
+      max-width: size(512);
+      margin-inline: auto;
+      @include flex-center-column;
+      gap: size(32);
+
+      @include breakpoint(mobile768) {
+        gap: size(48);
+      }
+
+      .emptyicon {
+        @include square(195);
+        @include flex-center;
+        overflow: hidden;
+      }
+
+      .emptyinfo {
+        p {
+          color: $placeholdertext;
+          font-weight: 500;
+          text-align: center;
+
+          .link {
+            color: $primary;
+            @include transitionscolor;
+
+            @include hover {
+              color: $hoverbg;
+            }
+          }
+        }
+      }
+    }
+
+    .trackorderinfo {
+      @include w100;
+      @include flex-column;
+      gap: size(48);
+
+      @include breakpoint(tab992) {
+        gap: size(80);
+      }
+
+      @include breakpoint(desktop1200) {
+        gap: size(120);
+      }
+
+      &-header {
+        @include flex-column;
+        gap: size(8);
+        @include w100;
+
+        p {
+          color: $placeholdertext;
+          font-weight: 500;
+
+          .idnumber,
+          .arrivaldate {
+            color: $primary;
+          }
+
+          .date {
+            color: $blacktext;
+          }
+        }
+        
+        .importid {
+          color: $blacktext;
+        }
+      }
+
+      &-body {}
+    }
+  }
+}
