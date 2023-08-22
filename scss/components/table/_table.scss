@@ -10,3 +10,250 @@ table {
     }
   }
 }
+
+.ordertable {
+  thead {
+    background: $inputborder;
+
+    tr {
+      th {
+        color: $blacktext;
+        font-size: size(12);
+        font-weight: 500;
+        padding: size(8) size(14);
+
+        @include breakpoint(desktop1600) {
+          font-size: size(14);
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      @include border-single(bottom, solid, 1, $inputborder);
+
+      th {
+        .tableinfo {
+          @include flex-column;
+          gap: size(8);
+          min-width: size(150);
+        }
+
+        p {
+          color: $bodytext;
+          font-size: size(12);
+          font-weight: 300;
+  
+          @include breakpoint(desktop1600) {
+            font-size: size(14);
+          }
+
+          span {
+            font-weight: 500;
+          }
+        }
+
+        .importid {
+          span {
+            color: $primary;
+          }
+        }
+
+        .orderid {
+          span {
+            color: $blacktext;
+          }
+        }
+      }
+
+      td {
+        .tableinfo {
+          @include flex-column;
+          gap: size(8);
+          min-width: size(150);
+        }
+
+        p {
+          color: $bodytext;
+          font-size: size(12);
+          font-weight: 300;
+  
+          @include breakpoint(desktop1600) {
+            font-size: size(14);
+          }
+
+          span {
+            font-weight: 500;
+          }
+        }
+
+        .address,
+        .totalcost {
+          font-weight: 500;
+        }
+
+        .flag {
+          @include square(18);
+          @include flex-center;
+          overflow: hidden;
+        }
+
+        .status {
+          .paid {
+            color: $paid;
+          }
+
+          .calculating {
+            color: $black;
+          }
+
+          .topay {
+            color: $primary;
+          }
+
+          .waiting {
+            color: $waiting;
+          }
+        }
+
+        .status {
+          @include flex-center-vert;
+          gap: size(10);
+
+          .icon {
+            @include square(9);
+            @include flex-center;
+            overflow: hidden;
+          }
+
+          .text {
+
+          }
+
+          &.orderplaced {
+            .icon {
+              svg {
+                circle {
+                  fill: $paginationtext;
+                }
+              }
+            }
+          }
+
+          &.approved {
+            .icon {
+              svg {
+                circle {
+                  fill: $approved;
+                }
+              }
+            }
+          }
+
+          &.inwearhouse {
+            .icon {
+              svg {
+                circle {
+                  fill: $inwearhouse;
+                }
+              }
+            }
+          }
+
+          &.shippingprocess {
+            .icon {
+              svg {
+                circle {
+                  fill: $shippingprocess;
+                }
+              }
+            }
+          }
+
+          &.bdcustoms {
+            .icon {
+              svg {
+                circle {
+                  fill: $bdcustoms;
+                }
+              }
+            }
+          }
+
+          &.pickedup {
+            .icon {
+              svg {
+                circle {
+                  fill: $waiting;
+                }
+              }
+            }
+          }
+        }
+
+        .action {
+          position: relative;
+          cursor: pointer;
+
+          .dropdownicon {
+            @include square(16);
+            @include flex-center;
+            overflow: hidden;
+          }
+
+          &-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            @include radius(4);
+            background: $white;
+            box-shadow: $dropshadow;
+            min-width: size(128);
+            display: none;
+            @extend %animation;
+            @extend %slideUpIn;
+
+            .dropdownlist {
+              @include list-vertical;
+              background: $white;
+
+              &-item {
+                &:last-of-type {
+                  .dropdownlist-link {
+                    border-bottom: 0;
+                  }
+                }
+              }
+
+              &-link {
+                @include setBgColor($white, $blacktext);
+                font-size: size(12);
+                font-weight: 600;
+                @include flex;
+                @include w100;
+                padding: size(12) size(16);
+                @include border-single(bottom, solid, 1, $headerborder);
+                @include transitionscolor;
+        
+                @include breakpoint(desktop1600) {
+                  font-size: size(14);
+                }
+
+                @include hover {
+                  color: $primary;
+                }
+              }
+            }
+          }
+
+          @include hover {
+            .action-dropdown {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

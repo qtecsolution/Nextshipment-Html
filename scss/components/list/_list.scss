@@ -27,36 +27,6 @@
   }
 }
 
-.dropdownlist {
-  @include list-vertical;
-  @include border(solid, 1, $headerborder);
-  border-top: 0;
-  background: $white;
-
-  &-item {
-    &:last-of-type {
-      .dropdownlist-link {
-        border-bottom: 0;
-      }
-    }
-  }
-
-  &-link {
-    color: $blacktext;
-    font-size: size(14);
-    font-weight: 600;
-    @include flex;
-    @include w100;
-    padding: size(12) size(16);
-    @include border-single(bottom, solid, 1, $headerborder);
-    @include transitionscolor;
-
-    @include hover {
-      color: $primary;
-    }
-  }
-}
-
 .authlist {
   @include list-horizontal;
 

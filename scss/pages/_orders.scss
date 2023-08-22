@@ -1,0 +1,324 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+.orderlist {
+  padding: size(48) size(0);
+  
+  @include breakpoint(tab992) {
+    padding: size(80) size(0);
+  }
+
+  @include breakpoint(desktop1400) {
+    padding: size(120) size(0);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(32);
+
+    @include breakpoint(tab992) {
+      gap: size(64);
+    }
+
+    @include breakpoint(desktop1200) {
+      gap: size(80);
+    }
+
+    @include breakpoint(desktop1400) {
+      gap: size(100);
+    }
+  }
+
+  &-header {
+    @include flex-center-column;
+    gap: size(32);
+    text-align: center;
+
+    @include breakpoint(tab992) {
+      gap: size(48);
+    }
+  }
+
+  &-body {
+    @include flex-column;
+    gap: size(40);
+  }
+}
+
+.emptyorder {
+  @include flex-center-column;
+  gap: size(40);
+  padding: size(120) size(0);
+
+  &-thumbnail {
+    width: size(254);
+    height: size(132);
+    @include flex-center;
+    overflow: hidden;
+  }
+
+  .emptyinfo {
+    max-width: size(458);
+
+    p {
+      color: $placeholdertext;
+      font-size: size(14);
+      font-style: normal;
+      font-weight: 500;
+    }
+  }
+
+  .importfile {
+    max-width: size(200);
+  }
+}
+
+.orderdetails {
+  @include flex-column;
+  gap: size(32);
+  padding: size(24);
+
+  @include breakpoint(tab992) {
+    padding: size(32);
+  }
+
+  @include breakpoint(desktop1200) {
+    padding: size(36);
+  }
+
+  &-header {
+    @include border-single(bottom, solid, 1, $inputborder);
+    @include flex-column;
+    gap: size(32);
+    padding-bottom: size(32);
+
+    .headerinfo {
+      @include flex-column;
+      gap: size(10);
+    }
+
+    .importdate {
+      color: $placeholdertext;
+      font-size: size(14);
+      font-weight: 500;
+    }
+
+    .estimatedate {
+      @include flex-center-vert;
+      gap: size(8);
+
+      .icon {
+        @include square(18);
+        @include flex-center;
+        overflow: hidden;
+      }
+
+      .text {
+        color: $paid;
+        font-size: size(14);
+        font-weight: 500;
+      }
+    }
+
+    .itemtable {
+      thead {
+        background: $inputborder;
+
+        tr {
+          th {
+            color: $bodytext;
+            font-size: size(14);
+            font-weight: 600;
+            padding: size(12) size(16);
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          th,
+          td {
+            color: $bodytext;
+            font-size: size(14);
+            font-weight: 400;
+            padding: size(5) size(16);
+          }
+
+          td {
+            font-weight: 500;
+          }
+
+          &:first-child {
+            th, td {
+              padding-top: size(24);
+            }
+          }
+
+          &:last-child {
+            td {
+              padding-top: size(20);
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  &-body {
+    @include border-single(bottom, solid, 1, $inputborder);
+    padding-bottom: size(32);
+
+    .deliverytable {
+      thead {
+        tr {
+          th {
+            color: $bodytext;
+            font-size: size(14);
+            font-weight: 600;
+            padding: size(12) 0;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      tbody {
+        th {
+          p {
+            font-size: size(14);
+            font-weight: 500;
+          }
+
+          .calculating {
+            color: $bodytext;
+          }
+          
+          .waiting {
+            color: $waiting;
+          }
+          
+          .paid {
+            color: $placeholdertext;
+
+            span {
+              color: $paid;
+            }
+          }
+        }
+
+        td {
+          .address {
+            @include flex-column;
+            gap: size(10);
+
+            .title {
+              color: $placeholdertext;
+              font-family: $inter;
+              font-size: size(13);
+              font-style: normal;
+              font-weight: 400;
+            }
+
+            p {
+              color: $bodytext;
+              font-size: size(14);
+              font-style: normal;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-footer {
+    .summarytable {
+      thead {
+        tr {
+          th {
+            color: $bodytext;
+            font-size: size(14);
+            font-weight: 600;
+            padding: size(12) 0;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      tbody {
+        th {
+          vertical-align: top;
+          
+          .link {
+            @include flex-center-vert;
+            gap: size(8);
+
+            .icon {
+              @include square(16);
+              @include flex-center;
+              overflow: hidden;
+            }
+
+            .text {
+              color: $placeholdertext;
+              font-size: size(14);
+              font-weight: 500;
+            }
+
+            @include hover {
+              .icon {
+                svg {
+                  path {
+                    stroke: $primary;
+                  }
+                }
+              }
+
+              .text {
+                color: $primary;
+              }
+            }
+          }
+        }
+
+        td {
+          .summary {
+            @include flex-column;
+            gap: size(16);
+
+            &-header {
+              @include border-single(bottom, solid, 1, $inputborder);
+              padding-bottom: size(20);
+
+              .summarylist {
+                @include list-vertical;
+                gap: size(10);
+
+                &-item {
+                  @include flex-center-between;
+
+                  span {
+                    color: $placeholdertext;
+                    font-size: size(14);
+                    font-weight: 500;
+                  }
+                }
+              }
+            }
+            
+            &-body {
+              @include flex-center-between;
+
+              span {
+                color: $blacktext;
+                font-size: size(14);
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+    }
+  }  
+}

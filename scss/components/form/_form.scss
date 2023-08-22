@@ -41,3 +41,20 @@
     }
   }
 }
+
+.searchform {
+  @include flex-center-vert;
+  @include border(solid, 1, $inputborder);
+  @include radius(4);
+  height: size(48);
+  padding: size(14) size(16);
+  gap: size(16);
+
+  input {
+
+  }
+  
+  button {
+
+  }
+}

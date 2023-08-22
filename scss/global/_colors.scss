@@ -27,6 +27,15 @@ $trackbg: hsl(0, 0%, 94%); //#EFEFEF
 $bodytext: hsl(0, 0%, 19%); //#303030
 $blacktext: hsl(0, 0%, 11%); //#1B1B1B
 $placeholdertext: hsl(208, 9%, 59%); //#8C969F
+$paginationtext: hsl(224, 15%, 66%); //#9CA3B6
+
+$paid: hsl(168, 98%, 35%); //#02B290
+$waiting: #ff9900; //#ff9900
+
+$approved: hsl(209, 80%, 58%); //#4098EA
+$inwearhouse: hsl(79, 85%, 59%); //#B7EF40
+$shippingprocess: hsl(105, 34%, 50%); //#6BAC55
+$bdcustoms: hsl(335, 100%, 72%); //#FF6FAB
 
 
 $danger: hsl(354, 70%, 54%); //#dc3545
@@ -50,3 +59,4 @@ $shade-1: rgba(30, 30, 30, 0.05);
 // BOX-SHADOWS
 $shadow-1: .25rem .25rem 0rem 0rem $shade-1;
 $dropdownshadow: 0rem 3rem 6.25rem 0rem $shade-1;
+$dropshadow: .1875rem .125rem .875rem .1875rem $inputborder;

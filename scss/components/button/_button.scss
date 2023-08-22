@@ -214,3 +214,15 @@ button,
     }
   }
 }
+
+.btn-text {
+  @include setBgColor($white, $primary);
+  font-size: size(14);
+  font-style: normal;
+  font-weight: 500;
+  @include transitionscolor;
+
+  @include hover {
+    color: $hoverbg;
+  }
+}

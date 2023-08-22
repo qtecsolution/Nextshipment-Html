@@ -8,7 +8,7 @@
 /**=====================================================**
                 ANIMATION-STYLES
 =======================================================**/
-.ourservices table tbody td .servicelink, .authlist .desktopdropdown-menu {
+.ourservices table tbody td .servicelink, .authlist .desktopdropdown-menu, .ordertable tbody tr td .action-dropdown {
   animation-duration: 350ms;
   animation-fill-mode: both;
 }
@@ -46,7 +46,7 @@
     transform: translateY(1.25rem);
   }
 }
-.authlist .desktopdropdown-menu {
+.authlist .desktopdropdown-menu, .ordertable tbody tr td .action-dropdown {
   animation-name: slideUpIn;
 }
 
@@ -336,7 +336,7 @@ video::selection {
 }
 
 body {
-  background: hsl(0, 0%, 100%);
+  background: url(../images/bodybg.webp) no-repeat center center/cover;
   color: hsl(0, 0%, 19%);
   font-family: "Inter", sans-serif;
   font-size: 0.875rem;
@@ -632,6 +632,18 @@ button:focus,
 }
 .btn-remove:not([disabled]):hover svg path {
   stroke: #bf2231;
+}
+
+.btn-text {
+  background: hsl(0, 0%, 100%);
+  color: hsl(217, 100%, 56%);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  transition: color 350ms ease-in-out;
+}
+.btn-text:not([disabled]):hover {
+  color: hsl(217, 100%, 47%);
 }
 
 .cardservice {
@@ -1105,7 +1117,7 @@ input[type=search]::-webkit-search-results-decoration:focus {
 }
 
 .modal-content {
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
 }
 .modal-header {
   border-bottom: 0;
@@ -1283,6 +1295,178 @@ table tr th, table tr td {
   vertical-align: middle;
 }
 
+.ordertable thead {
+  background: hsl(207, 23%, 92%);
+}
+.ordertable thead tr th {
+  color: hsl(0, 0%, 11%);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.5rem 0.875rem;
+}
+@media screen and (min-width: 100rem) {
+  .ordertable thead tr th {
+    font-size: 0.875rem;
+  }
+}
+.ordertable tbody tr {
+  border-bottom: solid 0.0625rem hsl(207, 23%, 92%);
+}
+.ordertable tbody tr th .tableinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 9.375rem;
+}
+.ordertable tbody tr th p {
+  color: hsl(0, 0%, 19%);
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+@media screen and (min-width: 100rem) {
+  .ordertable tbody tr th p {
+    font-size: 0.875rem;
+  }
+}
+.ordertable tbody tr th p span {
+  font-weight: 500;
+}
+.ordertable tbody tr th .importid span {
+  color: hsl(217, 100%, 56%);
+}
+.ordertable tbody tr th .orderid span {
+  color: hsl(0, 0%, 11%);
+}
+.ordertable tbody tr td .tableinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 9.375rem;
+}
+.ordertable tbody tr td p {
+  color: hsl(0, 0%, 19%);
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+@media screen and (min-width: 100rem) {
+  .ordertable tbody tr td p {
+    font-size: 0.875rem;
+  }
+}
+.ordertable tbody tr td p span {
+  font-weight: 500;
+}
+.ordertable tbody tr td .address,
+.ordertable tbody tr td .totalcost {
+  font-weight: 500;
+}
+.ordertable tbody tr td .flag {
+  width: 1.125rem;
+  height: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.ordertable tbody tr td .status .paid {
+  color: hsl(168, 98%, 35%);
+}
+.ordertable tbody tr td .status .calculating {
+  color: hsl(0, 0%, 0%);
+}
+.ordertable tbody tr td .status .topay {
+  color: hsl(217, 100%, 56%);
+}
+.ordertable tbody tr td .status .waiting {
+  color: #ff9900;
+}
+.ordertable tbody tr td .status {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.ordertable tbody tr td .status .icon {
+  width: 0.5625rem;
+  height: 0.5625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.ordertable tbody tr td .status.orderplaced .icon svg circle {
+  fill: hsl(224, 15%, 66%);
+}
+.ordertable tbody tr td .status.approved .icon svg circle {
+  fill: hsl(209, 80%, 58%);
+}
+.ordertable tbody tr td .status.inwearhouse .icon svg circle {
+  fill: hsl(79, 85%, 59%);
+}
+.ordertable tbody tr td .status.shippingprocess .icon svg circle {
+  fill: hsl(105, 34%, 50%);
+}
+.ordertable tbody tr td .status.bdcustoms .icon svg circle {
+  fill: hsl(335, 100%, 72%);
+}
+.ordertable tbody tr td .status.pickedup .icon svg circle {
+  fill: #ff9900;
+}
+.ordertable tbody tr td .action {
+  position: relative;
+  cursor: pointer;
+}
+.ordertable tbody tr td .action .dropdownicon {
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.ordertable tbody tr td .action-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  border-radius: 0.25rem;
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0.1875rem 0.125rem 0.875rem 0.1875rem hsl(207, 23%, 92%);
+  min-width: 8rem;
+  display: none;
+}
+.ordertable tbody tr td .action-dropdown .dropdownlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  background: hsl(0, 0%, 100%);
+}
+.ordertable tbody tr td .action-dropdown .dropdownlist-item:last-of-type .dropdownlist-link {
+  border-bottom: 0;
+}
+.ordertable tbody tr td .action-dropdown .dropdownlist-link {
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 11%);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-bottom: solid 0.0625rem hsl(210, 35%, 93%);
+  transition: color 350ms ease-in-out;
+}
+@media screen and (min-width: 100rem) {
+  .ordertable tbody tr td .action-dropdown .dropdownlist-link {
+    font-size: 0.875rem;
+  }
+}
+.ordertable tbody tr td .action-dropdown .dropdownlist-link:not([disabled]):hover {
+  color: hsl(217, 100%, 56%);
+}
+.ordertable tbody tr td .action:not([disabled]):hover .action-dropdown {
+  display: block;
+}
+
 .importform {
   display: flex;
   flex-direction: column;
@@ -1327,6 +1511,15 @@ table tr th, table tr td {
   }
 }
 
+.searchform {
+  display: flex;
+  align-items: center;
+  border: solid 0.0625rem hsl(207, 23%, 92%);
+  border-radius: 0.25rem;
+  height: 3rem;
+  padding: 0.875rem 1rem;
+  gap: 1rem;
+}
 .desktoplist {
   margin: 0;
   padding: 0;
@@ -1351,33 +1544,6 @@ table tr th, table tr td {
   color: hsl(217, 100%, 56%);
 }
 .desktoplist-link.active {
-  color: hsl(217, 100%, 56%);
-}
-
-.dropdownlist {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  border: solid 0.0625rem hsl(210, 35%, 93%);
-  border-top: 0;
-  background: hsl(0, 0%, 100%);
-}
-.dropdownlist-item:last-of-type .dropdownlist-link {
-  border-bottom: 0;
-}
-.dropdownlist-link {
-  color: hsl(0, 0%, 11%);
-  font-size: 0.875rem;
-  font-weight: 600;
-  display: flex;
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border-bottom: solid 0.0625rem hsl(210, 35%, 93%);
-  transition: color 350ms ease-in-out;
-}
-.dropdownlist-link:not([disabled]):hover {
   color: hsl(217, 100%, 56%);
 }
 
@@ -1702,6 +1868,48 @@ table tr th, table tr td {
   width: 0rem;
   height: 0;
   display: none;
+}
+
+.pagination {
+  border-radius: 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+}
+.pagination .page-item:hover:not(.active) .page-link {
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 11%);
+}
+.pagination .page-item.active .page-link {
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 11%);
+}
+.pagination .page-item:first-child .page-link, .pagination .page-item:last-child .page-link {
+  border-radius: 0rem;
+}
+.pagination .page-item:first-child {
+  margin-right: 1rem;
+}
+.pagination .page-item:last-child {
+  margin-left: 1rem;
+}
+.pagination .page-link {
+  border: none;
+  background: hsl(0, 0%, 100%);
+  color: hsl(224, 15%, 66%);
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0rem;
+}
+.pagination .page-link:focus {
+  box-shadow: none;
+  outline: none;
 }
 
 .uppersection {
@@ -3113,6 +3321,282 @@ table tr th, table tr td {
 .trackorder-body .trackorderinfo-header .importid {
   color: hsl(0, 0%, 11%);
 }
+.orderlist {
+  padding: 3rem 0rem;
+}
+@media screen and (min-width: 62rem) {
+  .orderlist {
+    padding: 5rem 0rem;
+  }
+}
+@media screen and (min-width: 87.5rem) {
+  .orderlist {
+    padding: 7.5rem 0rem;
+  }
+}
+.orderlist-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media screen and (min-width: 62rem) {
+  .orderlist-content {
+    gap: 4rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .orderlist-content {
+    gap: 5rem;
+  }
+}
+@media screen and (min-width: 87.5rem) {
+  .orderlist-content {
+    gap: 6.25rem;
+  }
+}
+.orderlist-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+@media screen and (min-width: 62rem) {
+  .orderlist-header {
+    gap: 3rem;
+  }
+}
+.orderlist-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.emptyorder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 7.5rem 0rem;
+}
+.emptyorder-thumbnail {
+  width: 15.875rem;
+  height: 8.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.emptyorder .emptyinfo {
+  max-width: 28.625rem;
+}
+.emptyorder .emptyinfo p {
+  color: hsl(208, 9%, 59%);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+}
+.emptyorder .importfile {
+  max-width: 12.5rem;
+}
+
+.orderdetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+@media screen and (min-width: 62rem) {
+  .orderdetails {
+    padding: 2rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .orderdetails {
+    padding: 2.25rem;
+  }
+}
+.orderdetails-header {
+  border-bottom: solid 0.0625rem hsl(207, 23%, 92%);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+.orderdetails-header .headerinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.orderdetails-header .importdate {
+  color: hsl(208, 9%, 59%);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.orderdetails-header .estimatedate {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.orderdetails-header .estimatedate .icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.orderdetails-header .estimatedate .text {
+  color: hsl(168, 98%, 35%);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.orderdetails-header .itemtable thead {
+  background: hsl(207, 23%, 92%);
+}
+.orderdetails-header .itemtable thead tr th {
+  color: hsl(0, 0%, 19%);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-transform: uppercase;
+}
+.orderdetails-header .itemtable tbody tr th,
+.orderdetails-header .itemtable tbody tr td {
+  color: hsl(0, 0%, 19%);
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 0.3125rem 1rem;
+}
+.orderdetails-header .itemtable tbody tr td {
+  font-weight: 500;
+}
+.orderdetails-header .itemtable tbody tr:first-child th, .orderdetails-header .itemtable tbody tr:first-child td {
+  padding-top: 1.5rem;
+}
+.orderdetails-header .itemtable tbody tr:last-child td {
+  padding-top: 1.25rem;
+  font-weight: 500;
+}
+.orderdetails-body {
+  border-bottom: solid 0.0625rem hsl(207, 23%, 92%);
+  padding-bottom: 2rem;
+}
+.orderdetails-body .deliverytable thead tr th {
+  color: hsl(0, 0%, 19%);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.75rem 0;
+  text-transform: uppercase;
+}
+.orderdetails-body .deliverytable tbody th p {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.orderdetails-body .deliverytable tbody th .calculating {
+  color: hsl(0, 0%, 19%);
+}
+.orderdetails-body .deliverytable tbody th .waiting {
+  color: #ff9900;
+}
+.orderdetails-body .deliverytable tbody th .paid {
+  color: hsl(208, 9%, 59%);
+}
+.orderdetails-body .deliverytable tbody th .paid span {
+  color: hsl(168, 98%, 35%);
+}
+.orderdetails-body .deliverytable tbody td .address {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.orderdetails-body .deliverytable tbody td .address .title {
+  color: hsl(208, 9%, 59%);
+  font-family: "Inter", sans-serif;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+}
+.orderdetails-body .deliverytable tbody td .address p {
+  color: hsl(0, 0%, 19%);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+}
+.orderdetails-footer .summarytable thead tr th {
+  color: hsl(0, 0%, 19%);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.75rem 0;
+  text-transform: uppercase;
+}
+.orderdetails-footer .summarytable tbody th {
+  vertical-align: top;
+}
+.orderdetails-footer .summarytable tbody th .link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.orderdetails-footer .summarytable tbody th .link .icon {
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.orderdetails-footer .summarytable tbody th .link .text {
+  color: hsl(208, 9%, 59%);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.orderdetails-footer .summarytable tbody th .link:not([disabled]):hover .icon svg path {
+  stroke: hsl(217, 100%, 56%);
+}
+.orderdetails-footer .summarytable tbody th .link:not([disabled]):hover .text {
+  color: hsl(217, 100%, 56%);
+}
+.orderdetails-footer .summarytable tbody td .summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.orderdetails-footer .summarytable tbody td .summary-header {
+  border-bottom: solid 0.0625rem hsl(207, 23%, 92%);
+  padding-bottom: 1.25rem;
+}
+.orderdetails-footer .summarytable tbody td .summary-header .summarylist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.orderdetails-footer .summarytable tbody td .summary-header .summarylist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.orderdetails-footer .summarytable tbody td .summary-header .summarylist-item span {
+  color: hsl(208, 9%, 59%);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.orderdetails-footer .summarytable tbody td .summary-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.orderdetails-footer .summarytable tbody td .summary-body span {
+  color: hsl(0, 0%, 11%);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
 .errormain {
   width: 100%;
   min-height: 60vh;

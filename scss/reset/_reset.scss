@@ -110,7 +110,8 @@ video {
 }
 
 body {
-  @include setBgColor($white, $bodytext);
+  background: url(../images/bodybg.webp) no-repeat center center/cover;
+  color: $bodytext;
   font-family: $inter;
   font-size: size(14);
   font-weight: 400;

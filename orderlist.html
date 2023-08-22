@@ -17,7 +17,7 @@
   <!-- CUSTOM-CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="pe-0">
   <!-- PRELOADER START -->
   <div class="preloader" id="preloader">
     <div class="loader">
@@ -27,7 +27,7 @@
   <!-- PRELOADER END -->
 
   <!-- HEADER-SECTION START -->
-  <header class="header fixed-top">
+  <header class="header fixed-top pe-0">
     <div class="shipcontainer">
       <nav id="header-nav" class="d-flex align-items-center justify-content-between" aria-labelledby="header-nav">
         <!-- HAMBURGER-MENU -->
@@ -165,9 +165,1209 @@
   
   <!-- MAIN-SECTION START -->
   <main class="main">
-    <div class="shipcontainer">
-      
-    </div>
+    <!-- ORDER-LIST START -->
+    <section class="orderlist">
+      <div class="orderlist-content">
+        <div class="shipcontainer">
+          <div class="row">
+            <div class="col-lg-6 col-md-8 mx-md-auto">
+              <div class="orderlist-header">
+                <h1 class="display-2 fw-semibold">
+                  <span class="marked">Order</span> details
+                </h1>
+
+                <div class="info">
+                  <p>
+                    In order details you can track every step of your 
+                    import journey. Here, you'll find comprehensive 
+                    information about your order, from confirmation 
+                    to delivery. Monitor real-time updates, estimated 
+                    delivery dates, and shipping progress.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="shipcontainer">
+          <div class="row">
+            <div class="col-12">
+              <div class="orderlist-body">
+                <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
+                  <div class="titlebox">
+                    <h2 class="title fw-semibold">My order list</h2>
+                  </div>
+
+                  <form class="searchform">
+                    <input type="search" placeholder="Search Order list">
+                    
+                    <button type="button" class="btn-search">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.24889 5.61966e-08C8.61899 -0.0001705 9.96109 0.38789 11.1197 1.11922C12.2783 1.85054 13.2059 2.89519 13.7951 4.13212C14.3843 5.36905 14.611 6.74762 14.4488 8.10808C14.2867 9.46855 13.7423 10.7552 12.8789 11.819L17.7789 16.719C17.9134 16.8527 17.9923 17.0323 17.9997 17.2218C18.0071 17.4113 17.9425 17.5966 17.8188 17.7403C17.695 17.8841 17.5215 17.9756 17.333 17.9965C17.1445 18.0174 16.9551 17.9661 16.8029 17.853L16.7189 17.78L11.8179 12.88C10.9168 13.6111 9.85332 14.1153 8.71691 14.35C7.58051 14.5848 6.40434 14.5434 5.28726 14.2293C4.17019 13.9151 3.14484 13.3374 2.29738 12.5447C1.44993 11.752 0.805132 10.7675 0.417179 9.67385C0.0292265 8.58021 -0.0905459 7.40943 0.0679275 6.25989C0.226401 5.11035 0.65849 4.01565 1.32788 3.06778C1.99727 2.1199 2.88441 1.34655 3.91474 0.812724C4.94507 0.278894 6.08848 0.000178069 7.24889 5.61966e-08ZM7.24889 1.5C6.49379 1.5 5.74608 1.64873 5.04846 1.93769C4.35084 2.22666 3.71696 2.6502 3.18303 3.18414C2.64909 3.71807 2.22555 4.35195 1.93658 5.04957C1.64762 5.74719 1.49889 6.4949 1.49889 7.25C1.49889 8.0051 1.64762 8.75281 1.93658 9.45043C2.22555 10.1481 2.64909 10.7819 3.18303 11.3159C3.71696 11.8498 4.35084 12.2733 5.04846 12.5623C5.74608 12.8513 6.49379 13 7.24889 13C8.77388 13 10.2364 12.3942 11.3148 11.3159C12.3931 10.2375 12.9989 8.77499 12.9989 7.25C12.9989 5.72501 12.3931 4.26247 11.3148 3.18414C10.2364 2.1058 8.77388 1.5 7.24889 1.5Z" fill="#8C969F"/>
+                      </svg>
+                    </button>
+                  </form>
+                </div>
+
+                <div class="table-responsive">
+                  <table id="ordertable" class="ordertable" aria-describedby="ordertable">
+                    <thead>
+                      <tr>
+                        <th scope="col">Import / Order ID</th>
+                        <th scope="col">Import / Delivery date</th>
+                        <th scope="col">Total Item / Quantity</th>
+                        <th scope="col">Shipping method / From</th>
+                        <th scope="col">Total cost</th>
+                        <th scope="col">Payment method / status</th>
+                        <th scope="col">Shipping address</th>
+                        <th scope="col">Delivery status</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <!-- EMPTY-ORDER START -->
+                      <tr class="d-none">
+                        <td colspan="9">
+                          <div class="row">
+                            <div class="col-lg-6 col-md-8 mx-md-auto">
+                              <div class="emptyorder">
+                                <figure class="emptyorder-thumbnail">
+                                  <svg width="254" height="132" viewBox="0 0 254 132" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <rect width="254" height="132" fill="url(#emptyorder-pattern)"/>
+                                    <defs>
+                                      <pattern id="emptyorder-pattern" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <use xlink:href="#emptyorder-image" transform="matrix(0.00195312 0 0 0.00375829 0 -0.462121)"/>
+                                      </pattern>
+                                      <image id="emptyorder-image" width="512" height="512" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAgAElEQVR4Ae3d/e9kV13A8f4jogh9AMKv/mSCRFSkUlS2Iu32kXZbAqatYS1KwoOlphZbSZEI9BGFFlBA6IJYedKyUAopIAKVtkCMYtQfmmhM0F/GTMIkZ2bns/fMOffcmXv2RfLN3t25852Z11zu5z1n5vvtWWf5HwECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAIH5C/zPXTe+9L/ffvx+XwwcA30dA/9582999LvXXvboXL7+8drLv3rPsWM/qP361LGrvj3GY/6LY1c/UXtf3n/NsafGuC9Tfo/5TzWPIFtgedL/j2tes/DFwDHQ1zHwg0tetfjCC8+fzddDL7pgcdHV11d/3XLh5aM85hsuubb6vlxzxWtHuS9TPo/Zw8OO8xcQAH2d9A1xz+fqGBAAdfEjAOY/3zyCAQEBYGCsBoY/+zoWBIAAKFk5GBgZLu5JQAD0ddI3xD2fq2NAAAgAAdDTtG7wWASAgbEaGP7s61gQAAJAADQYmj19SwHQ10nfEPd8ro4BASAABEBP07rBYxEABsZqYPizr2NBAAgAAdBgaPb0LQVAXyd9Q9zzuToGBIAAEAA9TesGj0UAGBirgeHPvo4FASAABECDodnTtxQAfZ30DXHP5+oYEAACQAD0NK0bPBYBYGCsBoY/+zoWBIAAEAANhmZP31IA9HXSN8Q9n6tjQAAIAAHQ07Ru8FgEgIGxGhj+7OtYEAACQAA0GJo9fUsB0NdJ3xD3fK6OAQEgAARAT9O6wWMRAAbGamD4s69jQQAIAAHQYGj29C0FQF8nfUPc87k6BgSAABAAPU3rBo9FABgYq4Hhz76OBQEgAARAg6HZ07cUAH2d9A1xz+fqGBAAAkAA9DStGzwWAWBgrAaGP/s6FgSAABAADYZmT99SAPR10jfEPZ+rY0AACAAB0NO0bvBYBICBsRoY/uzrWBAAAkAANBiaPX1LAdDXSd8Q93yujgEBIAAEQE/TusFjEQAGxmpg+LOvY0EACAAB0GBo9vQtBUBfJ31D3PO5OgYEgAAQAD1N6waPRQAYGKuB4c++jgUBIAAEQIOh2dO3FAB9nfQNcc/n6hgQAAJAAPQ0rRs8likD4JFfeNniiz//0qqvr7/0wsXqBNf6z8fOP1J1X5eP9Ssv/rXJ7u83f/UV1fd3eZ9bu66+/3eOXDzK/f3hq66Z5D4/ddHlo9zf5WBeGbT8UwAIAAHQYGj29C2nDIDlcCk5INPrfO1Xjkxy8lyemL/6y79efX+//Isvm+z+fuOC36i+v0vrlkMp/d7ffvlFo9zff71ymgB48pWXjXJ/v3/0ykmMBYAASM+duds9zTePZUBAAMRLxgIgtkkHeem2AGjrKwAEQO7QT/cbGBku7klAAMQnYQEQ25QO/fR6AqCtrwAQAOlgz93uab55LAMCAiA+CQuA2CYd5KXbAqCtrwAQALlDP91vYGS4uCcBARCfhAVAbFM69NPrCYC2vgJAAKSDPXe7p/nmsQwICID4JCwAYpt0kJduC4C2vgJAAOQO/XS/gZHh4p4EBEB8EhYAsU3p0E+vJwDa+goAAZAO9tztnuabxzIgIADik7AAiG3SQV66LQDa+goAAZA79NP9BkaGi3sSEADxSVgAxDalQz+9ngBo6ysABEA62HO3e5pvHsuAgACIT8ICILZJB3nptgBo6ysABEDu0E/3GxgZLu5JQADEJ2EBENuUDv30egKgra8AEADpYM/d7mm+eSwDAgIgPgkLgNgmHeSl2wKgra8AEAC5Qz/db2BkuLgnAQEQn4QFQGxTOvTT6wmAtr4CQACkgz13u6f55rEMCAiA+CQsAGKbdJCXbguAtr4CQADkDv10v4GR4eKeBARAfBIWALFN6dBPrycA2voKAAGQDvbc7Z7mm8cyICAA4pOwAIht0kFeui0A2voKAAGQO/TT/QZGhot7EhAA8UlYAMQ2pUM/vZ4AaOsrAARAOthzt3uabx7LgIAAiE/CAiC2SQd56bYAaOsrAARA7tBP9xsYGS7uSUAAxCdhARDblA799HoCoK2vABAA6WDP3e5pvnksAwICID4JC4DYJh3kpdsCoK2vABAAuUM/3W9gZLi4JwEBEJ+EBUBsUzr00+sJgLa+AkAApIM9d7un+eaxDAgIgPgkLABim3SQl24LgLa+AkAA5A79dL+BkeHingQEQHwSFgCxTenQT68nANr6CgABkA723O2e5pvHMiAgAOKTsACIbdJBXrotANr6CgABkDv00/0GRoaLexIQAPFJWADENqVDP72eAGjrKwAEQDrYc7d7mm8ey4CAAIhPwgIgtkkHeem2AGjrKwAEQO7QT/cbGBku7klAAMQnYQEQ25QO/fR6AqCtrwAQAOlgz93uab55LAMCAiA+CQuA2CYd5KXbAqCtrwAQALlDP91vYGS4uCcBARCfhAVAbFM69NPrCYC2vgJAAKSDPXe7p/nmsQwICID4JCwAYpt0kJduC4C2vgJAAOQO/XS/gZHh4p4EBEB8EhYAsU3p0E+vJwDa+goAAZAO9tztnuabxzIgIADik7AAiG3SQV66LQDa+goAAZA79NP9BkaGi3sSEADxSVgAxDalQz+9ngBo6ysABEA62HO3e5pvHsuAgACIT8ICILZJB3nptgBo6ysABEDu0E/3GxgZLu5JQADEJ2EBENuUDv30egKgra8AEADpYM/d7mm+eSwDAgIgPgkLgNgmHeSl2wKgra8AEAC5Qz/db2BkuLgnAQEQn4QFQGxTOvTT6wmAtr4CQACkgz13u6f55rEMCAiA+CQsAGKbdJCXbguAtr4CQADkDv10v4GR4eKeBARAfBIWALFN6dBPrycA2voKAAGQDvbc7Z7mm8cyICAA4pOwAIht0kFeui0A2voKAAGQO/TT/QZGhot7EhAA8UlYAMQ2pUM/vZ4AaOsrAARAOthzt3uabx7LgIAAiE/CAiC2SQd56bYAaOsrAARA7tBP9xsYGS7uSUAAxCdhARDblA799HoCoK2vABAA6WDP3e5pvnksAwICID4JC4DYJh3kpdsCoK2vABAAuUM/3W9gZLi4JwEBEJ+EBUBsUzr00+sJgLa+AkAApIM9d7un+eaxDAgIgPgkLABim3SQl24LgLa+AkAA5A79dL+BkeHingQEQHwSFgCxTenQT68nANr6CgABkA723O2e5pvHMiAgAOKTsACIbdJBXrotANr6CgABkDv00/0GRoaLexIQAPFJWADENqVDP72eAGjrKwAEQDrYc7d7mm8ey4CAAIhPwgIgtkkHeem2AGjrKwAEQO7QT/cbGBku7klAAMQnYQEQ25QO/fR6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wSx9z21Qt7q/AkAACIC8V7ZWAPKcojgQAAJAABzYMSAABIAAyBtsAiDPSQAc2Em+1atH33f+bzMIAAEgAPIGmwDIcxIAAsAr/ZkcAwJAAAiAvMEmAPKcBMBMTv5ewc//FXztcygABIAAyBtsAiDPSQAIACsAMzkGBIAAEAB5g00A5DkJgJmc/GtfPbr+/FcQBIAAEAB5g00A5DkJAAFgBWAmx4AAEAACIG+wCYA8JwEwk5O/V/DzfwVf+xwKAAEgAPIGmwDIcxIAAsAKwEyOAQEgAARA3mATAHlOAmAmJ//aV4+uP/8VBAEgAARA3mATAHlOAkAAWAGYyTEgAASAAMgbbAIgz0kAzOTk7xX8/F/B1z6HAkAACIC8wSYA8pwEgACwAjCTY0AACAABkDfYBECekwCYycm/9tWj689/BUEACAABkDfYBECekwAQAFYAZnIMCAABIADyBpsAyHMSADM5+XsFP/9X8LXPoQAQAAIgb7AJgDwnASAArADM5BgQAAJAAOQNNgGQ5yQAZnLyr3316PrzX0EQAAJAAOQNNgGQ5yQABIAVgJkcAwJAAAiAvMEmAPKcBMBMTv5ewc//FXztcygABIAAyBtsAiDPSQAIACsAMzkGBIAAEAB5g00A5DkJgJmc/GtfPbr+/FcQBIAAEAB5g00A5DkJAAFgBWAmx4AAEAACIG+wCYA8pzAAfvfvP36/LwaOgcM5Bq68/4G/fsltdz96pn0du+9j//TbH3joBzVf1z/wN98/09yWj/eyP73rk4vH33rtmfb1w799zU1f+/NX3l/79V9ffv3xM81u+XjP8j8CBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAQL8C/w+PHUqEmGBUmAAAAABJRU5ErkJggg=="/>
+                                    </defs>
+                                  </svg>
+                                </figure>
+
+                                <div class="emptyinfo">
+                                  <p>
+                                    It appears that you haven't placed any orders yet. 
+                                    To enjoy our services, simply place an import request. 
+                                    Once the request is placed you will find you order details here.
+                                  </p>
+                                </div>
+
+                                <div class="importfile">
+                                  <a href="importpackage.html" class="btn-login">Import Package</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <!-- EMPTY-ORDER END -->
+                      
+                      <tr>
+                        <th scope="row">
+                          <div class="tableinfo">
+                            <p class="importid">
+                              Import ID : <span>Q6P9R2M7</span>
+                            </p>
+
+                            <p class="orderid">
+                              Order ID : <span>M3N6B8V2</span>
+                            </p>
+                          </div>
+                        </th>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="importdate">
+                              Import : <span>22 August, 2023</span>
+                            </p>
+
+                            <p class="deliverydate">
+                              Delivery : <span>23 September, 2023</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="totalitem">Item : <span>5</span></p>
+                            <p class="totalquantity">Quantity :  <span>13</span></p>
+                          </div>
+                        </td>
+                        
+                        <td>
+                          <div class="tableinfo">
+                            <p class="shippingmethod">Method : <span>Air Freight</span></p>
+
+                            <div class="d-flex gap-2">
+                              <p class="from">From : <span>China</span></p>
+                              <figure class="flag">
+                                <img src="assets/images/flag/flag-china.png" alt="flag-china">
+                              </figure>
+                            </div>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="totalcost">3,77,865 bdt</p>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="paymentmethod">Method : <span>Bank</span></p>
+
+                            <p class="status">
+                              Status : <span class="paid">Paid</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="address">
+                            Stadium market, sylhet, sylhet, 3100
+                          </p>
+                        </td>
+
+                        <td>
+                          <p class="status delivered">
+                            <span class="icon">
+                              <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="4.5" cy="4.5" r="4.5" fill="#02B290"/>
+                              </svg>
+                            </span>
+
+                            <span class="text">Delivered</span>
+                          </p>
+                        </td>
+
+                        <td>
+                          <div class="action">
+                            <figure class="dropdownicon">
+                              <svg width="14" height="4" viewBox="0 0 14 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.59098 3.15909C1.15158 3.15909 0.77469 3.00568 0.460296 2.69886C0.14969 2.38826 -0.00371942 2.01136 6.84555e-05 1.56818C-0.00371942 1.13636 0.14969 0.767045 0.460296 0.460227C0.77469 0.153409 1.15158 0 1.59098 0C2.00764 0 2.37507 0.153409 2.69325 0.460227C3.01522 0.767045 3.1781 1.13636 3.18189 1.56818C3.1781 1.86364 3.10045 2.13258 2.94893 2.375C2.8012 2.61364 2.60802 2.80492 2.36939 2.94886C2.13075 3.08902 1.87128 3.15909 1.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M6.59098 3.15909C6.15158 3.15909 5.77469 3.00568 5.4603 2.69886C5.14969 2.38826 4.99628 2.01136 5.00007 1.56818C4.99628 1.13636 5.14969 0.767045 5.4603 0.460227C5.77469 0.153409 6.15158 0 6.59098 0C7.00764 0 7.37507 0.153409 7.69325 0.460227C8.01522 0.767045 8.1781 1.13636 8.18189 1.56818C8.1781 1.86364 8.10045 2.13258 7.94893 2.375C7.8012 2.61364 7.60802 2.80492 7.36939 2.94886C7.13075 3.08902 6.87128 3.15909 6.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M11.591 3.15909C11.1516 3.15909 10.7747 3.00568 10.4603 2.69886C10.1497 2.38826 9.99628 2.01136 10.0001 1.56818C9.99628 1.13636 10.1497 0.767045 10.4603 0.460227C10.7747 0.153409 11.1516 0 11.591 0C12.0076 0 12.3751 0.153409 12.6933 0.460227C13.0152 0.767045 13.1781 1.13636 13.1819 1.56818C13.1781 1.86364 13.1004 2.13258 12.9489 2.375C12.8012 2.61364 12.608 2.80492 12.3694 2.94886C12.1308 3.08902 11.8713 3.15909 11.591 3.15909Z" fill="#9CA3B6"/>
+                              </svg>
+                            </figure>
+
+                            <div class="action-dropdown">
+                              <ul class="dropdownlist">
+                                <li class="dropdownlist-item">
+                                  <button type="button" class="dropdownlist-link" data-bs-toggle="modal" data-bs-target="#orderDetails">
+                                    Order details
+                                  </button>
+                                </li>
+
+                                <li class="dropdownlist-item">
+                                  <a href="trackorder.html" class="dropdownlist-link">
+                                    Track Order
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <th scope="row">
+                          <div class="tableinfo">
+                            <p class="importid">
+                              Import ID : <span>Q6P9R2M7</span>
+                            </p>
+
+                            <p class="orderid">
+                              Order ID : <span>M3N6B8V2</span>
+                            </p>
+                          </div>
+                        </th>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="importdate">
+                              Import : <span>22 August, 2023</span>
+                            </p>
+
+                            <p class="deliverydate">
+                              Delivery : <span>23 September, 2023</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="totalitem">Item : <span>5</span></p>
+                            <p class="totalquantity">Quantity :  <span>13</span></p>
+                          </div>
+                        </td>
+                        
+                        <td>
+                          <div class="tableinfo">
+                            <p class="shippingmethod">Method : <span>Air Freight</span></p>
+
+                            <div class="d-flex gap-2">
+                              <p class="from">From : <span>China</span></p>
+                              <figure class="flag">
+                                <img src="assets/images/flag/flag-china.png" alt="flag-china">
+                              </figure>
+                            </div>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="totalcost">3,77,865 bdt</p>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="paymentmethod">Method : <span>Bank</span></p>
+
+                            <p class="status">
+                              Status : <span class="calculating">Calculating</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="address">
+                            Stadium market, sylhet, sylhet, 3100
+                          </p>
+                        </td>
+
+                        <td>
+                          <p class="status orderplaced">
+                            <span class="icon">
+                              <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="4.5" cy="4.5" r="4.5" fill="#02B290"/>
+                              </svg>
+                            </span>
+
+                            <span class="text">Order placed</span>
+                          </p>
+                        </td>
+
+                        <td>
+                          <div class="action">
+                            <figure class="dropdownicon">
+                              <svg width="14" height="4" viewBox="0 0 14 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.59098 3.15909C1.15158 3.15909 0.77469 3.00568 0.460296 2.69886C0.14969 2.38826 -0.00371942 2.01136 6.84555e-05 1.56818C-0.00371942 1.13636 0.14969 0.767045 0.460296 0.460227C0.77469 0.153409 1.15158 0 1.59098 0C2.00764 0 2.37507 0.153409 2.69325 0.460227C3.01522 0.767045 3.1781 1.13636 3.18189 1.56818C3.1781 1.86364 3.10045 2.13258 2.94893 2.375C2.8012 2.61364 2.60802 2.80492 2.36939 2.94886C2.13075 3.08902 1.87128 3.15909 1.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M6.59098 3.15909C6.15158 3.15909 5.77469 3.00568 5.4603 2.69886C5.14969 2.38826 4.99628 2.01136 5.00007 1.56818C4.99628 1.13636 5.14969 0.767045 5.4603 0.460227C5.77469 0.153409 6.15158 0 6.59098 0C7.00764 0 7.37507 0.153409 7.69325 0.460227C8.01522 0.767045 8.1781 1.13636 8.18189 1.56818C8.1781 1.86364 8.10045 2.13258 7.94893 2.375C7.8012 2.61364 7.60802 2.80492 7.36939 2.94886C7.13075 3.08902 6.87128 3.15909 6.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M11.591 3.15909C11.1516 3.15909 10.7747 3.00568 10.4603 2.69886C10.1497 2.38826 9.99628 2.01136 10.0001 1.56818C9.99628 1.13636 10.1497 0.767045 10.4603 0.460227C10.7747 0.153409 11.1516 0 11.591 0C12.0076 0 12.3751 0.153409 12.6933 0.460227C13.0152 0.767045 13.1781 1.13636 13.1819 1.56818C13.1781 1.86364 13.1004 2.13258 12.9489 2.375C12.8012 2.61364 12.608 2.80492 12.3694 2.94886C12.1308 3.08902 11.8713 3.15909 11.591 3.15909Z" fill="#9CA3B6"/>
+                              </svg>
+                            </figure>
+
+                            <div class="action-dropdown">
+                              <ul class="dropdownlist">
+                                <li class="dropdownlist-item">
+                                  <button type="button" class="dropdownlist-link" data-bs-toggle="modal" data-bs-target="#orderDetails">
+                                    Order details
+                                  </button>
+                                </li>
+
+                                <li class="dropdownlist-item">
+                                  <a href="trackorder.html" class="dropdownlist-link">
+                                    Track Order
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <th scope="row">
+                          <div class="tableinfo">
+                            <p class="importid">
+                              Import ID : <span>Q6P9R2M7</span>
+                            </p>
+
+                            <p class="orderid">
+                              Order ID : <span>M3N6B8V2</span>
+                            </p>
+                          </div>
+                        </th>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="importdate">
+                              Import : <span>22 August, 2023</span>
+                            </p>
+
+                            <p class="deliverydate">
+                              Delivery : <span>23 September, 2023</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="totalitem">Item : <span>5</span></p>
+                            <p class="totalquantity">Quantity :  <span>13</span></p>
+                          </div>
+                        </td>
+                        
+                        <td>
+                          <div class="tableinfo">
+                            <p class="shippingmethod">Method : <span>Air Freight</span></p>
+
+                            <div class="d-flex gap-2">
+                              <p class="from">From : <span>China</span></p>
+                              <figure class="flag">
+                                <img src="assets/images/flag/flag-china.png" alt="flag-china">
+                              </figure>
+                            </div>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="totalcost">3,77,865 bdt</p>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="paymentmethod">Method : <span>Bank</span></p>
+
+                            <p class="status">
+                              Status : <span class="topay">Click to pay</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="address">
+                            Stadium market, sylhet, sylhet, 3100
+                          </p>
+                        </td>
+
+                        <td>
+                          <p class="status approved">
+                            <span class="icon">
+                              <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="4.5" cy="4.5" r="4.5" fill="#02B290"/>
+                              </svg>
+                            </span>
+
+                            <span class="text">Approved</span>
+                          </p>
+                        </td>
+
+                        <td>
+                          <div class="action">
+                            <figure class="dropdownicon">
+                              <svg width="14" height="4" viewBox="0 0 14 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.59098 3.15909C1.15158 3.15909 0.77469 3.00568 0.460296 2.69886C0.14969 2.38826 -0.00371942 2.01136 6.84555e-05 1.56818C-0.00371942 1.13636 0.14969 0.767045 0.460296 0.460227C0.77469 0.153409 1.15158 0 1.59098 0C2.00764 0 2.37507 0.153409 2.69325 0.460227C3.01522 0.767045 3.1781 1.13636 3.18189 1.56818C3.1781 1.86364 3.10045 2.13258 2.94893 2.375C2.8012 2.61364 2.60802 2.80492 2.36939 2.94886C2.13075 3.08902 1.87128 3.15909 1.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M6.59098 3.15909C6.15158 3.15909 5.77469 3.00568 5.4603 2.69886C5.14969 2.38826 4.99628 2.01136 5.00007 1.56818C4.99628 1.13636 5.14969 0.767045 5.4603 0.460227C5.77469 0.153409 6.15158 0 6.59098 0C7.00764 0 7.37507 0.153409 7.69325 0.460227C8.01522 0.767045 8.1781 1.13636 8.18189 1.56818C8.1781 1.86364 8.10045 2.13258 7.94893 2.375C7.8012 2.61364 7.60802 2.80492 7.36939 2.94886C7.13075 3.08902 6.87128 3.15909 6.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M11.591 3.15909C11.1516 3.15909 10.7747 3.00568 10.4603 2.69886C10.1497 2.38826 9.99628 2.01136 10.0001 1.56818C9.99628 1.13636 10.1497 0.767045 10.4603 0.460227C10.7747 0.153409 11.1516 0 11.591 0C12.0076 0 12.3751 0.153409 12.6933 0.460227C13.0152 0.767045 13.1781 1.13636 13.1819 1.56818C13.1781 1.86364 13.1004 2.13258 12.9489 2.375C12.8012 2.61364 12.608 2.80492 12.3694 2.94886C12.1308 3.08902 11.8713 3.15909 11.591 3.15909Z" fill="#9CA3B6"/>
+                              </svg>
+                            </figure>
+
+                            <div class="action-dropdown">
+                              <ul class="dropdownlist">
+                                <li class="dropdownlist-item">
+                                  <button type="button" class="dropdownlist-link" data-bs-toggle="modal" data-bs-target="#orderDetails">
+                                    Order details
+                                  </button>
+                                </li>
+
+                                <li class="dropdownlist-item">
+                                  <a href="trackorder.html" class="dropdownlist-link">
+                                    Track Order
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <th scope="row">
+                          <div class="tableinfo">
+                            <p class="importid">
+                              Import ID : <span>Q6P9R2M7</span>
+                            </p>
+
+                            <p class="orderid">
+                              Order ID : <span>M3N6B8V2</span>
+                            </p>
+                          </div>
+                        </th>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="importdate">
+                              Import : <span>22 August, 2023</span>
+                            </p>
+
+                            <p class="deliverydate">
+                              Delivery : <span>23 September, 2023</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="totalitem">Item : <span>5</span></p>
+                            <p class="totalquantity">Quantity :  <span>13</span></p>
+                          </div>
+                        </td>
+                        
+                        <td>
+                          <div class="tableinfo">
+                            <p class="shippingmethod">Method : <span>Air Freight</span></p>
+
+                            <div class="d-flex gap-2">
+                              <p class="from">From : <span>China</span></p>
+                              <figure class="flag">
+                                <img src="assets/images/flag/flag-china.png" alt="flag-china">
+                              </figure>
+                            </div>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="totalcost">3,77,865 bdt</p>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="paymentmethod">Method : <span>Bank</span></p>
+
+                            <p class="status">
+                              Status : <span class="waiting">Waiting</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="address">
+                            Stadium market, sylhet, sylhet, 3100
+                          </p>
+                        </td>
+
+                        <td>
+                          <p class="status inwearhouse">
+                            <span class="icon">
+                              <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="4.5" cy="4.5" r="4.5" fill="#02B290"/>
+                              </svg>
+                            </span>
+
+                            <span class="text">China warehouse</span>
+                          </p>
+                        </td>
+
+                        <td>
+                          <div class="action">
+                            <figure class="dropdownicon">
+                              <svg width="14" height="4" viewBox="0 0 14 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.59098 3.15909C1.15158 3.15909 0.77469 3.00568 0.460296 2.69886C0.14969 2.38826 -0.00371942 2.01136 6.84555e-05 1.56818C-0.00371942 1.13636 0.14969 0.767045 0.460296 0.460227C0.77469 0.153409 1.15158 0 1.59098 0C2.00764 0 2.37507 0.153409 2.69325 0.460227C3.01522 0.767045 3.1781 1.13636 3.18189 1.56818C3.1781 1.86364 3.10045 2.13258 2.94893 2.375C2.8012 2.61364 2.60802 2.80492 2.36939 2.94886C2.13075 3.08902 1.87128 3.15909 1.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M6.59098 3.15909C6.15158 3.15909 5.77469 3.00568 5.4603 2.69886C5.14969 2.38826 4.99628 2.01136 5.00007 1.56818C4.99628 1.13636 5.14969 0.767045 5.4603 0.460227C5.77469 0.153409 6.15158 0 6.59098 0C7.00764 0 7.37507 0.153409 7.69325 0.460227C8.01522 0.767045 8.1781 1.13636 8.18189 1.56818C8.1781 1.86364 8.10045 2.13258 7.94893 2.375C7.8012 2.61364 7.60802 2.80492 7.36939 2.94886C7.13075 3.08902 6.87128 3.15909 6.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M11.591 3.15909C11.1516 3.15909 10.7747 3.00568 10.4603 2.69886C10.1497 2.38826 9.99628 2.01136 10.0001 1.56818C9.99628 1.13636 10.1497 0.767045 10.4603 0.460227C10.7747 0.153409 11.1516 0 11.591 0C12.0076 0 12.3751 0.153409 12.6933 0.460227C13.0152 0.767045 13.1781 1.13636 13.1819 1.56818C13.1781 1.86364 13.1004 2.13258 12.9489 2.375C12.8012 2.61364 12.608 2.80492 12.3694 2.94886C12.1308 3.08902 11.8713 3.15909 11.591 3.15909Z" fill="#9CA3B6"/>
+                              </svg>
+                            </figure>
+
+                            <div class="action-dropdown">
+                              <ul class="dropdownlist">
+                                <li class="dropdownlist-item">
+                                  <button type="button" class="dropdownlist-link" data-bs-toggle="modal" data-bs-target="#orderDetails">
+                                    Order details
+                                  </button>
+                                </li>
+
+                                <li class="dropdownlist-item">
+                                  <a href="trackorder.html" class="dropdownlist-link">
+                                    Track Order
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <th scope="row">
+                          <div class="tableinfo">
+                            <p class="importid">
+                              Import ID : <span>Q6P9R2M7</span>
+                            </p>
+
+                            <p class="orderid">
+                              Order ID : <span>M3N6B8V2</span>
+                            </p>
+                          </div>
+                        </th>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="importdate">
+                              Import : <span>22 August, 2023</span>
+                            </p>
+
+                            <p class="deliverydate">
+                              Delivery : <span>23 September, 2023</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="totalitem">Item : <span>5</span></p>
+                            <p class="totalquantity">Quantity :  <span>13</span></p>
+                          </div>
+                        </td>
+                        
+                        <td>
+                          <div class="tableinfo">
+                            <p class="shippingmethod">Method : <span>Air Freight</span></p>
+
+                            <div class="d-flex gap-2">
+                              <p class="from">From : <span>China</span></p>
+                              <figure class="flag">
+                                <img src="assets/images/flag/flag-china.png" alt="flag-china">
+                              </figure>
+                            </div>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="totalcost">3,77,865 bdt</p>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="paymentmethod">Method : <span>Bank</span></p>
+
+                            <p class="status">
+                              Status :  <span class="paid">Paid</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="address">
+                            Stadium market, sylhet, sylhet, 3100
+                          </p>
+                        </td>
+
+                        <td>
+                          <p class="status shippingprocess">
+                            <span class="icon">
+                              <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="4.5" cy="4.5" r="4.5" fill="#02B290"/>
+                              </svg>
+                            </span>
+
+                            <span class="text">Shipping</span>
+                          </p>
+                        </td>
+
+                        <td>
+                          <div class="action">
+                            <figure class="dropdownicon">
+                              <svg width="14" height="4" viewBox="0 0 14 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.59098 3.15909C1.15158 3.15909 0.77469 3.00568 0.460296 2.69886C0.14969 2.38826 -0.00371942 2.01136 6.84555e-05 1.56818C-0.00371942 1.13636 0.14969 0.767045 0.460296 0.460227C0.77469 0.153409 1.15158 0 1.59098 0C2.00764 0 2.37507 0.153409 2.69325 0.460227C3.01522 0.767045 3.1781 1.13636 3.18189 1.56818C3.1781 1.86364 3.10045 2.13258 2.94893 2.375C2.8012 2.61364 2.60802 2.80492 2.36939 2.94886C2.13075 3.08902 1.87128 3.15909 1.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M6.59098 3.15909C6.15158 3.15909 5.77469 3.00568 5.4603 2.69886C5.14969 2.38826 4.99628 2.01136 5.00007 1.56818C4.99628 1.13636 5.14969 0.767045 5.4603 0.460227C5.77469 0.153409 6.15158 0 6.59098 0C7.00764 0 7.37507 0.153409 7.69325 0.460227C8.01522 0.767045 8.1781 1.13636 8.18189 1.56818C8.1781 1.86364 8.10045 2.13258 7.94893 2.375C7.8012 2.61364 7.60802 2.80492 7.36939 2.94886C7.13075 3.08902 6.87128 3.15909 6.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M11.591 3.15909C11.1516 3.15909 10.7747 3.00568 10.4603 2.69886C10.1497 2.38826 9.99628 2.01136 10.0001 1.56818C9.99628 1.13636 10.1497 0.767045 10.4603 0.460227C10.7747 0.153409 11.1516 0 11.591 0C12.0076 0 12.3751 0.153409 12.6933 0.460227C13.0152 0.767045 13.1781 1.13636 13.1819 1.56818C13.1781 1.86364 13.1004 2.13258 12.9489 2.375C12.8012 2.61364 12.608 2.80492 12.3694 2.94886C12.1308 3.08902 11.8713 3.15909 11.591 3.15909Z" fill="#9CA3B6"/>
+                              </svg>
+                            </figure>
+
+                            <div class="action-dropdown">
+                              <ul class="dropdownlist">
+                                <li class="dropdownlist-item">
+                                  <button type="button" class="dropdownlist-link" data-bs-toggle="modal" data-bs-target="#orderDetails">
+                                    Order details
+                                  </button>
+                                </li>
+
+                                <li class="dropdownlist-item">
+                                  <a href="trackorder.html" class="dropdownlist-link">
+                                    Track Order
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <th scope="row">
+                          <div class="tableinfo">
+                            <p class="importid">
+                              Import ID : <span>Q6P9R2M7</span>
+                            </p>
+
+                            <p class="orderid">
+                              Order ID : <span>M3N6B8V2</span>
+                            </p>
+                          </div>
+                        </th>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="importdate">
+                              Import : <span>22 August, 2023</span>
+                            </p>
+
+                            <p class="deliverydate">
+                              Delivery : <span>23 September, 2023</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="totalitem">Item : <span>5</span></p>
+                            <p class="totalquantity">Quantity :  <span>13</span></p>
+                          </div>
+                        </td>
+                        
+                        <td>
+                          <div class="tableinfo">
+                            <p class="shippingmethod">Method : <span>Air Freight</span></p>
+
+                            <div class="d-flex gap-2">
+                              <p class="from">From : <span>China</span></p>
+                              <figure class="flag">
+                                <img src="assets/images/flag/flag-china.png" alt="flag-china">
+                              </figure>
+                            </div>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="totalcost">3,77,865 bdt</p>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="paymentmethod">Method : <span>Bank</span></p>
+
+                            <p class="status">
+                              Status :  <span class="paid">Paid</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="address">
+                            Stadium market, sylhet, sylhet, 3100
+                          </p>
+                        </td>
+
+                        <td>
+                          <p class="status bdcustoms">
+                            <span class="icon">
+                              <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="4.5" cy="4.5" r="4.5" fill="#02B290"/>
+                              </svg>
+                            </span>
+
+                            <span class="text">BD customs</span>
+                          </p>
+                        </td>
+
+                        <td>
+                          <div class="action">
+                            <figure class="dropdownicon">
+                              <svg width="14" height="4" viewBox="0 0 14 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.59098 3.15909C1.15158 3.15909 0.77469 3.00568 0.460296 2.69886C0.14969 2.38826 -0.00371942 2.01136 6.84555e-05 1.56818C-0.00371942 1.13636 0.14969 0.767045 0.460296 0.460227C0.77469 0.153409 1.15158 0 1.59098 0C2.00764 0 2.37507 0.153409 2.69325 0.460227C3.01522 0.767045 3.1781 1.13636 3.18189 1.56818C3.1781 1.86364 3.10045 2.13258 2.94893 2.375C2.8012 2.61364 2.60802 2.80492 2.36939 2.94886C2.13075 3.08902 1.87128 3.15909 1.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M6.59098 3.15909C6.15158 3.15909 5.77469 3.00568 5.4603 2.69886C5.14969 2.38826 4.99628 2.01136 5.00007 1.56818C4.99628 1.13636 5.14969 0.767045 5.4603 0.460227C5.77469 0.153409 6.15158 0 6.59098 0C7.00764 0 7.37507 0.153409 7.69325 0.460227C8.01522 0.767045 8.1781 1.13636 8.18189 1.56818C8.1781 1.86364 8.10045 2.13258 7.94893 2.375C7.8012 2.61364 7.60802 2.80492 7.36939 2.94886C7.13075 3.08902 6.87128 3.15909 6.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M11.591 3.15909C11.1516 3.15909 10.7747 3.00568 10.4603 2.69886C10.1497 2.38826 9.99628 2.01136 10.0001 1.56818C9.99628 1.13636 10.1497 0.767045 10.4603 0.460227C10.7747 0.153409 11.1516 0 11.591 0C12.0076 0 12.3751 0.153409 12.6933 0.460227C13.0152 0.767045 13.1781 1.13636 13.1819 1.56818C13.1781 1.86364 13.1004 2.13258 12.9489 2.375C12.8012 2.61364 12.608 2.80492 12.3694 2.94886C12.1308 3.08902 11.8713 3.15909 11.591 3.15909Z" fill="#9CA3B6"/>
+                              </svg>
+                            </figure>
+
+                            <div class="action-dropdown">
+                              <ul class="dropdownlist">
+                                <li class="dropdownlist-item">
+                                  <button type="button" class="dropdownlist-link" data-bs-toggle="modal" data-bs-target="#orderDetails">
+                                    Order details
+                                  </button>
+                                </li>
+
+                                <li class="dropdownlist-item">
+                                  <a href="trackorder.html" class="dropdownlist-link">
+                                    Track Order
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <th scope="row">
+                          <div class="tableinfo">
+                            <p class="importid">
+                              Import ID : <span>Q6P9R2M7</span>
+                            </p>
+
+                            <p class="orderid">
+                              Order ID : <span>M3N6B8V2</span>
+                            </p>
+                          </div>
+                        </th>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="importdate">
+                              Import : <span>22 August, 2023</span>
+                            </p>
+
+                            <p class="deliverydate">
+                              Delivery : <span>23 September, 2023</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="totalitem">Item : <span>5</span></p>
+                            <p class="totalquantity">Quantity :  <span>13</span></p>
+                          </div>
+                        </td>
+                        
+                        <td>
+                          <div class="tableinfo">
+                            <p class="shippingmethod">Method : <span>Air Freight</span></p>
+
+                            <div class="d-flex gap-2">
+                              <p class="from">From : <span>China</span></p>
+                              <figure class="flag">
+                                <img src="assets/images/flag/flag-china.png" alt="flag-china">
+                              </figure>
+                            </div>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="totalcost">3,77,865 bdt</p>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="paymentmethod">Method : <span>Bank</span></p>
+
+                            <p class="status">
+                              Status :  <span class="paid">Paid</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="address">
+                            Stadium market, sylhet, sylhet, 3100
+                          </p>
+                        </td>
+
+                        <td>
+                          <p class="status pickedup">
+                            <span class="icon">
+                              <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="4.5" cy="4.5" r="4.5" fill="#02B290"/>
+                              </svg>
+                            </span>
+
+                            <span class="text">Picked up</span>
+                          </p>
+                        </td>
+
+                        <td>
+                          <div class="action">
+                            <figure class="dropdownicon">
+                              <svg width="14" height="4" viewBox="0 0 14 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.59098 3.15909C1.15158 3.15909 0.77469 3.00568 0.460296 2.69886C0.14969 2.38826 -0.00371942 2.01136 6.84555e-05 1.56818C-0.00371942 1.13636 0.14969 0.767045 0.460296 0.460227C0.77469 0.153409 1.15158 0 1.59098 0C2.00764 0 2.37507 0.153409 2.69325 0.460227C3.01522 0.767045 3.1781 1.13636 3.18189 1.56818C3.1781 1.86364 3.10045 2.13258 2.94893 2.375C2.8012 2.61364 2.60802 2.80492 2.36939 2.94886C2.13075 3.08902 1.87128 3.15909 1.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M6.59098 3.15909C6.15158 3.15909 5.77469 3.00568 5.4603 2.69886C5.14969 2.38826 4.99628 2.01136 5.00007 1.56818C4.99628 1.13636 5.14969 0.767045 5.4603 0.460227C5.77469 0.153409 6.15158 0 6.59098 0C7.00764 0 7.37507 0.153409 7.69325 0.460227C8.01522 0.767045 8.1781 1.13636 8.18189 1.56818C8.1781 1.86364 8.10045 2.13258 7.94893 2.375C7.8012 2.61364 7.60802 2.80492 7.36939 2.94886C7.13075 3.08902 6.87128 3.15909 6.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M11.591 3.15909C11.1516 3.15909 10.7747 3.00568 10.4603 2.69886C10.1497 2.38826 9.99628 2.01136 10.0001 1.56818C9.99628 1.13636 10.1497 0.767045 10.4603 0.460227C10.7747 0.153409 11.1516 0 11.591 0C12.0076 0 12.3751 0.153409 12.6933 0.460227C13.0152 0.767045 13.1781 1.13636 13.1819 1.56818C13.1781 1.86364 13.1004 2.13258 12.9489 2.375C12.8012 2.61364 12.608 2.80492 12.3694 2.94886C12.1308 3.08902 11.8713 3.15909 11.591 3.15909Z" fill="#9CA3B6"/>
+                              </svg>
+                            </figure>
+
+                            <div class="action-dropdown">
+                              <ul class="dropdownlist">
+                                <li class="dropdownlist-item">
+                                  <button type="button" class="dropdownlist-link" data-bs-toggle="modal" data-bs-target="#orderDetails">
+                                    Order details
+                                  </button>
+                                </li>
+
+                                <li class="dropdownlist-item">
+                                  <a href="trackorder.html" class="dropdownlist-link">
+                                    Track Order
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <th scope="row">
+                          <div class="tableinfo">
+                            <p class="importid">
+                              Import ID : <span>Q6P9R2M7</span>
+                            </p>
+
+                            <p class="orderid">
+                              Order ID : <span>M3N6B8V2</span>
+                            </p>
+                          </div>
+                        </th>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="importdate">
+                              Import : <span>22 August, 2023</span>
+                            </p>
+
+                            <p class="deliverydate">
+                              Delivery : <span>23 September, 2023</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="totalitem">Item : <span>5</span></p>
+                            <p class="totalquantity">Quantity :  <span>13</span></p>
+                          </div>
+                        </td>
+                        
+                        <td>
+                          <div class="tableinfo">
+                            <p class="shippingmethod">Method : <span>Air Freight</span></p>
+
+                            <div class="d-flex gap-2">
+                              <p class="from">From : <span>China</span></p>
+                              <figure class="flag">
+                                <img src="assets/images/flag/flag-china.png" alt="flag-china">
+                              </figure>
+                            </div>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="totalcost">3,77,865 bdt</p>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="paymentmethod">Method : <span>Bank</span></p>
+
+                            <p class="status">
+                              Status :  <span class="paid">Paid</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="address">
+                            Stadium market, sylhet, sylhet, 3100
+                          </p>
+                        </td>
+
+                        <td>
+                          <p class="status delivered">
+                            <span class="icon">
+                              <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="4.5" cy="4.5" r="4.5" fill="#02B290"/>
+                              </svg>
+                            </span>
+
+                            <span class="text">Delivered</span>
+                          </p>
+                        </td>
+
+                        <td>
+                          <div class="action">
+                            <figure class="dropdownicon">
+                              <svg width="14" height="4" viewBox="0 0 14 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.59098 3.15909C1.15158 3.15909 0.77469 3.00568 0.460296 2.69886C0.14969 2.38826 -0.00371942 2.01136 6.84555e-05 1.56818C-0.00371942 1.13636 0.14969 0.767045 0.460296 0.460227C0.77469 0.153409 1.15158 0 1.59098 0C2.00764 0 2.37507 0.153409 2.69325 0.460227C3.01522 0.767045 3.1781 1.13636 3.18189 1.56818C3.1781 1.86364 3.10045 2.13258 2.94893 2.375C2.8012 2.61364 2.60802 2.80492 2.36939 2.94886C2.13075 3.08902 1.87128 3.15909 1.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M6.59098 3.15909C6.15158 3.15909 5.77469 3.00568 5.4603 2.69886C5.14969 2.38826 4.99628 2.01136 5.00007 1.56818C4.99628 1.13636 5.14969 0.767045 5.4603 0.460227C5.77469 0.153409 6.15158 0 6.59098 0C7.00764 0 7.37507 0.153409 7.69325 0.460227C8.01522 0.767045 8.1781 1.13636 8.18189 1.56818C8.1781 1.86364 8.10045 2.13258 7.94893 2.375C7.8012 2.61364 7.60802 2.80492 7.36939 2.94886C7.13075 3.08902 6.87128 3.15909 6.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M11.591 3.15909C11.1516 3.15909 10.7747 3.00568 10.4603 2.69886C10.1497 2.38826 9.99628 2.01136 10.0001 1.56818C9.99628 1.13636 10.1497 0.767045 10.4603 0.460227C10.7747 0.153409 11.1516 0 11.591 0C12.0076 0 12.3751 0.153409 12.6933 0.460227C13.0152 0.767045 13.1781 1.13636 13.1819 1.56818C13.1781 1.86364 13.1004 2.13258 12.9489 2.375C12.8012 2.61364 12.608 2.80492 12.3694 2.94886C12.1308 3.08902 11.8713 3.15909 11.591 3.15909Z" fill="#9CA3B6"/>
+                              </svg>
+                            </figure>
+
+                            <div class="action-dropdown">
+                              <ul class="dropdownlist">
+                                <li class="dropdownlist-item">
+                                  <button type="button" class="dropdownlist-link" data-bs-toggle="modal" data-bs-target="#orderDetails">
+                                    Order details
+                                  </button>
+                                </li>
+
+                                <li class="dropdownlist-item">
+                                  <a href="trackorder.html" class="dropdownlist-link">
+                                    Track Order
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <th scope="row">
+                          <div class="tableinfo">
+                            <p class="importid">
+                              Import ID : <span>Q6P9R2M7</span>
+                            </p>
+
+                            <p class="orderid">
+                              Order ID : <span>M3N6B8V2</span>
+                            </p>
+                          </div>
+                        </th>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="importdate">
+                              Import : <span>22 August, 2023</span>
+                            </p>
+
+                            <p class="deliverydate">
+                              Delivery : <span>23 September, 2023</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="totalitem">Item : <span>5</span></p>
+                            <p class="totalquantity">Quantity :  <span>13</span></p>
+                          </div>
+                        </td>
+                        
+                        <td>
+                          <div class="tableinfo">
+                            <p class="shippingmethod">Method : <span>Air Freight</span></p>
+
+                            <div class="d-flex gap-2">
+                              <p class="from">From : <span>China</span></p>
+                              <figure class="flag">
+                                <img src="assets/images/flag/flag-china.png" alt="flag-china">
+                              </figure>
+                            </div>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="totalcost">3,77,865 bdt</p>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="paymentmethod">Method : <span>Bank</span></p>
+
+                            <p class="status">
+                              Status : <span class="paid">Paid</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="address">
+                            Stadium market, sylhet, sylhet, 3100
+                          </p>
+                        </td>
+
+                        <td>
+                          <p class="status delivered">
+                            <span class="icon">
+                              <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="4.5" cy="4.5" r="4.5" fill="#02B290"/>
+                              </svg>
+                            </span>
+
+                            <span class="text">Delivered</span>
+                          </p>
+                        </td>
+
+                        <td>
+                          <div class="action">
+                            <figure class="dropdownicon">
+                              <svg width="14" height="4" viewBox="0 0 14 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.59098 3.15909C1.15158 3.15909 0.77469 3.00568 0.460296 2.69886C0.14969 2.38826 -0.00371942 2.01136 6.84555e-05 1.56818C-0.00371942 1.13636 0.14969 0.767045 0.460296 0.460227C0.77469 0.153409 1.15158 0 1.59098 0C2.00764 0 2.37507 0.153409 2.69325 0.460227C3.01522 0.767045 3.1781 1.13636 3.18189 1.56818C3.1781 1.86364 3.10045 2.13258 2.94893 2.375C2.8012 2.61364 2.60802 2.80492 2.36939 2.94886C2.13075 3.08902 1.87128 3.15909 1.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M6.59098 3.15909C6.15158 3.15909 5.77469 3.00568 5.4603 2.69886C5.14969 2.38826 4.99628 2.01136 5.00007 1.56818C4.99628 1.13636 5.14969 0.767045 5.4603 0.460227C5.77469 0.153409 6.15158 0 6.59098 0C7.00764 0 7.37507 0.153409 7.69325 0.460227C8.01522 0.767045 8.1781 1.13636 8.18189 1.56818C8.1781 1.86364 8.10045 2.13258 7.94893 2.375C7.8012 2.61364 7.60802 2.80492 7.36939 2.94886C7.13075 3.08902 6.87128 3.15909 6.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M11.591 3.15909C11.1516 3.15909 10.7747 3.00568 10.4603 2.69886C10.1497 2.38826 9.99628 2.01136 10.0001 1.56818C9.99628 1.13636 10.1497 0.767045 10.4603 0.460227C10.7747 0.153409 11.1516 0 11.591 0C12.0076 0 12.3751 0.153409 12.6933 0.460227C13.0152 0.767045 13.1781 1.13636 13.1819 1.56818C13.1781 1.86364 13.1004 2.13258 12.9489 2.375C12.8012 2.61364 12.608 2.80492 12.3694 2.94886C12.1308 3.08902 11.8713 3.15909 11.591 3.15909Z" fill="#9CA3B6"/>
+                              </svg>
+                            </figure>
+
+                            <div class="action-dropdown">
+                              <ul class="dropdownlist">
+                                <li class="dropdownlist-item">
+                                  <button type="button" class="dropdownlist-link" data-bs-toggle="modal" data-bs-target="#orderDetails">
+                                    Order details
+                                  </button>
+                                </li>
+
+                                <li class="dropdownlist-item">
+                                  <a href="trackorder.html" class="dropdownlist-link">
+                                    Track Order
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <th scope="row">
+                          <div class="tableinfo">
+                            <p class="importid">
+                              Import ID : <span>Q6P9R2M7</span>
+                            </p>
+
+                            <p class="orderid">
+                              Order ID : <span>M3N6B8V2</span>
+                            </p>
+                          </div>
+                        </th>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="importdate">
+                              Import : <span>22 August, 2023</span>
+                            </p>
+
+                            <p class="deliverydate">
+                              Delivery : <span>23 September, 2023</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="totalitem">Item : <span>5</span></p>
+                            <p class="totalquantity">Quantity :  <span>13</span></p>
+                          </div>
+                        </td>
+                        
+                        <td>
+                          <div class="tableinfo">
+                            <p class="shippingmethod">Method : <span>Air Freight</span></p>
+
+                            <div class="d-flex gap-2">
+                              <p class="from">From : <span>China</span></p>
+                              <figure class="flag">
+                                <img src="assets/images/flag/flag-china.png" alt="flag-china">
+                              </figure>
+                            </div>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="totalcost">3,77,865 bdt</p>
+                        </td>
+
+                        <td>
+                          <div class="tableinfo">
+                            <p class="paymentmethod">Method : <span>Bank</span></p>
+
+                            <p class="status">
+                              Status : <span class="paid">Paid</span>
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <p class="address">
+                            Stadium market, sylhet, sylhet, 3100
+                          </p>
+                        </td>
+
+                        <td>
+                          <p class="status delivered">
+                            <span class="icon">
+                              <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="4.5" cy="4.5" r="4.5" fill="#02B290"/>
+                              </svg>
+                            </span>
+
+                            <span class="text">Delivered</span>
+                          </p>
+                        </td>
+
+                        <td>
+                          <div class="action">
+                            <figure class="dropdownicon">
+                              <svg width="14" height="4" viewBox="0 0 14 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.59098 3.15909C1.15158 3.15909 0.77469 3.00568 0.460296 2.69886C0.14969 2.38826 -0.00371942 2.01136 6.84555e-05 1.56818C-0.00371942 1.13636 0.14969 0.767045 0.460296 0.460227C0.77469 0.153409 1.15158 0 1.59098 0C2.00764 0 2.37507 0.153409 2.69325 0.460227C3.01522 0.767045 3.1781 1.13636 3.18189 1.56818C3.1781 1.86364 3.10045 2.13258 2.94893 2.375C2.8012 2.61364 2.60802 2.80492 2.36939 2.94886C2.13075 3.08902 1.87128 3.15909 1.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M6.59098 3.15909C6.15158 3.15909 5.77469 3.00568 5.4603 2.69886C5.14969 2.38826 4.99628 2.01136 5.00007 1.56818C4.99628 1.13636 5.14969 0.767045 5.4603 0.460227C5.77469 0.153409 6.15158 0 6.59098 0C7.00764 0 7.37507 0.153409 7.69325 0.460227C8.01522 0.767045 8.1781 1.13636 8.18189 1.56818C8.1781 1.86364 8.10045 2.13258 7.94893 2.375C7.8012 2.61364 7.60802 2.80492 7.36939 2.94886C7.13075 3.08902 6.87128 3.15909 6.59098 3.15909Z" fill="#9CA3B6"/>
+                                <path d="M11.591 3.15909C11.1516 3.15909 10.7747 3.00568 10.4603 2.69886C10.1497 2.38826 9.99628 2.01136 10.0001 1.56818C9.99628 1.13636 10.1497 0.767045 10.4603 0.460227C10.7747 0.153409 11.1516 0 11.591 0C12.0076 0 12.3751 0.153409 12.6933 0.460227C13.0152 0.767045 13.1781 1.13636 13.1819 1.56818C13.1781 1.86364 13.1004 2.13258 12.9489 2.375C12.8012 2.61364 12.608 2.80492 12.3694 2.94886C12.1308 3.08902 11.8713 3.15909 11.591 3.15909Z" fill="#9CA3B6"/>
+                              </svg>
+                            </figure>
+
+                            <div class="action-dropdown">
+                              <ul class="dropdownlist">
+                                <li class="dropdownlist-item">
+                                  <button type="button" class="dropdownlist-link" data-bs-toggle="modal" data-bs-target="#orderDetails">
+                                    Order details
+                                  </button>
+                                </li>
+
+                                <li class="dropdownlist-item">
+                                  <a href="trackorder.html" class="dropdownlist-link">
+                                    Track Order
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="d-flex justify-content-center justify-content-lg-end">
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="30" height="30" rx="4" transform="matrix(-1 0 0 1 30 0)" fill="#FBFCFD"/>
+                            <path d="M17.8664 19.8823C17.9521 19.8054 18 19.7021 18 19.5946C18 19.487 17.9521 19.3838 17.8664 19.3068L13.0827 15L17.8664 10.694C17.9521 10.6171 18 10.5138 18 10.4063C18 10.2987 17.9521 10.1955 17.8664 10.1185C17.8248 10.081 17.7751 10.0512 17.7201 10.0308C17.6651 10.0105 17.6061 10 17.5464 10C17.4868 10 17.4277 10.0105 17.3727 10.0308C17.3178 10.0512 17.268 10.081 17.2264 10.1185L12.1393 14.6993C12.05 14.7798 12 14.8877 12 15C12 15.1123 12.05 15.2202 12.1393 15.3007L17.2264 19.8815C17.268 19.919 17.3178 19.9488 17.3727 19.9692C17.4277 19.9895 17.4868 20 17.5464 20C17.6061 20 17.6651 19.9895 17.7201 19.9692C17.7751 19.9488 17.8248 19.919 17.8664 19.8815V19.8823Z" fill="#CDCDCD"/>
+                          </svg>
+                        </a>
+                      </li>
+
+                      <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+
+                      <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                      </li>
+
+                      <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                      </li>
+
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="30" height="30" rx="4" fill="#F3F6F9"/>
+                            <path d="M12.1336 19.8823C12.0479 19.8054 12 19.7021 12 19.5946C12 19.487 12.0479 19.3838 12.1336 19.3068L16.9173 15L12.1336 10.694C12.0479 10.6171 12 10.5138 12 10.4063C12 10.2987 12.0479 10.1955 12.1336 10.1185C12.1752 10.081 12.2249 10.0512 12.2799 10.0308C12.3349 10.0105 12.3939 10 12.4536 10C12.5132 10 12.5723 10.0105 12.6273 10.0308C12.6822 10.0512 12.732 10.081 12.7736 10.1185L17.8607 14.6993C17.95 14.7798 18 14.8877 18 15C18 15.1123 17.95 15.2202 17.8607 15.3007L12.7736 19.8815C12.732 19.919 12.6822 19.9488 12.6273 19.9692C12.5723 19.9895 12.5132 20 12.4536 20C12.3939 20 12.3349 19.9895 12.2799 19.9692C12.2249 19.9488 12.1752 19.919 12.1336 19.8815V19.8823Z" fill="#565758"/>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ORDER-LIST END -->
   </main>
   <!-- MAIN-SECTION END -->
 
@@ -402,6 +1602,220 @@
     </div>
   </footer>
   <!-- FOOTER-SECTION END -->
+
+  <!-- ORDER-DETAILS START -->
+  <div class="modal fade pe-0" id="orderDetails" tabindex="-1" aria-labelledby="orderDetails" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="orderdetails">
+            <div class="orderdetails-header">
+              <div class="d-flex flex-column gap-4">
+                <div class="headerinfo">
+                  <h2 class="fw-normal">
+                    Import ID : <span class="fw-medium">Q6P9R2M7</span>
+                  </h2>
+    
+                  <p class="order-id fw-normal">
+                    Order ID : <span class="fw-medium">M3N6B8V2</span>
+                  </p>
+                </div>
+  
+                <div class="d-flex align-items-center gap-2 flex-wrap">
+                  <p class="importdate">Import request date : 21/10/2023</p>
+  
+                  <figure class="divider">
+                    <svg width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <line x1="0.5" y1="2.18552e-08" x2="0.499999" y2="16" stroke="#E7ECF0"/>
+                    </svg>
+                  </figure>
+  
+                  <p class="estimatedate">
+                    <span class="icon">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.875 4.87497L13.125 2.69997C13.4134 2.41155 13.8046 2.24951 14.2125 2.24951C14.6204 2.24951 15.0116 2.41155 15.3 2.69997C15.5884 2.98839 15.7505 3.37958 15.7505 3.78747C15.7505 4.19536 15.5884 4.58655 15.3 4.87497L13.125 7.12497L15 12.75L13.125 14.6625L10.5 9.74997L8.25 12V14.25L6.75 15.75L5.625 12.375L2.25 11.25L3.75 9.74997H6L8.25 7.49997L3.375 4.87497L5.25 2.99997L10.875 4.87497Z" stroke="#02B290" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+  
+                    <span class="text">Estimated delivery : 21/10/2023</span>
+                  </p>
+                </div>
+              </div>
+              
+              <div class="table-responsive">
+                <table id="itemtable" class="itemtable w-100" aria-describedby="itemtable">
+                  <thead>
+                    <tr>
+                      <th scope="col">Item details</th>
+                      <th scope="col" class="text-end">Quantity</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>                    
+                    <tr>
+                      <th scope="row">
+                        1. Stellar Galaxy Backpack
+                      </th>
+
+                      <td class="text-end">
+                        4
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">
+                        2. Midnight Serenade Perfume
+                      </th>
+
+                      <td class="text-end">
+                        2
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">
+                        3. Solar Flare Gaming Mouse
+                      </th>
+
+                      <td class="text-end">
+                        3
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">
+                        4. Arctic Breeze Cooling Fan
+                      </th>
+
+                      <td class="text-end">
+                        1
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td colspan="2" class="text-end">
+                        Total Quantity : 8
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="orderdetails-body">
+              <table id="deliverytable" class="deliverytable w-100" aria-describedby="deliverytable">
+                <thead>
+                  <tr>
+                    <th scope="col">Payment</th>
+                    <th scope="col">Delivery</th>
+                  </tr>
+                </thead>
+
+                <tbody>                    
+                  <tr>
+                    <th scope="row">
+                      <div class="d-flex flex-column align-items-start gap-3">
+                        <p class="calculating">Calculating</p>
+                        <button class="btn-text">Click to pay</button>
+                        <p class="waiting">Waiting for confirmation</p>
+                        <p class="paid">
+                          <span>Paid</span> - via bKash / bank
+                        </p>
+                      </div>
+                    </th>
+
+                    <td>
+                      <div class="d-flex flex-column gap-4">
+                        <div class="address">
+                          <h5 class="title">Address</h5>
+                          <p>Stadium market, sylhet, sylhet, 3100</p>
+                        </div>
+
+                        <div class="address">
+                          <h5 class="title">Delivery Method</h5>
+                          <p>Air Freight (26 days approx)</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="orderdetails-footer">
+              <table id="summarytable" class="summarytable w-100" aria-describedby="summarytable">
+                <thead>
+                  <tr>
+                    <th scope="col">Need help?</th>
+                    <th scope="col">order summary</th>
+                  </tr>
+                </thead>
+
+                <tbody>                    
+                  <tr>
+                    <th scope="row">
+                      <a href="support.html" class="link">
+                        <span class="icon">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#support-icon)">
+                              <path d="M7.99967 14.6668C11.6816 14.6668 14.6663 11.6821 14.6663 8.00016C14.6663 4.31826 11.6816 1.3335 7.99967 1.3335C4.31778 1.3335 1.33301 4.31826 1.33301 8.00016C1.33301 11.6821 4.31778 14.6668 7.99967 14.6668Z" stroke="#8C969F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M6.05957 5.99989C6.21631 5.55434 6.52567 5.17863 6.93287 4.93931C7.34008 4.7 7.81883 4.61252 8.28435 4.69237C8.74988 4.77222 9.17211 5.01424 9.47629 5.37558C9.78046 5.73691 9.94694 6.19424 9.94624 6.66656C9.94624 7.99989 7.94624 8.66656 7.94624 8.66656" stroke="#8C969F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M8 11.3335H8.00667" stroke="#8C969F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                              <clipPath id="support-icon">
+                                <rect width="16" height="16" fill="white"/>
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </span>
+
+                        <span class="text">Support here</span>
+                      </a>
+                    </th>
+
+                    <td>
+                      <div class="summary">
+                        <div class="summary-header">
+                          <ul class="summarylist">
+                            <li class="summarylist-item">
+                              <span>Delivery method</span>
+                              <span>7,426 bdt</span>
+                            </li>
+                            
+                            <li class="summarylist-item">
+                              <span>Customs charge</span>
+                              <span>726 bdt</span>
+                            </li>
+
+                            <li class="summarylist-item">
+                              <span>Warehouse charge</span>
+                              <span>742 bdt</span>
+                            </li>
+
+                            <li class="summarylist-item">
+                              <span>Delivery charge</span>
+                              <span>426 bdt</span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div class="summary-body">
+                          <span>Total</span>
+                          <span>9320 bdt</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ORDER-DETAILS END -->
   
   <!-- BOOTSTRAP-JS(5.3.1) -->
   <script src="assets/js/bootsrap/bootstrap.bundle.min.js"></script>
