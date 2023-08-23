@@ -2428,6 +2428,73 @@ table tr th, table tr td {
   height: 0.125rem;
 }
 
+.pricing {
+  background: hsl(240, 30%, 8%);
+  padding: 3rem 0rem;
+}
+@media screen and (min-width: 62rem) {
+  .pricing {
+    padding: 5rem 0rem;
+  }
+}
+@media screen and (min-width: 100rem) {
+  .pricing {
+    padding: 7.75rem 0rem;
+  }
+}
+.pricing-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media screen and (min-width: 62rem) {
+  .pricing-details {
+    gap: 3rem;
+  }
+}
+@media screen and (min-width: 100rem) {
+  .pricing-details {
+    gap: 5rem;
+  }
+}
+.pricing-details h2 {
+  color: hsl(0, 0%, 100%);
+}
+.pricing-details .pricinglist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+@media screen and (min-width: 62rem) {
+  .pricing-details .pricinglist {
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 100rem) {
+  .pricing-details .pricinglist {
+    gap: 3rem;
+  }
+}
+.pricing-details .pricinglist-item {
+  display: flex;
+  gap: 0.625rem;
+}
+.pricing-details .pricinglist-item .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.pricing-details .pricinglist-item .text {
+  color: hsl(210, 35%, 93%);
+  width: calc(100% - 2.125rem);
+}
+
 .uppersection {
   background: hsl(240, 30%, 8%);
   min-height: 20.5rem;

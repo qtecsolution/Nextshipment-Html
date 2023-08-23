@@ -339,7 +339,7 @@
 
           .submitbutton {
             @include w100;
-            
+
             button {
               @include w100;
             }
@@ -398,6 +398,65 @@
         background: $headerborder;
         @include w100;
         height: size(2);
+      }
+    }
+  }
+}
+
+.pricing {
+  background: $sectionbgdark;
+  padding: size(48) size(0);
+  
+  @include breakpoint(tab992) {
+    padding: size(80) size(0);
+  }
+
+  @include breakpoint(desktop1600) {
+    padding: size(124) size(0);
+  }
+
+  &-details {
+    @include flex-column;
+    gap: size(32);
+  
+    @include breakpoint(tab992) {
+      gap: size(48);
+    }
+  
+    @include breakpoint(desktop1600) {
+      gap: size(80);
+    }
+
+    h2 {
+      color: $white;
+    }
+
+    .pricinglist {
+      @include list-vertical;
+      gap: size(10);
+  
+      @include breakpoint(tab992) {
+        gap: size(32);
+      }
+  
+      @include breakpoint(desktop1600) {
+        gap: size(48);
+      }
+
+      &-item {
+        @include flex;
+        gap: size(10);
+
+        .icon {
+          @include square(24);
+          @include flex-center;
+          overflow: hidden;
+        }
+
+        .text {
+          color: $headerborder;
+          width: calc(100% - size(34));
+        }
       }
     }
   }
