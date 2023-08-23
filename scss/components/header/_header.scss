@@ -32,4 +32,11 @@
       @include wh100;
     }
   }
+
+  &.scrolled {
+    background: rgba($white, 0.7);
+    -webkit-backdrop-filter: blur(size(20));
+    backdrop-filter: blur(size(20));
+    box-shadow: $headershadow;
+  }
 }

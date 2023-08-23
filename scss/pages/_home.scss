@@ -1,6 +1,28 @@
 @use "../global" as *;
 @use "../partials" as *;
 
+.homebanner {
+  background: $sectionbg;
+  padding-bottom: size(48);
+
+  .details {
+    padding: size(48) size(0) size(0);
+    @include flex-column;
+    gap: size(24);
+
+    @include breakpoint(desktop1200) {
+      gap: size(48);
+    }
+    
+    .icon {
+      width: size(68);
+      height: size(41);
+      @include flex-center;
+      overflow: hidden;
+    }
+  }
+}
+
 .uppersection {
   background: $sectionbgdark;
   min-height: size(328);
