@@ -340,7 +340,7 @@ body {
   color: hsl(0, 0%, 19%);
   font-family: "Inter", sans-serif;
   font-size: 0.875rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
   overflow-x: hidden;
@@ -1125,6 +1125,28 @@ input[type=search]::-webkit-search-results-decoration:focus {
 
 .form-check-input.is-valid ~ .form-check-label::after, .was-validated .form-check-input:valid ~ .form-check-label::after {
   border-color: hsl(152, 69%, 31%);
+}
+
+.radiobox input[type=radio]:checked ~ .radiolabel {
+  color: hsl(217, 100%, 56%);
+}
+.radiobox .radiolabel {
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 11%);
+  border-radius: 0.125rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  height: 2.5rem;
+}
+@media screen and (min-width: 87.5rem) {
+  .radiobox .radiolabel {
+    font-size: 1rem;
+  }
 }
 
 .offcanvas {
@@ -2152,6 +2174,258 @@ table tr th, table tr td {
 }
 .trackpackage-detail .mytrack {
   max-width: 13.5rem;
+}
+
+.managedelivery {
+  padding: 3rem 0rem;
+}
+@media screen and (min-width: 62rem) {
+  .managedelivery {
+    padding: 5rem 0rem;
+  }
+}
+@media screen and (min-width: 100rem) {
+  .managedelivery {
+    padding: 7.75rem 0rem;
+  }
+}
+.managedelivery .deliverydetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 62rem) {
+  .managedelivery .deliverydetails {
+    margin-bottom: 0rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .managedelivery .deliverydetails {
+    gap: 3rem;
+  }
+}
+.managedelivery-thumbnail {
+  width: 100%;
+  min-height: 13.375rem;
+  max-height: 33.4375rem;
+  position: relative;
+}
+@media screen and (min-width: 48rem) {
+  .managedelivery-thumbnail {
+    min-height: 21.875rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .managedelivery-thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 100rem) {
+  .managedelivery-thumbnail {
+    min-height: 33.4375rem;
+  }
+}
+.managedelivery-thumbnail img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 100;
+}
+.managedelivery-thumbnail .deliveriesicon {
+  display: none;
+  position: absolute;
+  left: -18.3125rem;
+  bottom: 0rem;
+  width: 39.8125rem;
+  height: 24rem;
+}
+@media screen and (min-width: 62rem) {
+  .managedelivery-thumbnail .deliveriesicon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .managedelivery-thumbnail .deliveriesicon {
+    bottom: -2.25rem;
+  }
+}
+@media screen and (min-width: 100rem) {
+  .managedelivery-thumbnail .deliveriesicon {
+    bottom: 0rem;
+  }
+}
+@media screen and (min-width: 112.5rem) {
+  .managedelivery-thumbnail .deliveriesicon {
+    bottom: -2.25rem;
+  }
+}
+
+.pricesection {
+  padding: 3rem 0rem;
+}
+@media screen and (min-width: 62rem) {
+  .pricesection {
+    padding: 5rem 0rem;
+  }
+}
+@media screen and (min-width: 100rem) {
+  .pricesection {
+    padding: 7.75rem 0rem;
+  }
+}
+.pricesection-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media screen and (min-width: 62rem) {
+  .pricesection-detail {
+    gap: 3rem;
+  }
+}
+.pricesection-detail .cost {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.pricesection-detail .cost-header .title {
+  color: hsl(0, 0%, 77%);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+}
+@media screen and (min-width: 87.5rem) {
+  .pricesection-detail .cost-header .title {
+    font-size: 2rem;
+  }
+}
+.pricesection-detail .cost-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.pricesection-detail .cost-body .costinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.pricesection-detail .cost-body .costinfo .title {
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.pricesection-detail .cost-body .costinfo h5 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+}
+.pricesection-detail .cost-body .costinfo .icon {
+  width: 1.8125rem;
+  height: 1.8125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.pricesection .shippingcost {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.pricesection .shippingcost-header .title {
+  color: hsl(0, 0%, 11%);
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+.pricesection .shippingcost-body .costform {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media screen and (min-width: 62rem) {
+  .pricesection .shippingcost-body .costform {
+    gap: 3rem;
+  }
+}
+.pricesection .shippingcost-body .costform .shipmethod {
+  border: solid 0.0625rem hsl(207, 23%, 92%);
+  border-radius: 0.25rem;
+  padding: 0.625rem;
+}
+.pricesection .shippingcost-body .costform .submitbox {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.pricesection .shippingcost-body .costform .submitbox .submitbutton {
+  width: 100%;
+}
+.pricesection .shippingcost-body .costform .submitbox .submitbutton button {
+  width: 100%;
+}
+@media screen and (min-width: 48rem) {
+  .pricesection .shippingcost-body .costform .submitbox .submitbutton {
+    width: 12.5rem;
+  }
+}
+.pricesection .shippingcost-body .costform .submitbox .estematecost {
+  width: 100%;
+}
+@media screen and (min-width: 48rem) {
+  .pricesection .shippingcost-body .costform .submitbox .estematecost {
+    width: calc(100% - 13.75rem);
+  }
+}
+.pricesection .shippingcost-body .costform .submitbox .estematecost h5 {
+  font-size: 1rem;
+}
+@media screen and (min-width: 100rem) {
+  .pricesection .shippingcost-body .costform .submitbox .estematecost h5 {
+    font-size: 1.5rem;
+  }
+}
+
+.achievements {
+  padding: 3rem 0rem;
+}
+@media screen and (min-width: 62rem) {
+  .achievements {
+    padding: 5rem 0rem;
+  }
+}
+@media screen and (min-width: 100rem) {
+  .achievements {
+    padding: 7.75rem 0rem;
+  }
+}
+.achievements-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+@media screen and (min-width: 75rem) {
+  .achievements-content {
+    gap: 5rem;
+  }
+}
+.achievements-content .leftinfo,
+.achievements-content .rightinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+.achievements-content .leftinfo .divider,
+.achievements-content .rightinfo .divider {
+  background: hsl(210, 35%, 93%);
+  width: 100%;
+  height: 0.125rem;
 }
 
 .uppersection {
@@ -3909,4 +4183,17 @@ table tr th, table tr td {
 
 .getstarted {
   max-width: 10rem;
+}
+
+.formlabel {
+  color: hsl(0, 0%, 11%);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 87.5rem) {
+  .formlabel {
+    font-size: 1rem;
+  }
 }

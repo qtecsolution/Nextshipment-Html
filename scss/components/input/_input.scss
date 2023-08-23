@@ -244,3 +244,26 @@ input[type="search"]::-webkit-search-results-decoration {
     border-color: $success;
   }
 }
+
+.radiobox {
+  input[type="radio"] {
+    &:checked ~ .radiolabel {
+      color: $primary;
+    }
+  }
+
+  .radiolabel {
+    @include setBgColor($white, $blacktext);
+    @include radius(2);
+    cursor: pointer;
+    @include flex-center;
+    font-size: size(14);
+    font-style: normal;
+    font-weight: 600;
+    height: size(40);
+    
+    @include breakpoint(desktop1400) {
+      font-size: size(16);
+    }
+  }
+}

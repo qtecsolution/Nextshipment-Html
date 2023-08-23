@@ -39,3 +39,15 @@
 .getstarted {
   max-width: size(160);
 }
+
+.formlabel {
+  color: $blacktext;
+  font-size: size(14);
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  @include breakpoint(desktop1400) {
+    font-size: size(16);
+  }
+}
