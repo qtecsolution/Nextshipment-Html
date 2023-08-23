@@ -148,3 +148,66 @@
     font-weight: 300;
   }
 }
+
+.cardpackage {
+  background: $white;
+  @include border(solid, 1, $headerborder);
+  @include radius(4);
+  @include flex-column;
+  gap: size(24);
+  padding: size(24) size(30) size(30);
+  @include wh100;
+
+  &-header {
+    @include flex-column;
+    gap: size(20);
+
+    .icon {
+      @include square(50);
+      @include circle;
+      @include flex-center;
+      padding: size(13);
+    }
+
+    .title {
+      color: $blacktext;
+      font-weight: 600;
+    }
+  }
+
+  &-body {
+    p {
+      font-size: size(12);
+      font-style: normal;
+      font-weight: 300;
+
+      @include breakpoint(desktop1400) {
+        font-size: size(14);
+      }
+    }
+  }
+
+  &.package-1 {
+    .cardpackage-header {
+      .icon {
+        background: $icon-4-bg;
+      }
+    }
+  }
+
+  &.package-2 {
+    .cardpackage-header {
+      .icon {
+        background: $icon-7-bg;
+      }
+    }
+  }
+
+  &.package-3 {
+    .cardpackage-header {
+      .icon {
+        background: $icon-8-bg;
+      }
+    }
+  }
+}

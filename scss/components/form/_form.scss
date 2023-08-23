@@ -15,7 +15,7 @@
     @include w100;
 
     @include breakpoint(mobile768) {
-      width: calc(100% - size(220));
+      width: calc(100% - size(236));
     }
 
     input {
@@ -33,7 +33,7 @@
   }
   
   .submitbox {
-    width: size(200);
+    width: size(216);
     margin-inline: auto;
 
     @include breakpoint(mobile768) {
@@ -49,12 +49,4 @@
   height: size(48);
   padding: size(14) size(16);
   gap: size(16);
-
-  input {
-
-  }
-  
-  button {
-
-  }
 }
