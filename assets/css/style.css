@@ -675,6 +675,10 @@ button:focus,
   justify-content: center;
   overflow: hidden;
 }
+.cardservice-header .servicetitle {
+  color: hsl(0, 0%, 11%);
+  transition: color 350ms ease-in-out;
+}
 .cardservice-body {
   display: flex;
   flex-direction: column;
@@ -692,10 +696,17 @@ button:focus,
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: transform 350ms ease-in-out;
 }
 .cardservice-body .servicetext {
   color: hsl(0, 0%, 11%);
   font-weight: 300;
+}
+.cardservice:not([disabled]):hover .cardservice-header .servicetitle {
+  color: hsl(217, 100%, 56%);
+}
+.cardservice:not([disabled]):hover .cardservice-body .icon {
+  transform: translateX(0.625rem);
 }
 
 .card-counter {

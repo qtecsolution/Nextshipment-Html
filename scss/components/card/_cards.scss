@@ -23,6 +23,11 @@
       @include flex-center;
       overflow: hidden;
     }
+
+    .servicetitle {
+      color: $blacktext;
+      @include transitionscolor;
+    }
   }
 
   &-body {
@@ -37,11 +42,26 @@
       @include square(24);
       @include flex-center;
       overflow: hidden;
+      @include transitiontransform;
     }
 
     .servicetext {
       color: $blacktext;
       font-weight: 300;
+    }
+  }
+
+  @include hover {
+    .cardservice-header {
+      .servicetitle {
+        color: $primary;
+      }
+    }
+
+    .cardservice-body {
+      .icon {
+        @include translateX(size(10));
+      }
     }
   }
 }
