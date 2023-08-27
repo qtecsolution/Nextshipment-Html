@@ -462,6 +462,40 @@
   }
 }
 
+.reviews {
+  padding: size(48) size(0);
+  
+  @include breakpoint(tab992) {
+    padding: size(80) size(0);
+  }
+  
+  @include breakpoint(desktop1200) {
+    padding: size(96) size(0);
+  }
+
+  @include breakpoint(desktop1600) {
+    padding: size(124) size(0);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(32);
+  
+    @include breakpoint(tab992) {
+      gap: size(48);
+    }
+  
+    @include breakpoint(desktop1600) {
+      gap: size(80);
+    }
+  }
+
+  .info {
+    max-width: size(525);
+    margin-inline: auto;
+  }
+}
+
 .uppersection {
   background: $sectionbgdark;
   min-height: size(328);

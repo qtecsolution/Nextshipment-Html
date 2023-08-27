@@ -211,3 +211,70 @@
     }
   }
 }
+
+.cardreview {
+  background: $white;
+  @include border(solid, 1, $headerborder);
+  @include radius(4);
+  @include flex-column;
+  gap: size(24);
+  padding: size(24) size(30) size(30);
+  @include wh100;
+
+
+  &-header {
+    @include flex-column;
+    gap: size(20);
+
+    h5 {
+      color: $blacktext;
+      font-size: size(20);
+      font-weight: 600;
+      @include line-clamp;
+    }
+
+    p {
+      font-size: size(14);
+      font-style: normal;
+      font-weight: 300;
+
+      @include breakpoint(desktop1400) {
+        font-size: size(16);
+      }
+    }
+  }
+
+  &-body {
+    @include flex-center-vert;
+    gap: size(10);
+
+    .review-thumbnail {
+      @include square(48);
+      @include circle;
+      @include flex-center;
+      overflow: hidden;
+
+      img {
+        @include wh100;
+      }
+    }
+
+    .reviewer {
+      @include flex-column;
+      gap: size(4);
+
+      h5 {
+        color: $blacktext;
+        font-size: size(16);
+        font-weight: 500;
+      }
+
+      p {
+        color: $tableborder;
+        font-size: size(12);
+        font-style: normal;
+        font-weight: 300;
+      }
+    }
+  }
+}
