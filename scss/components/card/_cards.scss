@@ -9,7 +9,7 @@
   padding: size(24);
   @include wh100;
 
-  @include breakpoint(tab992) {
+  @include breakpoint(desktop1600) {
     padding: size(42) size(48);
     gap: size(48);
   }
@@ -26,7 +26,11 @@
 
     .servicetitle {
       color: $blacktext;
-      @include transitionscolor;
+      font-size: size(24);
+
+      @include breakpoint(desktop1600) {
+        font-size: size(32);
+      }
     }
   }
 
@@ -50,17 +54,77 @@
       font-weight: 300;
     }
   }
+}
 
+.service-1 {
   @include hover {
+    background: $primary;
+
     .cardservice-header {
+      .serviceicon {
+        svg {
+          path {
+            fill: $white;
+          }
+        }
+      }
+      
       .servicetitle {
-        color: $primary;
+        color: $white;
       }
     }
 
     .cardservice-body {
+      .servicetext {
+        color: $white;
+      }
+
       .icon {
         @include translateX(size(10));
+
+        svg {
+          path {
+            stroke: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.service-2,
+.service-3,
+.service-4 {
+  @include hover {
+    background: $primary;
+
+    .cardservice-header {
+      .serviceicon {
+        svg {
+          path {
+            stroke: $white;
+          }
+        }
+      }
+      
+      .servicetitle {
+        color: $white;
+      }
+    }
+
+    .cardservice-body {
+      .servicetext {
+        color: $white;
+      }
+
+      .icon {
+        @include translateX(size(10));
+
+        svg {
+          path {
+            stroke: $white;
+          }
+        }
       }
     }
   }

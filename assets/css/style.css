@@ -656,7 +656,7 @@ button:focus,
   width: 100%;
   height: 100%;
 }
-@media screen and (min-width: 62rem) {
+@media screen and (min-width: 100rem) {
   .cardservice {
     padding: 2.625rem 3rem;
     gap: 3rem;
@@ -677,7 +677,12 @@ button:focus,
 }
 .cardservice-header .servicetitle {
   color: hsl(0, 0%, 11%);
-  transition: color 350ms ease-in-out;
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 100rem) {
+  .cardservice-header .servicetitle {
+    font-size: 2rem;
+  }
 }
 .cardservice-body {
   display: flex;
@@ -702,11 +707,55 @@ button:focus,
   color: hsl(0, 0%, 11%);
   font-weight: 300;
 }
-.cardservice:not([disabled]):hover .cardservice-header .servicetitle {
-  color: hsl(217, 100%, 56%);
+
+.service-1:not([disabled]):hover {
+  background: hsl(217, 100%, 56%);
 }
-.cardservice:not([disabled]):hover .cardservice-body .icon {
+.service-1:not([disabled]):hover .cardservice-header .serviceicon svg path {
+  fill: hsl(0, 0%, 100%);
+}
+.service-1:not([disabled]):hover .cardservice-header .servicetitle {
+  color: hsl(0, 0%, 100%);
+}
+.service-1:not([disabled]):hover .cardservice-body .servicetext {
+  color: hsl(0, 0%, 100%);
+}
+.service-1:not([disabled]):hover .cardservice-body .icon {
   transform: translateX(0.625rem);
+}
+.service-1:not([disabled]):hover .cardservice-body .icon svg path {
+  stroke: hsl(0, 0%, 100%);
+}
+
+.service-2:not([disabled]):hover,
+.service-3:not([disabled]):hover,
+.service-4:not([disabled]):hover {
+  background: hsl(217, 100%, 56%);
+}
+.service-2:not([disabled]):hover .cardservice-header .serviceicon svg path,
+.service-3:not([disabled]):hover .cardservice-header .serviceicon svg path,
+.service-4:not([disabled]):hover .cardservice-header .serviceicon svg path {
+  stroke: hsl(0, 0%, 100%);
+}
+.service-2:not([disabled]):hover .cardservice-header .servicetitle,
+.service-3:not([disabled]):hover .cardservice-header .servicetitle,
+.service-4:not([disabled]):hover .cardservice-header .servicetitle {
+  color: hsl(0, 0%, 100%);
+}
+.service-2:not([disabled]):hover .cardservice-body .servicetext,
+.service-3:not([disabled]):hover .cardservice-body .servicetext,
+.service-4:not([disabled]):hover .cardservice-body .servicetext {
+  color: hsl(0, 0%, 100%);
+}
+.service-2:not([disabled]):hover .cardservice-body .icon,
+.service-3:not([disabled]):hover .cardservice-body .icon,
+.service-4:not([disabled]):hover .cardservice-body .icon {
+  transform: translateX(0.625rem);
+}
+.service-2:not([disabled]):hover .cardservice-body .icon svg path,
+.service-3:not([disabled]):hover .cardservice-body .icon svg path,
+.service-4:not([disabled]):hover .cardservice-body .icon svg path {
+  stroke: hsl(0, 0%, 100%);
 }
 
 .card-counter {
