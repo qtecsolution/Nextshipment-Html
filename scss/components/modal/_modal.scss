@@ -32,3 +32,50 @@
     }
   }
 }
+
+.mypayment {
+  @include flex-column;
+  gap: size(24);
+  padding: size(24);
+
+  &-header {
+    @include border-single(bottom, solid, 1, $inputborder);
+    padding-bottom: size(16);
+
+    h5 {
+      color: $bodytext;
+      font-family: $inter;
+      font-size: size(16);
+      font-style: normal;
+      font-weight: 600;
+    }
+  }
+
+  &-body {
+    @include flex-column;
+    gap: size(24);
+
+    .info {
+      max-width: size(266);
+      margin: 0 auto size(8);
+
+      p {
+        color: $placeholdertext;
+        font-size: size(12);
+        font-style: normal;
+        font-weight: 400;
+  
+        @include breakpoint(desktop1400) {
+          font-size: size(14);
+        }
+      }
+    }
+
+    .paythumb {
+      @include square(134);
+      @include flex-center;
+      overflow: hidden;
+      margin-inline: auto;
+    }
+  }
+}

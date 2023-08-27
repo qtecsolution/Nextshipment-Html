@@ -267,3 +267,43 @@ input[type="search"]::-webkit-search-results-decoration {
     }
   }
 }
+
+.form-control.is-invalid ~ .uploadbox, .was-validated .form-control:invalid ~ .uploadbox {
+  border-color: $danger;
+}
+
+.uploadbox {
+  @include border(solid, 1, $inputborder);
+  @include radius(2);
+  @include flex-center-between;
+  height: size(48);
+  padding: size(12) size(8) size(12) size(16);
+
+  .uploadedfile {
+    color: $placeholdertext;
+    font-size: size(14);
+    font-weight: 400;
+  }
+
+  .upload-file {
+    @include setBgColor($blacktext, $white);
+    @include border(solid, 1, $blacktext);
+    @include radius(4);
+    cursor: pointer;
+    font-size: size(12);
+    font-weight: 600;
+    padding: size(8) size(16);
+    @include transitionsall;
+
+    @include hover {
+      @include setBgColor($white, $blacktext);
+    }
+  }
+}
+
+.paytext {
+  margin: size(12) size(0) size(20);
+  color: $placeholdertext;
+  font-size: size(12);
+  font-weight: 400;
+}

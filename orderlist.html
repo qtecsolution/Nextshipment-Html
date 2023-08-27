@@ -529,7 +529,11 @@
                             <p class="paymentmethod">Method : <span>Bank</span></p>
 
                             <p class="status">
-                              Status : <span class="topay">Click to pay</span>
+                              Status : 
+                              
+                              <button type="button" class="topay" data-bs-toggle="modal" data-bs-target="#paymentModal">
+                                Click to pay
+                              </button>
                             </p>
                           </div>
                         </td>
@@ -1716,7 +1720,9 @@
                     <th scope="row">
                       <div class="d-flex flex-column align-items-start gap-3">
                         <p class="calculating">Calculating</p>
-                        <button class="btn-text">Click to pay</button>
+                        <button type="button" class="btn-text" data-bs-toggle="modal" data-bs-target="#paymentModal">
+                          Click to pay
+                        </button>
                         <p class="waiting">Waiting for confirmation</p>
                         <p class="paid">
                           <span>Paid</span> - via bKash / bank
@@ -1816,6 +1822,171 @@
     </div>
   </div>
   <!-- ORDER-DETAILS END -->
+
+  <!-- PAYMENT-MODAL START -->
+  <div class="modal fade pe-0" id="paymentModal" tabindex="-1" aria-labelledby="paymentModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="mypayment">
+            <div class="mypayment-header">
+              <h5>Payment</h5>
+            </div>
+
+            <div class="mypayment-body">
+              <div class="d-flex flex-column gap-2">
+                <div class="form-check">
+                  <input type="radio" class="form-check-input" id="bkash-payment" name="mypayementmethod" autocomplete="off" required hidden checked>
+                  <label class="form-check-label fw-normal" for="bkash-payment">
+                    bKash
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input type="radio" class="form-check-input" id="bank-payment" name="mypayementmethod" autocomplete="off" required hidden>
+                  <label class="form-check-label fw-normal" for="bank-payment">
+                    Bank
+                  </label>
+                </div>
+              </div>
+
+              <div class="info">
+                <p>
+                  To proceed with your shipment payment, kindly initiate 
+                  a bank transfer to this “ 158589131064 ” account number. 
+                  Use the receipt image as the payment reference.
+                </p>
+              </div>
+
+              <button type="button" id="btn-proceed" class="btn-login w-100">Proceed to payment</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- PAYMENT-MODAL END -->
+
+  <!-- PAYMENT-MODAL START -->
+  <div class="modal fade pe-0" id="payModal" tabindex="-1" aria-labelledby="payModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="mypayment">
+            <div class="mypayment-header">
+              <h5>Payment</h5>
+            </div>
+
+            <div class="mypayment-body">
+              <form class="row g-3 needs-validation" novalidate>
+                <div class="col-12">
+                  <div class="inputbox">
+                    <input type="text" class="form-control" id="mybankname" placeholder="Bank Name" autocomplete="off" required>
+                    <div class="invalid-feedback">
+                      Bank name is required.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="inputbox">
+                    <input type="file" class="form-control" id="uploadfile" aria-label="file example" required hidden>
+                    
+                    <div class="uploadbox">
+                      <p class="uploadedfile">
+                        No file chosen
+                      </p>
+
+                      <label class="upload-file" for="uploadfile">
+                        Choose File
+                      </label>
+                    </div>
+
+                    <div class="invalid-feedback">
+                      File upload is required.
+                    </div>
+
+                    <p class="paytext">Bank payment receipt ( Max size : 5 mb)*</p>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <button class="btn-login w-100" id="btn-statement" type="submit">Submit statement</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- PAYMENT-MODAL END -->
+
+  <!-- CONFIRME-CONFIRMED-MODAL START -->
+  <div class="modal fade pe-0" id="paymentConfirmed" tabindex="-1" aria-labelledby="paymentConfirmed" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="mypayment">
+            <div class="mypayment-header">
+              <h5>Payment</h5>
+            </div>
+
+            <div class="mypayment-body">
+              <figure class="paythumb">
+                <svg width="134" height="132" viewBox="0 0 134 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g opacity="0.243228">
+                    <path d="M83.7437 3.90002C83.7437 6.05403 81.9974 7.80029 79.8435 7.80029C77.6895 7.80029 75.9434 6.05403 75.9434 3.90002C75.9434 1.74613 77.6895 0 79.8435 0C81.9974 0 83.7437 1.74613 83.7437 3.90002Z" fill="#9AA3C4"/>
+                  </g>
+                  <g opacity="0.571915">
+                    <path d="M53.0384 13.1008L50.7222 14.438C50.3028 14.6801 49.7667 14.5364 49.5245 14.1171L45.3422 6.87307C45.1001 6.45382 45.2438 5.91764 45.6631 5.67563L47.9794 4.33827C48.3986 4.09625 48.9348 4.23987 49.177 4.65912L53.3592 11.9032C53.6014 12.3226 53.4576 12.8586 53.0384 13.1008Z" fill="#9AA3C4"/>
+                  </g>
+                  <g opacity="0.571915">
+                    <path d="M13.9865 28.842L14.5075 29.0187C15.0982 29.219 15.7498 29.1158 16.2498 28.7427L16.6908 28.4136C17.9498 27.4741 19.7399 28.386 19.7198 29.957L19.7128 30.5071C19.7047 31.1309 20.0041 31.7187 20.5135 32.0789L20.9627 32.3966C22.2454 33.3037 21.9311 35.2878 20.4309 35.7542L19.9055 35.9175C19.3098 36.1026 18.8435 36.5692 18.6583 37.1649L18.4949 37.6903C18.0286 39.1905 16.0444 39.5047 15.1373 38.222L14.8195 37.7729C14.4593 37.2635 13.8715 36.964 13.2478 36.9721L12.6976 36.979C11.1268 36.999 10.2148 35.2092 11.1544 33.95L11.4835 33.5091C11.8566 33.0092 11.9598 32.3576 11.7594 31.7668L11.5827 31.2458C11.0782 29.7579 12.4986 28.3375 13.9865 28.842Z" fill="#46AC7C"/>
+                  </g>
+                  <g opacity="0.571915">
+                    <path d="M10.2929 56.4624L10.8778 59.0722C10.9838 59.5446 10.6867 60.0136 10.2141 60.1194L2.0521 61.9491C1.57969 62.0549 1.11086 61.7578 1.00481 61.2854L0.419822 58.6755C0.314019 58.2031 0.611111 57.7342 1.08352 57.6284L9.24569 55.7987C9.7181 55.6929 10.1869 55.99 10.2929 56.4624Z" fill="#1DB510"/>
+                  </g>
+                  <g opacity="0.571915">
+                    <path d="M18.5745 89.8522C18.5745 92.0061 16.8283 93.7522 14.6744 93.7522C12.5204 93.7522 10.7744 92.0061 10.7744 89.8522C10.7744 87.6983 12.5204 85.9521 14.6744 85.9521C16.8283 85.9521 18.5745 87.6983 18.5745 89.8522Z" fill="#F9C033"/>
+                  </g>
+                  <g opacity="0.571915">
+                    <path d="M13.9865 109.056L14.5075 109.233C15.0982 109.433 15.7498 109.33 16.2498 108.957L16.6908 108.627C17.9498 107.688 19.7399 108.6 19.7198 110.171L19.7128 110.721C19.7047 111.345 20.0041 111.933 20.5135 112.293L20.9627 112.61C22.2454 113.518 21.9311 115.502 20.4309 115.968L19.9055 116.131C19.3098 116.317 18.8435 116.783 18.6583 117.379L18.4949 117.904C18.0286 119.404 16.0444 119.719 15.1373 118.436L14.8195 117.987C14.4593 117.477 13.8715 117.178 13.2478 117.186L12.6976 117.193C11.1268 117.213 10.2148 115.423 11.1544 114.164L11.4835 113.723C11.8566 113.223 11.9598 112.572 11.7594 111.981L11.5827 111.46C11.0782 109.972 12.4986 108.551 13.9865 109.056Z" fill="#1DB510"/>
+                  </g>
+                  <g opacity="0.571915">
+                    <path d="M114.38 25.1253C113.198 23.5849 113.564 21.2903 115.191 20.0421C116.818 18.7939 119.129 19.0343 120.311 20.5747C120.313 20.5777 120.315 20.5806 120.318 20.5834" stroke="#1DB510" stroke-width="3.13924" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <g opacity="0.571915">
+                    <path d="M124.901 46.3737L125.421 46.5504C126.012 46.7508 126.664 46.6475 127.164 46.2744L127.605 45.9454C128.864 45.0058 130.654 45.9178 130.634 47.4887L130.627 48.0388C130.619 48.6626 130.918 49.2504 131.428 49.6107L131.877 49.9283C133.16 50.8354 132.845 52.8195 131.345 53.2859L130.819 53.4492C130.224 53.6344 129.757 54.1009 129.572 54.6966L129.409 55.2221C128.943 56.7222 126.958 57.0364 126.051 55.7538L125.734 55.3046C125.373 54.7953 124.786 54.4957 124.162 54.5038L123.612 54.5108C122.041 54.5308 121.129 52.7409 122.068 51.4819L122.398 51.0409C122.771 50.5409 122.874 49.8894 122.673 49.2985L122.497 48.7775C121.992 47.2896 123.413 45.8692 124.901 46.3737Z" fill="#9AA3C4"/>
+                  </g>
+                  <g opacity="0.571915">
+                    <path d="M128.538 92.5942C131.19 92.9435 133.069 95.5355 132.7 98.3361C132.331 101.137 129.846 103.154 127.194 102.805C127.189 102.804 127.184 102.803 127.179 102.803" stroke="#DE3E3E" stroke-width="2.35443" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <g opacity="0.571915">
+                    <path d="M120.183 125.497L117.867 126.834C117.447 127.076 116.911 126.932 116.669 126.513L112.487 119.269C112.245 118.85 112.388 118.314 112.808 118.072L115.124 116.734C115.543 116.492 116.079 116.636 116.321 117.055L120.504 124.299C120.746 124.719 120.602 125.255 120.183 125.497Z" fill="#1DB510"/>
+                  </g>
+                  <g opacity="0.571915">
+                    <path d="M44.2761 129.723C42.6478 127.601 43.1519 124.44 45.3931 122.72C47.6342 121 50.8183 121.332 52.4466 123.454L52.4559 123.466" stroke="#9AA3C4" stroke-width="3.13924" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <path d="M113.937 64.8937C113.937 89.3803 94.0867 109.231 69.5999 109.231C45.1132 109.231 25.2627 89.3803 25.2627 64.8937C25.2627 40.4069 45.1132 20.5566 69.5999 20.5566C94.0867 20.5566 113.937 40.4069 113.937 64.8937Z" fill="#1DB510"/>
+                  <path d="M50.0137 64.9687L63.0116 77.9668L89.158 51.8203" stroke="white" stroke-width="7.85511" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </figure>
+
+              <div class="info">
+                <p class="text-center">
+                  Your payment has been successfully processed and recorded. 
+                  You will receive a confirmation email with tracking details 
+                  once your package is dispatched.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- PAYMENT-CONFIRMED-MODAL END -->
   
   <!-- BOOTSTRAP-JS(5.3.1) -->
   <script src="assets/js/bootsrap/bootstrap.bundle.min.js"></script>
@@ -1830,5 +2001,9 @@
   <script src="assets/js/loader/loader.js"></script>
   <!-- COPYRIGHT-JS -->
   <script src="assets/js/copyright/copyright.js"></script>
+  <!-- MODAL-JS -->
+  <script src="assets/js/modal/modal.js"></script>
+  <!-- VALIDATION-JS -->
+  <script src="assets/js/validation/validation.js"></script>
 </body>
 </html>
